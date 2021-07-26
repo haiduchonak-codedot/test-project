@@ -1,2 +1,51 @@
 .header {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 36px;
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 7px;
+    }
+
+    .contact-btn {
+        font: inherit;
+        color: $pallete-secondary-main;
+        &:hover {
+            background-color: $pallete-secondary-main;
+            color: $pallete-common-grey-100;
+        }
+    }
+
+    .main-menu__list {
+        display: flex;
+    }
+
+    .main-menu__item {
+        display: block;
+        margin-right: 20px;
+        .dropdown {
+            margin-right: 36px;
+        }
+        .main-menu__link {
+            color: $pallete-primary-main;
+            &:hover {
+                color: $pallete-primary-light;
+                .main-menu__item {
+                    &:first-child {
+                        &::after {
+                            border-bottom: 2px solid $pallete-primary-light;
+                            border-left: 2px solid $pallete-primary-light;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
 }
