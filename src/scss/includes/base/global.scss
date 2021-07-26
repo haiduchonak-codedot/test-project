@@ -83,7 +83,6 @@ body {
   min-height: 100vh;
   transition: 0s;
   color: $color-black;
-  background-color: #f9f8f7;
   overscroll-behavior: none;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
@@ -155,4 +154,48 @@ select {
 
 strong {
   font-weight: 600;
+}
+
+h1, h2, h3 {
+  font-family: "Harabara";
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 44px;
+  color: $pallete-primary-dark;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: 36px;
+  color: $pallete-primary-dark;
+}
+
+h3 {
+  font-size: 24px;
+  color: $pallete-primary-light;
+}
+
+p {
+  font-family: "Montserrat";
+  font-weight: normal;
+  font-size: 16px;
+  color: $pallete-common-grey-900;
+}
+
+span {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+
+}
+
+button {
+  font: inherit;
+  border: 2px solid $pallete-secondary-main;
+  box-sizing: border-box;
+  border-radius: $border-radius;
+  background-color: transparent;
+  width: 160px;
 }
