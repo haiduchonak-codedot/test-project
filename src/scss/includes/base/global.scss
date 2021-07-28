@@ -19,6 +19,8 @@ body {
   padding: 0;
 }
 
+body
+
 input[type="submit"]:focus {
   outline: none;
 }
@@ -133,6 +135,10 @@ textarea {
 a {
   cursor: pointer;
   text-decoration: none;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
 
   &:not([href]) {
     cursor: initial;
