@@ -8,6 +8,7 @@
 		#main-menu {
 			margin-left: 0;
 			width: 100%;
+			background-color: rgba(0,0,0,0.1);
 		}
 	}
 }
@@ -18,21 +19,24 @@
 	font-weight: bold;
 	font-size: 16px;
 	line-height: 36px;
-	padding: 8px 0;
+	// padding: 8px 0;
 	@media screen and (max-width: $mobile) {
 		margin-top: 1px;
 	}
 	.wrapper {
 		display: flex;
 		justify-content: space-between;
-		align-items: flex-end;
+		// align-items: flex-end;
 		// margin-top: 7px;
+		@media screen and (max-width: $desktop-extra) {
+			align-items: center;
+		}
 		@media screen and (max-width: $mobile){
 			align-items: end;
 		}
 		.logo {
 			display: block;
-			// padding: 5px 0px;
+			padding: 7px 0;
 			@media screen and (max-width: $mobile) {
 				width: 141px;
 				height: 35px;	
@@ -78,6 +82,7 @@
 			@media screen and (max-width: $mobile){
 				right: 30px;
 				padding-right: 0;
+				margin-top: 10px;
 			}
 		}
 		
@@ -86,7 +91,7 @@
 			z-index: 1;
 			font: inherit;
 			color: $pallete-secondary-main;
-			margin-left: 114px;
+			margin-left: 143px;
 			&:hover {
 					background-color: $pallete-secondary-main;
 					color: $pallete-common-grey-100;
@@ -105,7 +110,7 @@
 			}
 		}
 		li.main-menu__item.dropdown {
-			margin-right: 24px;
+			// margin-right: 24px;
 			&:last-child {
 				margin-right: 0;
 			}
@@ -150,7 +155,6 @@
 					background-color: transparent;
 					border: 0;
 					box-shadow: none;
-
 					@media screen and (max-width: $desktop-extra) {
 						padding: 0 0 0 16px;
 						.dropdown__link {
@@ -183,11 +187,13 @@
 			display: block;
 			// margin-right: 26px;
 			.main-menu__link {
+				display: flex;
 				color: $pallete-primary-main;
-				padding: 15px 11px 13px 10px;
+				padding: 23px 10px;
 				@media screen and (max-width: $desktop-extra) {
 					font-size: 15px;
 					font-weight: normal;
+					padding: 0;
 				}
 				&:hover {
 					color: $pallete-primary-light;
@@ -199,6 +205,12 @@
 							}
 						}
 					}
+				}
+			}
+			a.main-menu__link.dropdown__menu-link {
+				padding: 23px 12.5px;
+				@media screen and (max-width: $desktop-extra) {
+					padding: 0;
 				}
 			}
 		}
