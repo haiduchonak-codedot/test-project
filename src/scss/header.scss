@@ -10,7 +10,6 @@ body#main:target {
 	#main-menu {
 		margin-left: 0;
 		width: 100%;
-		background-color: rgba(0,0,0,0.1);
 		@include desktop-extra {
 			background-color: transparent;
 			width: max-content;
