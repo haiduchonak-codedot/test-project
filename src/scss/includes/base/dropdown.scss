@@ -21,9 +21,9 @@
 			border-left: 2px solid #0D6EB7;
 			transition: .25s ease;
 		}
-		.dropdown__content {
-			display: block;
-		}
+		// .dropdown__content {
+		// 	display: block;
+		// }
 		.main-menu__link {
 			color: #0D6EB7;
 		}
@@ -35,15 +35,12 @@
 	display: none;
 	box-shadow: 2px 4px 16px rgba(158, 158, 158, 0.4);
 	background-color: #fff;
-	border-top: 3px solid $pallete-primary-light;
 	border-radius: 0 0 16px 16px;
 	margin-top: -26px;
 	margin-left: 11px;
-	padding: 5px 12px 15px 16px;
+	padding: 5px;
 	width: max-content;
-	@media screen and (max-width: $desktop-extra) {
-		margin: 0;
-	}
+	margin: 0;
 	& .dropdown__link {
 		color: $pallete-primary-main;
 		&:hover {
