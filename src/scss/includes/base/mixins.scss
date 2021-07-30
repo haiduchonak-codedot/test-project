@@ -79,3 +79,9 @@
     @content;
   }
 }
+
+@mixin mobile-small() {
+  @media (min-width: $mobile-small) {
+    @content;
+  }
+}

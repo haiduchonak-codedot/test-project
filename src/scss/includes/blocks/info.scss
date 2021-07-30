@@ -1,0 +1,43 @@
+.hero__info {
+  width: 553px;
+  margin-top: 210px;
+  text-align: left;
+
+  &:first-child {
+    margin-right: 140px;
+  }
+  h3 {
+    margin: 0 auto 20px auto;
+    color: $pallete-primary-main;
+    // @media screen and (max-width: $mobile) {
+    //   margin-bottom: 12px;
+    //   font-size: 20px;
+    // }
+  }
+  &-text-wrapper {
+    margin-top: 24px;
+  }
+  .hero_text {
+    // margin-left: 4px;
+    margin-bottom: 12px;
+  }
+  // @media screen and (max-width: $desktop) {
+  //   margin: 40px auto;
+  //   width: 80%;
+  //   &:first-child {
+  //     margin: 40px auto;
+  //   }
+  // }
+  // @media screen  and (max-width: $mobile) {
+  //   width: auto;
+  //   margin: 60px auto;
+  //   &:first-child {
+  //     margin: 5px auto;
+  //   }
+  // }
+  &-title {
+    // @media screen and (max-width: $mobile) {
+      // text-align: center;
+    // }
+  }
+}
