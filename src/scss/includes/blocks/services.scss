@@ -1,5 +1,5 @@
 .services {
-  margin-top: 85px;
+  padding-top: 50px;
   &__title {
     font-size: 22px;
     line-height: 24px;
@@ -19,7 +19,7 @@
       text-align: center;
       width: 145px;
       height: 162px;
-      padding: 16px 8px;
+      padding: 35px 8px;
       margin-bottom: 40px;
       display: flex;
       flex-wrap: wrap;
@@ -28,7 +28,8 @@
         margin: 0 auto;
       }
       img {
-        zoom: 50%;
+        zoom: 44%;
+        margin-bottom: 25px;
       }
       &-title {
         font-size: 12px;

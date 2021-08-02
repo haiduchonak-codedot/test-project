@@ -28,7 +28,7 @@ body#main:target {
 	.wrapper {
 		display: flex;
 		justify-content: space-between;
-		align-items: end;
+		align-items: flex-end;
 			@include mobile {
 				align-items: flex-end;
 			}
@@ -73,9 +73,11 @@ body#main:target {
 			@include desktop-extra {
 				display: none;
 			}
-			right: 30px;
+			position: absolute;
+			right: 20px;
 			padding: 10px;
 			display: block;
+
 			.header__burger-line {
 				width: 26px;
 				height: 4px;
@@ -86,10 +88,6 @@ body#main:target {
 			.main-menu__list {
 				display: none;
 			}
-
-			right: 30px;
-			padding-right: 0;
-			margin-top: 10px;
 		}
 		
 		
@@ -102,7 +100,7 @@ body#main:target {
 				margin-bottom: 60px;
 			}
 			@include desktop-extra {
-				margin-left: 143px;
+				margin-left: 140px;
 				display: block;
 				margin-bottom: 0;
 			}
@@ -229,7 +227,7 @@ body#main:target {
 			}
 			a.main-menu__link.dropdown__menu-link {
 				@include desktop-extra {
-					padding: 23px 12.5px;
+					padding: 23px 14px;
 				}
 			}
 		}
