@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-
+  text-decoration: none;
   *::before,
   *::after {
     box-sizing: border-box;
@@ -135,9 +135,24 @@ textarea {
 a {
   cursor: pointer;
   text-decoration: none;
-  outline: none;
+  outline: 0;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   &:focus {
-    outline: none;
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  &:active {
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  &:hover {
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
   &:not([href]) {

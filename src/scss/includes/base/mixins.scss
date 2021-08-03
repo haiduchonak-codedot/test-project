@@ -74,14 +74,3 @@
   }
 }
 
-@mixin mobile-middle() {
-  @media (min-width: $mobile-middle) {
-    @content;
-  }
-}
-
-@mixin mobile-small() {
-  @media (min-width: $mobile-small) {
-    @content;
-  }
-}

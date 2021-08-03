@@ -13,17 +13,18 @@
         margin-bottom: 61px;
       }
       @include desktop {
-        flex-basis: 41%;
+        flex-basis: 49%;
+        padding-right: 110px;
       }
       &-title {
         font-size: 20px;
         color: $pallete-primary-main;
         text-align: center;
-        margin: 22px auto;
+        margin: 17px auto;
         @include desktop {
           text-align: left;
           font-size: 24px;
-          margin: 19px auto;
+          margin: 16px auto;
         }
       }
       &-text-wrapper {

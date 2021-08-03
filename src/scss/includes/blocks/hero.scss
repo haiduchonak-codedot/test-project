@@ -1,6 +1,6 @@
 .hero {
   @include tablet {
-    padding-top: 43px;
+    padding-top: 38px;
 
   }
 
@@ -71,7 +71,7 @@
         font-size: 22px;
         text-align: center;
         margin-top: 20px;
-        @include mobile-small {
+        @include media-min($mobile-small) {
             font-size: 24px;
             // margin-top: 32px;
             margin-bottom: 0;
