@@ -1,0 +1,86 @@
+.proposal {
+  background-color: $pallete-background;
+  text-align: center;
+  margin-top: 147px;
+  margin-bottom: 180px;
+  padding-bottom: 20px;
+  position: relative;
+  @include desktop-extra {
+    padding: 50px 0;
+    margin-top: 337px;
+    margin-bottom: 337px;
+  }
+  &::before {
+    content: '';
+    background-image: url(../../../img/Group610.png);
+    background-repeat: no-repeat;
+    content: "";
+    display: block;
+    height: 140px;
+    background-position: -78px -7.5px;
+    background-size: 138% 93px;
+    margin-top: -77px;
+    position: absolute;
+    width: 100%;
+    @include desktop-extra {
+      background-position: 0 32.5px;
+      background-size: 100% 143px;
+      margin-top: -219px;
+      height: 351px;
+    }
+  }
+  &::after {
+    content: '';
+    background-image: url(../../../img/Group611.png);
+    background-repeat: no-repeat;
+    background-position: -88px 14px;
+    background-size: 145% 125px;
+    content: "";
+    display: block;
+    height: 140px;
+    position: absolute;
+    width: 100%;
+    @include desktop-extra {
+      background-position: -119px 41px;
+      background-repeat: no-repeat;
+      background-size: 118% 215px;
+      height: 351px;
+    }
+  }
+  // padding: 88px 0;
+  &__title {
+    font-size: 24px;
+    line-height: 38px;
+    color: #fff;
+    margin: 0;
+    padding: 6px 0;
+    letter-spacing: 0.05em;
+    // margin-bottom: 12px;
+    @include desktop-extra {
+      font-size: 44px;
+      line-height: 60px;
+      margin-bottom: 10px;
+    }
+  }
+  &__text {
+    color: #fff;
+    margin: 0;
+    margin: 0 0 16px;
+    @include desktop-extra {
+      font-size: 24px;
+      line-height: 29px;
+      margin-bottom: 36px;
+    }
+  }
+  &__button {
+    height: 42px;
+    color: $pallete-secondary-main;
+    font-weight: bold;
+    line-height: 20px;
+    background-color: #fff;
+    &:hover {
+      background-color: $pallete-secondary-main;
+      color: #fff;
+    }
+  }
+}
