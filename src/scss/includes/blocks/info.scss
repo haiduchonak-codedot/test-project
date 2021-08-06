@@ -1,13 +1,14 @@
 .info {
-  .wrapper {
+  &__wrapper {
     margin-left: 3px;
+    text-align: left;
     @include desktop {
       display: flex;
       justify-content: space-between;
       margin-left: 0;
     }
 
-    .info__section {
+    .info__content {
 
       &:first-child {
         margin-bottom: 61px;
@@ -35,6 +36,5 @@
         margin-bottom: 12px;
       }
     }
-    text-align: left;
     }
 }

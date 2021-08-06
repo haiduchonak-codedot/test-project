@@ -29,6 +29,10 @@
   padding: env(safe-area-inset-top) calc(24px + env(safe-area-inset-left));
 
   @include desktop {
+    padding: 0 40px;
+  }
+
+  @include desktop-extra {
     padding: 0 15px;
   }
 

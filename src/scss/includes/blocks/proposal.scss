@@ -1,47 +1,46 @@
 .proposal {
   background-color: $pallete-background;
-  text-align: center;
-  margin-top: 147px;
-  margin-bottom: 180px;
-  padding-bottom: 20px;
+  margin-bottom: 166px;
+  margin-top: 146px;
+  padding-bottom: 40px;
   position: relative;
+  text-align: center;
   @include desktop-extra {
+    margin-bottom: 296px;
+    margin-top: 324px;
     padding: 50px 0;
-    margin-top: 337px;
-    margin-bottom: 337px;
+    padding-bottom: 80px;
+  }
+  &::before, &::after {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
   }
   &::before {
     content: '';
-    background-image: url(../../../img/Group610.png);
-    background-repeat: no-repeat;
-    content: "";
-    display: block;
+    background-image: url(../../../img/upperWave.svg);
     height: 140px;
     background-position: -78px -7.5px;
     background-size: 138% 93px;
     margin-top: -77px;
-    position: absolute;
     width: 100%;
     @include desktop-extra {
       background-position: 0 32.5px;
       background-size: 100% 143px;
-      margin-top: -219px;
+      margin-top: -215px;
       height: 351px;
     }
   }
   &::after {
     content: '';
-    background-image: url(../../../img/Group611.png);
-    background-repeat: no-repeat;
-    background-position: -88px 14px;
+    background-image: url(../../../img/lowerWave.svg);
+    background-position: -86px 33px;
     background-size: 145% 125px;
-    content: "";
-    display: block;
     height: 140px;
-    position: absolute;
-    width: 100%;
     @include desktop-extra {
-      background-position: -119px 41px;
+      background-position: -119px 79px;
       background-repeat: no-repeat;
       background-size: 118% 215px;
       height: 351px;
@@ -60,6 +59,7 @@
       font-size: 44px;
       line-height: 60px;
       margin-bottom: 10px;
+      letter-spacing: 0.06em;
     }
   }
   &__text {
