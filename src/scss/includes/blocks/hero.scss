@@ -61,7 +61,7 @@
     }
   }
   .container {
-    .wrapper {
+    .hero__wrapper {
       position: relative;
       @include desktop-extra {
         display: flex;
@@ -85,7 +85,7 @@
           font-size: 44px;
         }
       }
-      .hero__img {
+      .hero__img-wrapper {
         img {
           height: 202px;
           width: 228px;
