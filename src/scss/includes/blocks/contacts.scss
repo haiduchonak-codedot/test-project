@@ -10,12 +10,15 @@
   }
 
   &__wrapper {
-    margin-top: 82px;
+    margin-top: 85px;
+    @include desktop {
+      margin-top: 82px;
+    }
   }
 
   &__content {
     text-align: center;
-    .contacts__text {
+    .contacts__subtitle {
       font-weight: bold;
       font-size: 18px;
       line-height: 28px;
@@ -28,7 +31,7 @@
       }
     }
     
-    .contacts__secondary-text {
+    .contacts__text {
       margin-top: 35px;
       @include desktop-extra {
         margin: 18px 0;
@@ -47,7 +50,7 @@
     @include desktop-extra {
       justify-content: center;
       margin-top: 92px;
-      gap: 90px;
+      gap: 100px;
     }
     .contacts__list {
       @include media-min($mobile-small) {

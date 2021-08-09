@@ -1,13 +1,14 @@
 .proposal {
   background-color: $pallete-background;
-  margin-bottom: 166px;
+  margin-bottom: 162px;
   margin-top: 146px;
   padding-bottom: 40px;
   position: relative;
   text-align: center;
+  z-index: 1;
   @include desktop-extra {
     margin-bottom: 296px;
-    margin-top: 324px;
+    margin-top: 333px;
     padding: 50px 0;
     padding-bottom: 80px;
   }
@@ -17,6 +18,7 @@
     background-repeat: no-repeat;
     position: absolute;
     width: 100%;
+    z-index: -1;
   }
   &::before {
     content: '';
@@ -28,7 +30,7 @@
     width: 100%;
     @include desktop-extra {
       background-position: 0 32.5px;
-      background-size: 100% 143px;
+      background-size: 102% 143px;
       margin-top: -215px;
       height: 351px;
     }

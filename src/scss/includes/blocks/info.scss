@@ -1,12 +1,14 @@
+.info__wrapper {
+  margin-left: 3px;
+  text-align: left;
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+  }
+}
+
 .info {
-  &__wrapper {
-    margin-left: 3px;
-    text-align: left;
-    @include desktop {
-      display: flex;
-      justify-content: space-between;
-      margin-left: 0;
-    }
 
     .info__content {
 
@@ -35,6 +37,5 @@
 
         margin-bottom: 12px;
       }
-    }
     }
 }

@@ -12,6 +12,7 @@ $color-black: #1a1a1a;
 $color-red: #f2571f;
 
 // Media queries
+$desktop-extra-large: 1600px;
 $desktop-extra: 1280px;
 $desktop: 992px;
 $tablet: 768px;
@@ -20,3 +21,9 @@ $mobile: 576px;
 $mobile-middle: 475px;
 $mobile-small: 375px;
 $mobile-extra-small: 340px;
+
+//rating in stars for reviews section
+$rating: 4.5;
+$percent: calc((#{$rating} / 5) * 100% + 1%);
+$star-color: #E1E1E1;
+$star-fill-color: $pallete-secondary-main;
