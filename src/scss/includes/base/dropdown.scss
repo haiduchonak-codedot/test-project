@@ -3,7 +3,7 @@
 	&__menu-link {
     align-items: center;
 		&::after {
-			@include desktop-extra {
+			@include desktop {
 				display: inline-flex;
 				content: '';
 				width: 7px;
@@ -15,7 +15,7 @@
 				margin-left: 4px;
 				transform: translateY(-5px) rotate(-45deg);
 			}
-			@include desktop-extra {
+			@include desktop {
 				display: block;
 				transform: rotate(-45deg);
 			}
@@ -46,7 +46,8 @@
 	margin-top: -25px;
 	padding: 14px 16px;
 	
-	width: max-content;
+	// width: max-content;
+	// width: 100%;
 	margin: 0;
 	& .dropdown__link {
 		color: $pallete-primary-main;
@@ -54,5 +55,5 @@
 			color: $pallete-primary-light;
 		}
 	}
-	position: absolute;
+	position: relative;
 }

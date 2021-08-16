@@ -1,15 +1,18 @@
 .proposal {
   background-color: $pallete-background;
-  margin-bottom: 162px;
-  margin-top: 146px;
+  margin-bottom: 144px;
+  margin-top: 139px;
   padding-bottom: 40px;
   position: relative;
   text-align: center;
   z-index: 1;
+  @include tablet {
+    padding-top: 20px;
+  }
   @include desktop-extra {
-    margin-bottom: 296px;
-    margin-top: 333px;
-    padding: 50px 0;
+    margin-bottom: 273px;
+    margin-top: 307px;
+    padding: 73px 0;
     padding-bottom: 80px;
   }
   &::before, &::after {
@@ -26,12 +29,15 @@
     height: 140px;
     background-position: -78px -7.5px;
     background-size: 138% 93px;
-    margin-top: -77px;
+    margin-top: -84px;
     width: 100%;
+    @include tablet {
+      margin-top: -104px;
+    }
     @include desktop-extra {
       background-position: 0 32.5px;
       background-size: 102% 143px;
-      margin-top: -215px;
+      margin-top: -238px;
       height: 351px;
     }
   }
@@ -53,21 +59,22 @@
     font-size: 24px;
     line-height: 38px;
     color: #fff;
-    margin: 0;
-    padding: 6px 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    // padding: 6px 0;
     letter-spacing: 0.05em;
     // margin-bottom: 12px;
     @include desktop-extra {
       font-size: 44px;
       line-height: 60px;
-      margin-bottom: 10px;
       letter-spacing: 0.06em;
+      margin-bottom: 17px;
     }
   }
   &__text {
     color: #fff;
-    margin: 0;
-    margin: 0 0 16px;
+    margin-top: 0;
+    margin-bottom: 10px;
     @include desktop-extra {
       font-size: 24px;
       line-height: 29px;
@@ -75,7 +82,7 @@
     }
   }
   &__button {
-    height: 42px;
+    min-height: 42px;
     color: $pallete-secondary-main;
     font-weight: bold;
     line-height: 20px;
