@@ -1,83 +1,85 @@
 .hero {
   @include tablet {
-    padding-top: 38px;
+    padding-top: 31px;
 
   }
-
-  .breadcrumbs {
-    display: flex;
-    width: fit-content;
-    @include desktop-extra {
-      margin-left: 3px;
-    }
-    &__item {
-      position: relative;
+  &__content {
+    flex-basis: 50%;
+    .breadcrumbs {
       display: flex;
-      align-items: center;
-      padding-right: 7px;
-      @include desktop-extra {
-        padding-right: 10px;
-      }
-      &::after {
-        content: '';
-        display: block;
-        width: 6px;
-        height: 6px;
-        transform: rotate(-135deg);
-        margin-left: -1px;
+      width: fit-content;
+      margin-left: -7px;
+      &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
         @include desktop-extra {
-          margin-left: 9px;
+          // padding-right: 10px;
         }
-        border-bottom: 2px solid $pallete-primary-dark;
-        border-left: 2px solid $pallete-primary-dark;
-      }
-      &:first-child {
-        display: none;
-      }
-      &:last-child::after {
-        display: none;
-      }
-      @include tablet {
+        &::after {
+          content: '';
+          display: block;
+          width: 6px;
+          height: 6px;
+          transform: rotate(-135deg);
+          margin-left: -1px;
+          border-bottom: 2px solid $pallete-primary-dark;
+          border-left: 2px solid $pallete-primary-dark;
+        }
         &:first-child {
-          display: flex;
+          display: none;
         }
-        
+        &:last-child::after {
+          display: none;
+        }
+        @include tablet {
+          &:first-child {
+            display: flex;
+          }
+          
+        }
       }
-    }
-    &__link {
-      font-family: "Montserrat";
-      font-weight: normal;
-      font-size: 12px;
-      color: $pallete-primary-dark;
-      padding: 7px 6.8px 7px 0;
-      padding-left: 0;
-      display: flex;
-      @include mobile {
-        font-size: 16px;
-      }
-      @include desktop-extra {
-        padding: 16px 0;
+      &__link {
+        font-family: "Montserrat";
+        font-weight: normal;
+        font-size: 12px;
+        color: $pallete-primary-dark;
+        padding: 7px 6.8px;
+        display: flex;
+        @include mobile {
+          font-size: 16px;
+        }
+        @include desktop-extra {
+          padding: 16px 10px;
+        }
       }
     }
   }
   .hero__wrapper {
     position: relative;
-    @include desktop-extra {
+    @include desktop {
       display: flex;
       justify-content: space-between;
+
+    }
+    @include desktop-extra {
     }
     .hero__title {
       font-size: 22px;
       text-align: center;
       margin-top: 25px;
+      margin-bottom: 0;
       @include media-min($mobile-small) {
           font-size: 24px;
           // margin-top: 32px;
-          margin-bottom: 0;
+          // margin-bottom: 0;
       }
       @include tablet {
         font-size: 34px;
-        margin-bottom: 10px;
+        // margin-bottom: 10px;
+      }
+      @include desktop {
+        text-align: left;
       }
       @include desktop-extra {
         margin-top: 109px;
@@ -85,6 +87,7 @@
       }
     }
     .hero__img-wrapper {
+      flex-basis: 50%;
       img {
         height: 202px;
         width: 228px;
@@ -93,13 +96,13 @@
           width: 308px;
         }
         @include desktop-extra {
-          height: 455px;
+          height: 444px;
           width: 467px;
         }
 
       }
       @include desktop-extra {
-        margin-right: 84px;
+        padding-left: 43px;
       }
       text-align: center;
 

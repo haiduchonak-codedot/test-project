@@ -4,7 +4,9 @@ $pallete-primary-light: #00A4E8;
 $pallete-primary-dark: #194484;
 $pallete-background: #276ED8;
 $pallete-secondary-main: #06B25F;
+$pallete-secondary-light: #66d6a0;
 $pallete-common-grey-900: #242424;
+$pallete-common-grey-700: #4C4C4C;
 $pallete-common-grey-100: #FFFFFF;
 $border-radius: 6px;
 
@@ -23,7 +25,5 @@ $mobile-small: 375px;
 $mobile-extra-small: 340px;
 
 //rating in stars for reviews section
-$rating: 4.5;
-$percent: calc((#{$rating} / 5) * 100% + 1%);
 $star-color: #E1E1E1;
 $star-fill-color: $pallete-secondary-main;

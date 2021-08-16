@@ -1,3 +1,112 @@
 .footer {
-  margin-top: 300px;
+  position: relative;
+  margin-top: 107px;
+  padding-top: 34px;
+  background-color: $pallete-primary-dark;
+  &::before {
+    content: "";
+    background-image: url(../img/footer-upper-wave.svg);
+    background-position: -134px -0.5px;
+    background-repeat: no-repeat;
+    background-size: 111% 75px;
+    display: block;
+    height: 154px;
+    margin-top: -108px;
+    position: absolute;
+    width: 122%;
+    z-index: -1;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    .footer__logo {
+
+    }
+    &-list {
+      display: flex;
+      .footer__socials-item {
+        
+        .footer__socials-link {
+          display: block;
+          padding: 20px;
+          .footer__socials-icon {
+            display: block;
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    margin-bottom: 39px;
+    .footer__item {
+      
+      &-link {
+        font-family: "Harabara";
+        font-style: normal;
+        font-weight: bold;
+        display: block;
+        color: $pallete-common-grey-100;
+        font-size: 20px;
+        line-height: 21px;
+        letter-spacing: 0.07em;
+        padding: 12px;
+      }
+      .footer__sublist {
+        padding-left: 23px;
+        .footer__subitem {
+
+          &-link {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: normal;
+            display: block;
+            color: $pallete-common-grey-100;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 9px;
+          }
+        }
+      }
+    }
+  }
+  &__legal {
+    background-color: $pallete-common-grey-100;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .container {
+      display: flex;
+      flex-direction: column-reverse;
+      &-copyright {
+        font-family: "Open Sans";
+        color: $pallete-common-grey-700;
+      }
+      .footer__legal-links {
+        
+        .footer__legal-link {
+          font-family: "Open Sans";
+          color: $pallete-common-grey-700;
+          padding: 16px;
+        }
+      }
+    }
+  }
+
+  
 }

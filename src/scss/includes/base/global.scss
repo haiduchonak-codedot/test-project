@@ -132,7 +132,7 @@ textarea {
   resize: none;
 }
 
-a, button {
+a, button, label {
   cursor: pointer;
   text-decoration: none;
   outline: 0;
@@ -170,7 +170,7 @@ button,
 input,
 label,
 select {
-  cursor: auto;
+  cursor: pointer;
 }
 
 strong {
@@ -210,6 +210,11 @@ h3 {
   letter-spacing: 0.05em;
 }
 
+h4 {
+  font-family: "Montserrat";
+  font-weight: bold;
+}
+
 p {
   font-family: "Montserrat";
   font-weight: normal;
@@ -231,6 +236,7 @@ button {
   box-sizing: border-box;
   border-radius: $border-radius;
   background-color: transparent;
-  width: 160px;
+  min-width: 160px;
   font-family: "Montserrat";
+  cursor: pointer;
 }
