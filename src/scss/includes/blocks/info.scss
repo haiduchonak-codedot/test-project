@@ -1,55 +1,46 @@
 .info__wrapper {
-  margin-left: 3px;
+  margin-left: pxToRem(3);
   text-align: left;
   @include desktop {
-    // width: 100%;
     display: flex;
     justify-content: space-between;
     margin-left: 0;
     flex-wrap: wrap;
-    // padding-top: 12px;
+    row-gap: 28px;
   }
 }
 
 .info {
-  padding-top: 17px;
-  padding-bottom: 47px;
+  padding-top: pxToRem(28);
+  padding-bottom: pxToRem(47);
   @include desktop {
-    padding-top: 24px;
+    padding-top: pxToRem(23);
   }
   .info__content {
-    padding-bottom: 61px;
+    padding-bottom: pxToRem(61);
     &:last-child {
       padding-bottom: 0;
     }
     @include desktop {
       flex-basis: 49%;
-      // padding-right: 110px;
-      // max-width: 553px;
       padding-bottom: 0;
     }
     &-title {
-      font-size: 20px;
-      color: $pallete-primary-main;
       text-align: center;
-      margin: 0 auto 17px;
+      margin-bottom: pxToRem(21);
       @include desktop {
         text-align: left;
-        font-size: 24px;
-        // margin: 16px auto;
+        max-width: pxToRem(553);
       }
     }
-    &-text-wrapper {
-      margin-top: 24px;
-      @include desktop {
-        max-width: 553px;
+    .info__content-text {
+      margin-top: 0;
+      margin-bottom: pxToRem(30);
+      &:last-child {
+        margin-bottom: 0;
       }
-      .info__content-text {
-        margin-top: 0;
-        margin-bottom: 28px;
-        &:last-child {
-          margin-bottom: 0;
-        }
+      @include desktop {
+        max-width: pxToRem(553);
       }
     }
   }

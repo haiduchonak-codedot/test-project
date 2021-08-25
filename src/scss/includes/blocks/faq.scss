@@ -1,84 +1,82 @@
 .faq {
-  padding-top: 47px;
-  padding-bottom: 47px;
+  padding-top: pxToRem(47);
+  padding-bottom: pxToRem(47);
   position: relative;
   .container {
-    max-width: 1016px;
+    max-width: pxToRem(1016);
   }
   @include desktop-extra {
-    // margin-top: 265px;
-    padding-top: 79px;
-    padding-bottom: 79px;
+    padding-top: pxToRem(79);
+    padding-bottom: pxToRem(79);
   }
   &__title {
-    margin-bottom: 23px;
+    margin-bottom: pxToRem(23);
     @include desktop-extra {
-      margin-bottom: 53px;
+      margin-bottom: pxToRem(53);
     }
   }
   &__list {
     position: relative;
     &::before, &::after {
       content: "";
-      top: 24px;
-      bottom: 24px;
-      width: 19px;
+      top: pxToRem(24);
+      bottom: pxToRem(28);
+      width: pxToRem(19);
       overflow: hidden;
       position: absolute;
       @include desktop-extra {
-        width: 34px;
-        top: 21px;
-        bottom: 21px;
+        width: pxToRem(34);
+        top: pxToRem(21);
+        bottom: pxToRem(21);
       }
     }
     &::before {
-      border-bottom: 6px solid $pallete-secondary-light;
-      border-bottom-left-radius: 15px;
-      border-left: 6px solid $pallete-secondary-light;
-      border-top: 6px solid $pallete-secondary-light;
-      border-top-left-radius: 13px;
-      left: -24px;
+      border-bottom: pxToRem(6) solid $pallete-secondary-light;
+      border-bottom-left-radius: pxToRem(15);
+      border-left: pxToRem(6) solid $pallete-secondary-light;
+      border-top: pxToRem(6) solid $pallete-secondary-light;
+      border-top-left-radius: pxToRem(13);
+      left: pxToRem(-24);
       @include desktop-extra {
-        left: -15px;
+        left: pxToRem(-15);
       }
     }
     &::after {
-      border-bottom: 6px solid $pallete-secondary-light;
-      border-bottom-right-radius: 15px;
-      border-right: 6px solid $pallete-secondary-light;
-      border-top: 6px solid $pallete-secondary-light;
-      border-top-right-radius: 13px;
-      right: -24px;
+      border-bottom: pxToRem(6) solid $pallete-secondary-light;
+      border-bottom-right-radius: pxToRem(15);
+      border-right: pxToRem(6) solid $pallete-secondary-light;
+      border-top: pxToRem(6) solid $pallete-secondary-light;
+      border-top-right-radius: pxToRem(13);
+      right: pxToRem(-24);
       @include desktop-extra {
-        border-bottom-right-radius: 14px;
-        border-top-right-radius: 14px;
-        right: -15px;
+        border-bottom-right-radius: pxToRem(14);
+        border-top-right-radius: pxToRem(14);
+        right: pxToRem(-15);
       }
     }
     .faq__item {
-      
       &-title {
-        display: flex;
-        font-size: 18px;
+        display: inline-flex;
+        font-size: pxToRem(18);
         font-family: "Montserrat";
         font-weight: 600;
-        line-height: 28px;
+        line-height: pxToRem(28);
         color: $pallete-primary-main;
-        padding: 15px 0;
-        border-radius: 5px;
+        padding: pxToRem(15) 0;
+        border-radius: pxToRem(5);
         flex: none;
         @include desktop-extra {
-          padding: 14px 41px;
-          font-size: 20px;
+          padding: pxToRem(14) pxToRem(41);
+          font-size: pxToRem(20);
         }
         &::before {
           content: '';
           display: block;
-          margin-right: 8px;
-          width: 12px;
-          height: 12px;
-          margin-left: 4px;
-          margin-top: 8px;
+          margin-right: pxToRem(8);
+          width: pxToRem(12);
+          height: pxToRem(12);
+          margin-left: pxToRem(4);
+          margin-top: pxToRem(8);
           border-radius: 50%;
           background-color: $pallete-primary-main;
           flex: none;
@@ -87,81 +85,70 @@
     }
   }
   &__extended-list {
-    margin-top: 67px;
+    margin-top: pxToRem(45);
+    max-width: pxToRem(963);
+    margin-left: auto;
+    margin-right: auto;
+    @include desktop {
+      padding-left: calc(35px + env(safe-area-inset-left));
+      padding-right: calc(37px + env(safe-area-inset-right));
+    }
+    
     @include desktop-extra {
-      margin-top: 56px;
-      padding-left: 42px;
+      margin-top: pxToRem(41);
     }
     .faq__extended-item {
-      margin-bottom: 39px;
       position: relative;
-      @include desktop-extra {
-        margin-bottom: 36.5px;
-      }
-      &:first-child {
-        margin-bottom: 34px;
-        @include desktop-extra {
-          margin-bottom: 41px;
-        }
-      }
-      &::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 130%;
-        height: 1px;
-        border: 1px solid $pallete-primary-main;
-        opacity: 0.5;
-        bottom: -15px;
-        left: -15%;
-        @include desktop {
-          left: 15px;
-          bottom: -22px;
-          width: 90.7%;
-        }
+      border-bottom: pxToRem(1) solid #86b7db;
+      
+      padding-left: calc(30px + env(safe-area-inset-left));
+      padding-right: calc(30px + env(safe-area-inset-right));
+      padding-top: 0;
+      padding-bottom: pxToRem(18.5);
+      @include desktop {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .faq__extended-item-title {
         display: flex;
-        font-family: "Montserrat";
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 28px;
         margin: 0;
         color: $pallete-common-grey-900;
-        // padding: 10px;
-        margin-bottom: 10px;
+        letter-spacing: 0.016rem;
+        padding-top: pxToRem(18.5);
+        padding-bottom: pxToRem(13);
         @include tablet {
-          font-size: 20px;
+          font-size: pxToRem(20);
         }
         @include desktop-extra {
-          margin-bottom: 16px;
+          padding-bottom: pxToRem(14);
         }
         &::before {
           content: "";
           display: block;
           flex: none;
           color: $pallete-common-grey-900;
-          width: 14px;
-          height: 14px;
-          margin-left: 8px;
-          margin-top: 7px;
-          margin-right: 17px;
-          border-bottom: 4px solid $pallete-common-grey-900;
-          border-left: 4px solid $pallete-common-grey-900;
+          width: pxToRem(14);
+          height: pxToRem(14);
+          margin-left: pxToRem(9);
+          margin-top: pxToRem(7);
+          margin-right: pxToRem(17);
+          border-bottom: pxToRem(4) solid $pallete-common-grey-900;
+          border-left: pxToRem(4) solid $pallete-common-grey-900;
           transform: rotate(-45deg);
           transform-origin: 45% 45%;
+          @include desktop-extra {
+            margin-left: pxToRem(2);
+          }
         }
       }
       &-subtitle {
         display: none;
-        padding-left: 40px;
-        line-height: 26px;
-        // margin-top: 10px;
+        padding-left: pxToRem(40);
+        line-height: pxToRem(26);
+        letter-spacing: -0.024rem;
         @include desktop-extra {
-          padding-right: 45px;
-          padding-left: 40px;
-          // margin-top: 8px;
+          padding-left: pxToRem(35);
         }
       }
     }
@@ -170,7 +157,7 @@
         display: block;
       }
       & > h4::before {
-        transform: rotate(135deg) translate(1px, -3px)!important;
+        transform: rotate(135deg) translate(pxToRem(3),pxToRem(-6))!important;
       }
     }
   }

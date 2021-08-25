@@ -1,16 +1,16 @@
 .alignleft {
   float: left;
-  margin: 0 10px 5px 0;
+  margin: 0 pxToRem(10) pxToRem(5) 0;
 }
 
 .alignright {
   float: right;
-  margin: 0 0 5px 10px;
+  margin: 0 0 pxToRem(5) pxToRem(10);
 }
 
 .aligncenter {
   display: block;
-  margin: 0 auto 5px;
+  margin: 0 auto pxToRem(5);
 }
 
 .page-wrapper {
@@ -23,21 +23,20 @@
 
 .container {
   width: 100%;
-  max-width: 1390px;
+  max-width: pxToRem(1390);
   margin: 0 auto;
-  // padding: 0 24px;
-  padding: env(safe-area-inset-top) calc(24px + env(safe-area-inset-left));
+  padding: env(safe-area-inset-top) calc(30px + env(safe-area-inset-left));
 
   @include desktop {
-    padding: 0 40px;
+    padding: 0 pxToRem(40);
   }
 
   @include desktop-extra {
-    padding: 0 15px;
+    padding: 0 pxToRem(15);
   }
 
   @media screen and (max-width: $mobile){
-    padding: 0 30px;
+    padding: 0 pxToRem(30);
   }
 }
 
@@ -74,9 +73,9 @@
 .visually-hidden {
   position: absolute;
   overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  width: 1px;
-  height: 1px;
+  clip: rect(pxToRem(1), pxToRem(1), pxToRem(1), pxToRem(1));
+  width: pxToRem(1);
+  height: pxToRem(1);
   white-space: nowrap;
 }
 

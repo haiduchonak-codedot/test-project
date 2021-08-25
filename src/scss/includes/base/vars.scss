@@ -1,3 +1,10 @@
+@function pxToRem($size, $postfix: rem) {
+  // @return $size / $base-size * 1 + $postfix;
+  @return $size + px
+}
+
+$base-size: 16;
+
 // Colors
 $pallete-primary-main: #0D6EB7;
 $pallete-primary-light: #00A4E8;
@@ -14,15 +21,15 @@ $color-black: #1a1a1a;
 $color-red: #f2571f;
 
 // Media queries
-$desktop-extra-large: 1600px;
-$desktop-extra: 1280px;
-$desktop: 992px;
-$tablet: 768px;
-$mobile: 576px;
+$desktop-extra-large: pxToRem(1600, em);
+$desktop-extra: pxToRem(1280, em);
+$desktop: pxToRem(992, em);
+$tablet: pxToRem(768, em);
+$mobile: pxToRem(576, em);
 
-$mobile-middle: 475px;
-$mobile-small: 375px;
-$mobile-extra-small: 340px;
+$mobile-middle: pxToRem(475, em);
+$mobile-small: pxToRem(375, em);
+$mobile-extra-small: pxToRem(340, em);
 
 //rating in stars for reviews section
 $star-color: #E1E1E1;

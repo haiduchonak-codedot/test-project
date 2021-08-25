@@ -1,7 +1,7 @@
 body#main:not(:target) #main-menu {
-  margin-left: -110%;
+  transform: translateX(-110%);
   @include desktop {
-    margin-left: 0;
+    transform: translateX(0);
   }
 }
 body#main:target {
@@ -11,18 +11,14 @@ body#main:target {
   }
 
   #main-menu {
-    margin-left: 0;
+    transform: translateX(0);
     width: 100%;
     display: flex;
     @include desktop {
       background-color: transparent;
-      width: max-content;
     }
     .main-menu__backdrop {
       width: 100%;
-      // @include mobile-middle {
-      // 	width: 35%;
-      // }
       @include desktop {
         display: none;
       }
@@ -34,75 +30,70 @@ body#main:target {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
-  font-size: 16px;
-  line-height: 36px;
+  font-size: pxToRem(16);
+  line-height: pxToRem(36);
   .container {
-    padding: 0 15px;
+    padding: 0 pxToRem(15);
   }
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    @include mobile {
-      // align-items: flex-end;
-    }
+    padding-bottom: pxToRem(5);
+    padding-top: pxToRem(2);
 
     @include desktop {
-      // align-items: end;
-      padding-bottom: 12px;
-      padding-top: 6px;
-      
+      padding-bottom: pxToRem(12);
+      padding-top: pxToRem(6);
     }
     @include desktop-extra {
-      padding-bottom: 16px;
-      gap: 136px;
+      padding-bottom: pxToRem(19);
+      padding-top: pxToRem(7);
+      gap: pxToRem(136);
     }
     .logo {
       display: block;
-      // padding: 9px 15px;
-      padding: 7px 15px;
+      padding: pxToRem(7) pxToRem(15);
       flex: none;
-      img {
-        width: 141px;
-        height: 38px;
-        @include desktop-extra {
-          width: 208px;
-          height: 52px;
-        }
-      }
       @include desktop-extra {
-        padding: 3px 0px;
+        padding: 0;
+        padding-bottom: pxToRem(3);
+      }
+      img {
+        width: pxToRem(141);
+        height: pxToRem(38);
+        @include desktop-extra {
+          width: pxToRem(208);
+          height: pxToRem(52);
+        }
       }
     }
     .header__main-menu-wrapper {
-
       z-index: 1;
       display: block;
       left: 0;
       top: 0;
       position: fixed;
+      transition: .6s ease;
       @include desktop {
         position: relative;
         width: auto;
-
       }
       @include desktop-extra {
         width: 100%;
       }
       .header__main-menu {
-        max-width: 275px;
+        max-width: pxToRem(275);
         width: 100%;
         flex: none;
-        box-shadow: 14px 0px 10px -7px rgba(0, 0, 0, 0.3);
+        box-shadow: pxToRem(14) 0 pxToRem(10) pxToRem(-7) rgba(0, 0, 0, 0.3);
         height: 100vh;
         overflow: auto;
         background-color: #fff;
         padding-bottom: calc(77px + env(safe-area-inset-bottom));
         @include tablet {
-          min-width: 365px;
+          min-width: pxToRem(365);
         }
         @include desktop {
           display: flex;
@@ -112,21 +103,23 @@ body#main:target {
           box-shadow: none;
           background-color: transparent;
           position: relative;
+          align-items: center;
           height: auto;
           justify-content: space-between;
-          gap: 10px;
+          gap: pxToRem(10);
           overflow: visible;
           padding-bottom: 0;
+          align-items: flex-end;
         }
 
-        @include media-min(1075px) {
-          gap: 50px;
+        @include media-min(pxToRem(1075, em)) {
+          gap: pxToRem(50);
         }
 
         @include desktop-extra {
-          gap: 28px;
+          gap: pxToRem(28);
         }
-  
+
         &-text {
           display: block;
           @include desktop {
@@ -135,40 +128,26 @@ body#main:target {
         }
 
         .main-menu__list {
-          // padding: 0 12px;
           display: block;
-          // background-color: #fff;
-          // height: 100vh;
-          // overflow: auto;
           margin-top: 0;
           z-index: 2;
           transition: 0.5s ease-in-out;
-          // max-width: 310px;
-          // width: 100%;
-          // flex: none;
-          // box-shadow: 14px 0px 10px -7px rgba(0, 0, 0, 0.3);
-          
+
           @include desktop {
             display: flex;
             height: auto;
-            // background-color: transparent;
-            // box-shadow: none;
             align-items: center;
             padding: 0;
-            // padding-top: 11px;
             overflow: initial;
-            // min-width: auto;
-            // max-width: max-content;
-            // width: 100%;
           }
-    
+
           .main-menu__link-wrapper {
             display: flex;
             justify-content: flex-end;
             .header__main-menu-text {
-              font-size: 15px;
+              font-size: pxToRem(15);
               border: 0;
-              padding: 5px 17px;
+              padding: pxToRem(5) pxToRem(17);
               font-weight: normal;
               text-align: right;
               color: $pallete-secondary-main;
@@ -187,25 +166,22 @@ body#main:target {
             }
             .main-menu__link {
               display: block;
-              font-size: 15px;
+              font-size: pxToRem(15);
               font-weight: normal;
-              // padding: 5px;
               color: $pallete-primary-main;
               position: relative;
-              padding-left: 48px;
+              padding-left: pxToRem(48);
               line-height: 1rem;
-              padding-top: 5.5px;
-              padding-bottom: 5.5px;
-              padding-right: 35px;
+              padding-top: pxToRem(5.5);
+              padding-bottom: pxToRem(5.5);
+              padding-right: pxToRem(35);
               @include desktop {
-                padding: 15px 6.5px;
+                padding: pxToRem(15) pxToRem(6.5);
                 font-weight: bold;
-                
-                // margin-bottom: 4px;
               }
               @include desktop-extra {
-                padding: 15px 11.7px;
-                font-size: 16px;
+                padding: pxToRem(13) pxToRem(10.5);
+                font-size: pxToRem(16);
               }
               &:hover {
                 color: $pallete-primary-light;
@@ -215,8 +191,8 @@ body#main:target {
                 .main-menu__item {
                   &:first-child {
                     &::after {
-                      border-bottom: 2px solid $pallete-primary-light;
-                      border-left: 2px solid $pallete-primary-light;
+                      border-bottom: pxToRem(2) solid $pallete-primary-light;
+                      border-left: pxToRem(2) solid $pallete-primary-light;
                     }
                   }
                 }
@@ -225,7 +201,10 @@ body#main:target {
             a.main-menu__link.dropdown__menu-link {
               @include desktop {
                 display: flex;
-                // padding: 28px 14px;
+              }
+              @include desktop-extra {
+                padding-right: pxToRem(12.5);
+                padding-left: pxToRem(12.5);
               }
             }
           }
@@ -236,16 +215,11 @@ body#main:target {
             border: 0;
           }
           .dropdown__content {
-            // position: relative;
             display: block;
-            // background-color: transparent;
             border: 0;
             box-shadow: none;
             margin: 0;
             padding: 0;
-            // padding-left: 18px;
-    
-            // width: 100%;
             li.main-menu__item.dropdown {
               &:last-child {
                 margin-right: 0;
@@ -255,17 +229,15 @@ body#main:target {
               position: relative;
             }
             .dropdown__link {
-              font-size: 13px;
+              font-size: pxToRem(13);
               font-weight: normal;
               display: block;
-              // padding-left: 54px;
-              padding: 3.75px 35px 3.75px 66px;
+              padding: pxToRem(3.75) pxToRem(35) pxToRem(3.75) pxToRem(66);
               line-height: 1rem;
-              // margin-bottom: 7.5px;
               @include desktop {
                 font-weight: bold;
-                font-size: 16px;
-                padding: 10px 0;
+                font-size: pxToRem(16);
+                padding: pxToRem(10) 0;
               }
             }
             @include desktop {
@@ -273,39 +245,24 @@ body#main:target {
               display: none;
               width: max-content;
               position: absolute;
-              // background-color: #fff;
-              margin-left: 11px;
-              margin-top: -8px;
-              padding: 0 16px 16px;
-              border-top: 3px solid $pallete-primary-light;
-              box-shadow: 2px 4px 16px rgba(158, 158, 158, 0.4);
-              // border-radius: 0 0 16px 16px;
+              margin-left: pxToRem(11);
+              top: pxToRem(36);
+              padding: 0 pxToRem(16) pxToRem(16);
+              border-top: pxToRem(3) solid $pallete-primary-light;
+              box-shadow: pxToRem(2) pxToRem(4) pxToRem(16) rgba(158, 158, 158, 0.4);
             }
           }
         }
       }
-      
+
       .contact-btn {
-        z-index: 1;
-        font: inherit;
         color: $pallete-secondary-main;
-        // margin-top: 28px;
-        // margin-bottom: 77px;
-        // margin-bottom: calc(77px + env(safe-area-inset-bottom));
-        margin-left: 46px;
-        margin-top: 26px;
-        @include mobile {
-          // margin-bottom: 60px;
-          // margin-bottom: env(safe-area-insert-bottom) + ;
-        }
+        background-color: #fff;
+        margin-left: pxToRem(46);
+        margin-top: pxToRem(26);
         @include desktop {
           margin-left: 0;
-          display: block;
-          margin-bottom: 0;
           margin-top: 0;
-        }
-        @include desktop-extra {
-          // margin-left: 138px;
         }
         &:hover {
           background-color: $pallete-secondary-main;
@@ -319,28 +276,19 @@ body#main:target {
         display: none;
       }
 
-      padding: 15px;
+      padding: pxToRem(15);
       display: block;
 
       .header__burger-line {
-        width: 26px;
-        height: 4px;
+        width: pxToRem(26);
+        height: pxToRem(4);
         background-color: $pallete-primary-dark;
-        margin-bottom: 4px;
-        border-radius: 2px;
+        margin-bottom: pxToRem(4);
+        border-radius: pxToRem(2);
         &:last-child {
           margin-bottom: 0;
         }
       }
-      // .main-menu__list {
-      //   display: none;
-      // }
     }
-
-    
-
-    
-
-    
   }
 }

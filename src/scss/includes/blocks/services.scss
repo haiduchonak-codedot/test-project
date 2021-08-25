@@ -1,25 +1,14 @@
 .services {
-  // padding: 20px 0;
-  padding-top: 39px;
-  padding-bottom: 39px;
+  padding-top: pxToRem(40);
+  padding-bottom: pxToRem(39);
   @include desktop-extra {
-    padding-top: 99px;
+    padding-top: pxToRem(99);
   }
   &__title {
-    font-size: 24px;
-    line-height: 24px;
     text-align: center;
-    margin-bottom: 38px;
-    // margin-top: 20px;
-    @include tablet {
-      font-size: 30px;
-    }
-    @include desktop {
-      font-size: 36px;
-    }
+    margin-bottom: pxToRem(38);
     @include desktop-extra {
-      // margin-top: 135px;
-      margin-bottom: 78px;
+      margin-bottom: pxToRem(78);
     }
   }
 
@@ -27,20 +16,22 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 29px;
+    column-gap: pxToRem(29);
+    row-gap: pxToRem(40);
     @include media-min($mobile-extra-small) {
-      // justify-content: space-around;
-      gap: 20px;
+      column-gap: pxToRem(20);
+    }
+    @include desktop {
+      row-gap: pxToRem(60);
     }
     .services__item {
       background: #F4F8FD;
-      box-shadow: 0px 3px 16px 4px rgba(29, 51, 107, 0.1);
-      border-radius: 16px;
+      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(4) rgba(29, 51, 107, 0.1);
+      border-radius: pxToRem(16);
       text-align: center;
-      width: 145px;
-      height: 162px;
-      padding: 4px;
-      margin-bottom: 19px;
+      width: pxToRem(145);
+      padding: pxToRem(4);
+      min-height: pxToRem(162);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -48,50 +39,59 @@
         background-color: #fff;
       }
       @include tablet {
-        height: 208px;
-        width: 193px;
-        padding: 0 10px 10px;
+        min-height: pxToRem(208);
+        width: pxToRem(193);
+        padding: pxToRem(10);
       }
       @include desktop {
-        height: 280px;
-        width: 282px;
+        min-height: pxToRem(280);
+        width: pxToRem(282);
       }
       @include desktop-extra {
-        width: 322px;
-        height: 320px;
-        margin-bottom: 40px;
+        min-width: pxToRem(322);
+        height: pxToRem(320);
       }
-      img {
-        width: 52px;
-        height: 52px;
-        margin: 26.5px 0;
+      &-img-wrapper {
+        max-width: pxToRem(52);
+        min-height: pxToRem(52);
+        max-height: pxToRem(52);
+        margin: pxToRem(30.5) 0 pxToRem(22);
+        display: flex;
+        img {
+          object-fit: scale-down;
+          width: 100%;
+          height: auto;
+        }
         @include tablet {
-          width: 70px;
-          height: 70px;
+          max-width: pxToRem(70);
+          min-height: pxToRem(70);
+          max-height: pxToRem(70);
         }
         @include desktop {
-          height: 90px;
-          width: 90px;
+          min-height: pxToRem(90);
+          max-height: pxToRem(90);
+          max-width: pxToRem(90);
         }
         @include desktop-extra {
-          width: 112px;
-          height: 112px;
-          margin: 65px auto 50px;
+          max-width: pxToRem(112);
+          min-height: pxToRem(112);
+          max-height: pxToRem(112);
+          margin: pxToRem(57) auto pxToRem(48);
         }
       }
       &-title {
-        font-size: 12px;
-        line-height: 22px;
+        font-size: pxToRem(12);
+        line-height: pxToRem(22);
         letter-spacing: 0.05em;
         color: $pallete-primary-main;
         margin: 0;
         @include tablet {
-          font-size: 15px;
+          font-size: pxToRem(15);
         }
         @include desktop {
-          font-size: 20px;
-          line-height: 30px;
-          margin-top: 40px;
+          font-size: pxToRem(20);
+          line-height: pxToRem(30);
+          margin-top: pxToRem(40);
         }
         @include desktop-extra {
           margin-top: 0;
