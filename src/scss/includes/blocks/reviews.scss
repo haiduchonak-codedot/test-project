@@ -1,56 +1,43 @@
 .reviews {
-  // margin-top: 78px;
-  // margin-bottom: 40px;
-  padding-top: 47px;
-  padding-bottom: 39px;
+  padding-top: pxToRem(47);
+  padding-bottom: pxToRem(40);
   @include desktop-extra {
-    // margin-top: 52px;
-    padding-bottom: 99px;
+    padding-bottom: pxToRem(99);
   }
   &__content {
     background: #FFFFFF;
-    box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
-    border-radius: 16px;  
+    box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(29, 51, 107, 0.15);
+    border-radius: pxToRem(16);  
     text-align: center;
-    padding: 32px 0 54px;
+    padding: pxToRem(32) 0 pxToRem(54);
+    max-width: pxToRem(320);
+    margin-left: auto;
+    margin-right: auto;
     @include tablet {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 32px;
+      padding: pxToRem(32);
+      max-width: pxToRem(898);
     }
     @include desktop {
-      max-width: 898px;
       margin: 0 auto;
     }
     .reviews__count {
-      margin-bottom: 41px;
+      margin-bottom: pxToRem(38);
       display: flex;
       justify-content: center;
       align-items: baseline;
-      gap: 7px;
-      @include tablet {
-        gap: 0;
-      }
-      span {
-        margin-right: 2px;
-        @include tablet {
-          margin-right: 10.8px;
-        }
-        &:last-child {
-          margin-right: 0;
-          @include desktop {
-            margin-left: 11px;
-          }
-        }
-      }
+      gap: pxToRem(8);
       @include tablet {
         margin-bottom: 0;
+        align-items: center;
+        gap: pxToRem(13);
       }
       .reviews__rating {
         &::before {
           content: '★★★★★';
-          font-size: 24px;
+          font-size: pxToRem(24);
           --rating: 4.5;
           --percent: calc((var(--rating) / 5) * 100% - 3%);
           background: linear-gradient(90deg, $star-fill-color var(--percent), $star-color var(--percent));
@@ -61,36 +48,27 @@
           @include media-min($mobile-small) {
             letter-spacing: 0.4em;
           }
+          @include tablet {
+            margin-right: pxToRem(-12);
+          }
         }
       }
     }
     .reviews__img {
-      margin-bottom: 21px;
+      margin-bottom: pxToRem(22);
       @include tablet {
         margin-bottom: 0;
       }
     }
-    // &-count {
-    //   display: flex;
-    //   align-items: center;
-    //   margin: 3px 90px 0 68px;
-    // }
     .reviews__text {
       font-weight: bold;
+      font-size: pxToRem(18);
     }
-  
     .reviews__button {
-      font-family: 'Montserrat';
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 36px;
-      width: 220px;
-      padding: 0 10px;
+      width: pxToRem(220);
+      padding: pxToRem(1) pxToRem(15);
       background-color: $pallete-secondary-main;
       color: #fff;
-      background: $pallete-secondary-main;
-      border: 2px solid $pallete-secondary-main;
-      border-radius: 6px;
       display: block;
       margin: 0 auto;
       &:hover {
@@ -100,10 +78,6 @@
       @include tablet {
         margin: 0;
       }
-      @include desktop-extra {
-        padding: 4px 10px;
-      }
     }
-
   }
 }

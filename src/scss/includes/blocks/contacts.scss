@@ -1,44 +1,44 @@
 .contacts {
-  padding-top: 73px;
+  padding-top: pxToRem(73);
+  padding-bottom: pxToRem(73);
   @include desktop-extra {
-    // padding: 20px 0;
-    padding-top: 125px;
-  }
-  &__title {
-    margin-bottom: 14px;
-    @include desktop-extra {
-      margin-bottom: 68px;
-    }
+    padding-top: pxToRem(130);
+    padding-bottom: pxToRem(130);
   }
 
-  &__wrapper {
-    // margin-top: 85px;
-    @include desktop {
-      // margin-top: 82px;
+  .container {
+    @include desktop-extra {
+      padding: env(safe-area-inset-top) calc(117px + env(safe-area-inset-left));
+    }
+  }
+  &__title {
+    margin-bottom: pxToRem(14);
+    @include desktop-extra {
+      margin-bottom: pxToRem(68);
     }
   }
 
   &__content {
-    margin-bottom: 23px;
+    margin-bottom: pxToRem(22);
     text-align: center;
+    @include desktop {
+      margin-bottom: pxToRem(31);
+    }
+    @include desktop-extra {
+      margin-bottom: pxToRem(94);
+    }
     .contacts__subtitle {
-      font-weight: bold;
-      font-size: 18px;
-      line-height: 28px;
       margin-top: 0;
-      margin-bottom: 35px;
-      @include tablet {
-        font-size: 24px;
-      }
+      margin-bottom: pxToRem(35);
       @include desktop-extra {
-        margin-bottom: 18px;
+        margin-bottom: pxToRem(18);
       }
     }
     
     .contacts__text {
       margin-top: 0;
       @include desktop-extra {
-        margin-bottom: 18px;
+        margin-bottom: pxToRem(18);
       }
     }
     
@@ -48,78 +48,51 @@
     @include desktop {
       display: flex;
       justify-content: space-around;
-      margin-top: 31px;
-      // gap: 30px;
     }
     @include desktop-extra {
       justify-content: center;
-      margin-top: 92px;
-      // gap: 100px;
     }
     .contacts__list {
       flex-basis: 50%;
-      @include media-min($mobile-small) {
-        // margin-left: 6px;
-      }
-      @include desktop {
-        margin-left: 86px;
-      }
-      @include desktop-extra {
-        margin-left: 0;
-        padding-left: 107px;
-        // margin-right: 20px;
-      }
       .contacts__item {
-        display: flex;
-        // margin-bottom: 24px;
-        align-items: center;
-        &:first-child {
-          // margin-bottom: 14px;
-          align-items: baseline;
-          @include desktop-extra {
-            // margin-bottom: 25px;
-            // margin-top: 13px;
-            // margin-left: 0;
-          }
-        }
+        width: 100%;
         &:last-child {
           margin-bottom: 0;
         }
         &-icon {
-          width: 20px;
-          height: 20px;
-          margin-left: -3px;
-          margin-right: 12px;
+          width: pxToRem(20);
+          height: pxToRem(20);
+          margin-left: pxToRem(3);
+          margin-right: pxToRem(18);
+          flex: none;
+          display: flex;
+          flex-basis: pxToRem(20);
         }
 
         &-text {
           font-family: "Montserrat";
-          font-size: 18px;
-          line-height: 26px;
+          display: inline-flex;
+          font-size: pxToRem(18);
+          line-height: pxToRem(26);
           text-decoration: none;
           color: #242424;
-          padding: 13.3px 0;
-          text-indent: -36px;
-          padding-left: 26px;
+          padding-top: 13.4px;
+          padding-bottom: 13.4px;
           @include media-min($mobile-small) {
-            padding-left: 42px;
-            // padding: 0;
-            padding-top: 13px;
-            padding-bottom: 13px;
-            font-size: 20px;
-            
+            font-size: pxToRem(20);
           }
           @include tablet {
-            padding-left: 47px;
+            padding-top: pxToRem(14.2);
+            padding-bottom: pxToRem(14.2);
+            padding-left: pxToRem(11);
+            padding-right: pxToRem(11);
           }
-          width: 100%;
         }
       }
     }
   }
   &__form-wrapper {
-    margin-top: 67px;
-    // background-image: url(../../../img/bg-icon1.svg);
+    margin-top: pxToRem(53);
     background-repeat: no-repeat;
     position: relative;
     z-index: 1;
@@ -133,103 +106,84 @@
       display: none;
       @include desktop-extra {
         display: block;
-        position: absolute;
+      }
+      .contacts__form-bg-icon {
         z-index: -1;
+        position: absolute;
       }
     }
     #bg-icon-container-1 {
-      left: 28px;
-      top: -38px;
       #bg-icon-1 {
-        height: 154px;
-        width: 149px;
+        height: pxToRem(154);
+        width: pxToRem(149);
+        left: pxToRem(-43);
+        top: pxToRem(-41);
+        @include desktop-extra {
+          left: pxToRem(27);
+        }
       }
     }
     #bg-icon-container-2 {
-      bottom: 30px;
-      left: 8px;
       #bg-icon-2 {
-        width: 135px;
-        height: 108px;
+        width: pxToRem(135);
+        height: pxToRem(108);
+        left: pxToRem(-42);
+        bottom: pxToRem(21);
+        @include desktop-extra {
+          left: pxToRem(8);
+        }
       }
     }
     #bg-icon-container-3 {
-      right: 47px;
-      top: -39px;
       #bg-icon-3 {
-        width: 126px;
-        height: 229px;
-        top: 0;
-        right: 0;
+        width: pxToRem(126);
+        height: pxToRem(229);
+        right: pxToRem(-61);
+        top: pxToRem(-41);
       }
     }
-    // &::before, &::after {
-    //   content: '';
-    //   position: absolute;
-    //   z-index: -1;
-    //   background-repeat: no-repeat;
-    // }
-    // &::before {
-    //   width: 148px;
-    //   height: 153px;
-    //   bottom: 0;
-    //   left: 0;
-    //   background-image: url(../../../img/bg-icon2.svg);
-    // }
-    // &::after {
-    //   width: 126px;
-    //   height: 229px;
-    //   right: 0;
-    //   top: 0;
-    //   background-image: url(../../../img/bg-icon3.svg);
-    // }
     @include desktop-extra {
       margin-top: 0;
-      // padding: 50px 80px;
     }
     .contacts__form {
       text-align: center;
       background: #FFFFFF;
-      box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
-      border-radius: 6px;
-      padding: 41px 22px;
-      max-width: 420px;
+      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(29, 51, 107, 0.15);
+      border-radius: pxToRem(6);
+      padding: pxToRem(41) pxToRem(22);
+      max-width: pxToRem(420);
       @include desktop-extra {
-      padding: 65px 39px;
+        padding: pxToRem(65) pxToRem(39);
+        margin-left: pxToRem(109);
       }
       &-field {
         font-family: "Open Sans";
         width: 100%;
-        border: 1px solid #D7D7D7;
+        border: pxToRem(1) solid #D7D7D7;
         box-sizing: border-box;
-        border-radius: 4px;
-        margin-bottom: 20px;
-        padding: 10px 16px;
+        border-radius: pxToRem(4);
+        margin-bottom: pxToRem(20);
+        padding: pxToRem(10) pxToRem(16);
         color: #242424;
-        &:last-child {
-          font-family: "Montserrat";
-          margin-bottom: 0;
-          margin-top: 10px;
-          border: 2px solid $pallete-secondary-main;
-          box-sizing: border-box;
-          border-radius: $border-radius;
-          background-color: transparent;
-          padding: 13px 0;
-          background-color: $pallete-secondary-main;
-          font-size: 18px;
-          font-weight: bold;
-          color: #FFF;
-          @include desktop-extra {
-            width: 339px;
-          }
-          &:hover {
-            color: $pallete-secondary-main;
-            background-color: transparent;
-          }
-        }
         &::placeholder {
           font-family: "Open Sans";
-          color: #A9A9A9;
+          // color: #A9A9A9;
+        }
+      }
+      .form-textarea {
+        min-height: pxToRem(80);
+        margin-bottom: pxToRem(22);
+      }
+      &-button {
+        width: 100%;
+        margin-bottom: 0;
+        padding: pxToRem(5) 0;
+        background-color: $pallete-secondary-main;
+        font-size: pxToRem(18);
+        color: #FFF;
+        &:hover {
+          color: $pallete-secondary-main;
+          background-color: transparent;
         }
       }
     }

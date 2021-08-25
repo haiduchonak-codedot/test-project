@@ -1,16 +1,19 @@
 .projects {
-  margin-top: 302px;
-  padding-bottom: 90px;
-  margin-bottom: 96px;
+  .container {
+    position: relative;
+  }
+  margin-top: pxToRem(234);
+  padding-bottom: pxToRem(90);
+  margin-bottom: pxToRem(130);
   background-color: #f6f9fd;
   position: relative;
   z-index: 1;
   @include desktop-extra {
-    margin-top: 337px;
-    // padding-bottom: 90px;
+    margin-top: pxToRem(212);
     z-index: 0;
-    padding-top: 62px;
-    margin-bottom: 225px;
+    padding-top: pxToRem(62);
+    margin-bottom: pxToRem(183);
+    padding-bottom: pxToRem(130);
   }
   &::before, &::after {
     content: '';
@@ -21,71 +24,89 @@
     z-index: -1;
   }
   &::before {
-    background-image: url(../../../img/projects-upper-wave.svg);
-    background-position: -40px 8px;
-    background-size: 140% 154px;
-    height: 150px;
-    margin-top: -150px;
+    background-image: url(../../../img/projectsUpperWave.svg);
+    background-position: pxToRem(-40) pxToRem(8);
+    background-size: 140% pxToRem(154);
+    height: pxToRem(150);
+    top: pxToRem(-150);
     @include desktop-extra {
-      background-position: 0px 8px;
+      background-position: 0 pxToRem(8);
       background-size: 101% 100%;
-      margin-top: -212px;
     }
   }
   &::after {
-    background-image: url(../../../img/projects-lower-wave.svg);
-    background-position: 0 90px;
-    background-size: 106% 94px;
-    height: 185px;
+    background-image: url(../../../img/projectsLowerWave.svg);
+    background-position: 0 0;
+    background-size: 106% 104px;
+    height: pxToRem(185);
+    bottom: pxToRem(-184);
+    @include desktop-extra {
+      background-size: 102% pxToRem(144);
+    }
   }
 
   &__title {
-    margin-bottom: 59px;
+    margin-bottom: pxToRem(59);
     @include desktop-extra {
-      margin-bottom: 94px;
+      margin-bottom: pxToRem(91);
     }
   }
 
   .slider {
-    position: relative;
-    &__arrow-wrapper {
-      cursor: pointer;
-      border: 0;
-      // width: auto;
-      // height: auto;
-      width: 30px;
-      height: 30px;
-      position: absolute;
-      // top: calc(50% - 15px);
-      min-width: auto;
-      @include media-min($desktop-extra-large) {
-        // top: calc(58% - 15px);
-      }
-      .slider__arrow {
-        display: none;
-        @include desktop {
+    &__arrow {
+      display: none;
+      @include desktop {
+        display: block;
+        cursor: pointer;
+        border: 0;
+        width: pxToRem(45);
+        height: pxToRem(55);
+        position: absolute;
+        min-width: auto;
+        border-radius: 0;
+        top: calc(56% - 15px);
+        background-color: transparent;
+        &::before, &::after {
+          content: "";
+          position: absolute;
           display: block;
-          border-left: 8px solid #84b5ff;
-          border-bottom: 8px solid #84b5ff;
-          width: 30px;
-          height: 30px;
+          background-color: #84b5ff;
+          width: pxToRem(30);
+          height: pxToRem(9);
+          z-index: 1;
         }
       }
     }
     .left-arrow {
-      transform: rotate(45deg);
-      left: 5px;
-      top: calc(47.5% - 15px);
+      left: 6%;
       @include media-min($desktop-extra-large) {
-        left: -71px;
+        left: -4.4%;
+      }
+      &::before {
+        left: 0;
+        bottom: pxToRem(16);
+        transform: rotate(48deg);
+      }
+      &::after {
+        top: pxToRem(14);
+        left:0;
+        transform: rotate(-45deg);
       }
     }
     .right-arrow {
-      transform: rotate(-135deg);
-      right: 5px;
-      top: calc(49.5% - 15px);
+      right: 6%;
       @include media-min($desktop-extra-large) {
-        right: -70px;
+        right: -4.4%;
+      }
+      &::before {
+        bottom: pxToRem(16);
+        right: pxToRem(3);
+        transform: rotate(133deg);
+      }
+      &::after {
+        right: pxToRem(2);
+        top: pxToRem(13.5);
+        transform: rotate(46deg);
       }
     }
 
@@ -94,6 +115,7 @@
       flex-direction: column;
       align-items: center;
       scrollbar-width: none;
+      gap: pxToRem(40);
       &::-webkit-scrollbar {
         width: 0;
       }
@@ -103,24 +125,21 @@
       @include desktop {
         overflow: auto;
         flex-direction: row;
-        gap: 80px;
+        gap: pxToRem(80);
         width: 80%;
-        padding: 25px;
+        padding: pxToRem(25);
         margin: 0 auto;
       }
       @include media-min($desktop-extra-large) {
         width: 100%;
-        // overflow: visible;
-        // padding: 0;
       }
       .slider__item {
         overflow: hidden;
         position: relative;
         background: #FFFFFF;
-        box-shadow: 0px 3px 16px 2px rgba(29, 51, 107, 0.15);
-        border-radius: 16px;
-        margin-bottom: 39px;
-        max-width: 320px;
+        box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(29, 51, 107, 0.15);
+        border-radius: pxToRem(16);
+        max-width: pxToRem(320);
         @include desktop {
           flex: none;
           margin-bottom: 0;
@@ -129,30 +148,57 @@
           }
         }
         @include desktop-extra {
-          max-width: 400px;
-          height: 438px;
+          max-width: pxToRem(400);
+          min-height: pxToRem(438);
         }
         &:last-child {
           margin-bottom: 0;
+        }
+
+        &-img-wrapper {
+          position: relative;
+          max-width: pxToRem(400);
+          // max-height: pxToRem(280);
+          // min-height: pxToRem(280);
+          
+          max-height: pxToRem(224);
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          @include media-min($mobile-extra-small) {
+            min-height: pxToRem(224);
+          }
+          @include desktop-extra {
+            min-height: pxToRem(280);
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
         }
 
         &-link {
           position: absolute;
           width: 100%;
           height: 100%;
+          border-radius: pxToRem(16);
+          z-index: 1;
         }
   
         &-content {
-          padding: 12px 13px 20px;
+          padding: pxToRem(16) pxToRem(13) pxToRem(16);
           @include desktop-extra {
-            padding-top: 18px;
+            padding-top: pxToRem(24);
           }
           .slider__item-title {
-            margin: 4px 0 13px;
+            margin: 0 0 pxToRem(13);
             letter-spacing: 0.05em;
-            font-size: 18px;
+            font-size: pxToRem(18);
             @include desktop-extra {
-              font-size: 24px;
+              font-size: pxToRem(24);
             }
           }
     
