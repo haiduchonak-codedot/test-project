@@ -70,7 +70,7 @@
         }
 
         &-text {
-          font-family: "Montserrat";
+          font-family: "Montserrat", $sans-serif;
           display: inline-flex;
           font-size: pxToRem(18);
           line-height: pxToRem(26);
@@ -157,7 +157,7 @@
         margin-left: pxToRem(109);
       }
       &-field {
-        font-family: "Open Sans";
+        font-family: "Open Sans", $sans-serif;
         width: 100%;
         border: pxToRem(1) solid #D7D7D7;
         box-sizing: border-box;
@@ -166,7 +166,7 @@
         padding: pxToRem(10) pxToRem(16);
         color: #242424;
         &::placeholder {
-          font-family: "Open Sans";
+          font-family: "Open Sans", $sans-serif;
           // color: #A9A9A9;
         }
       }

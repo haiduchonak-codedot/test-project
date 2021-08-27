@@ -27,7 +27,7 @@ body#main:target {
 }
 
 .header {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: pxToRem(16);

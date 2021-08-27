@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title><%=title%></title>
+    <link rel="preload" as="font" href="../../fonts/Montserrat/Montserrat-Bold.woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="../../fonts/Montserrat/Montserrat-Regular.woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="../../fonts/Montserrat/Montserrat-SemiBold.woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="../../fonts/Harabara/Harabara.woff" crossorigin="anonymous">
+    <link rel="preload" as="font" href="../../fonts/OpenSans/OpenSans-Regular.woff" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.min.css" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
   </head>
@@ -14,7 +19,11 @@
         <div class="container">
           <div class="header__wrapper">
             <a href="#" class="logo">
-              <img src="../../img/logo.png" srcset="../../img/regularLogo.png 1x, ../../img/retinaLogo.png 2x">
+              <img src="../../img/logo@1x.png" srcset="../../img/logo@1x.png 1x,
+              ../../img/logo@1.5x.png 1.5x,
+              ../../img/logo@2x.png 2x,
+              ../../img/logo@3x.png 3x,
+              ../../img/logo@4x.png 4x">
             </a>
             <a class="burger" id="hamburger" href="#main">
               <div class="header__burger-line" id="line1"></div>

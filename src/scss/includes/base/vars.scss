@@ -1,6 +1,6 @@
 @function pxToRem($size, $postfix: rem) {
-  @return $size / $base-size * 1 + $postfix;
-  // @return $size + px
+  // @return $size / $base-size * 1 + $postfix;
+  @return $size + px
 }
 
 $base-size: 16;
@@ -34,3 +34,6 @@ $mobile-extra-small: pxToRem(340, em);
 //rating in stars for reviews section
 $star-color: #E1E1E1;
 $star-fill-color: $pallete-secondary-main;
+
+//font
+$sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
