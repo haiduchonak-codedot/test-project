@@ -10,6 +10,8 @@
     transition: 0.25s ease;
     transition-property: background, border, color, left, margin, padding, right, opacity;
   }
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
 }
 
 html,
@@ -85,9 +87,8 @@ body {
   min-height: 100vh;
   transition: 0s;
   color: $color-black;
-  overscroll-behavior: none;
+  overscroll-behavior: contain;
   scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
 
   &.fixed {
     overflow: hidden;
@@ -178,7 +179,7 @@ strong {
 }
 
 h1, h2, h3 {
-  font-family: "Harabara";
+  font-family: "Harabara", $sans-serif;
   font-weight: normal;
   margin-top: 0;
 }
@@ -227,7 +228,7 @@ h3 {
 }
 
 h4 {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-weight: bold;
   font-size: pxToRem(18);
   line-height: pxToRem(28);
@@ -237,21 +238,21 @@ h4 {
 }
 
 p {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-weight: normal;
   color: $pallete-common-grey-900;
   line-height: pxToRem(26);
 }
 
 span {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-style: normal;
   font-weight: normal;
 
 }
 
 .btn {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-size: pxToRem(16);
   line-height: pxToRem(36);
   font-weight: bold;
