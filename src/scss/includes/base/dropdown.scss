@@ -12,7 +12,6 @@
 				border-bottom: pxToRem(2) solid #0D6EB7;
 				border-left: pxToRem(2) solid #0D6EB7;
 				margin-bottom: pxToRem(-4);
-				margin-left: pxToRem(4);
 				transform: translateY(pxToRem(-5)) rotate(-45deg);
 			}
 			@include desktop {

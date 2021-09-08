@@ -11,13 +11,15 @@
 }
 
 .info {
-  padding-top: pxToRem(28);
+  padding-top: pxToRem(24);
   padding-bottom: pxToRem(47);
   @include desktop {
     padding-top: pxToRem(23);
   }
   .info__content {
     padding-bottom: pxToRem(61);
+    opacity: 0;
+    animation: slideIn .4s 1.95s forwards;
     &:last-child {
       padding-bottom: 0;
     }
