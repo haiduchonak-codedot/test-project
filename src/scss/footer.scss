@@ -3,7 +3,7 @@
   margin-top: pxToRem(114);
   padding-top: pxToRem(34);
   background-color: $pallete-primary-dark;
-  z-index: 1;
+  z-index: 0;
   @include desktop-extra {
     margin-top: pxToRem(437);
     padding-top: pxToRem(47);
@@ -11,7 +11,7 @@
   &::before {
     content: "";
     background-image: url(../img/footerUpperWave.svg);
-    background-size: 117% pxToRem(74);
+    background-size: 147% pxToRem(74);
     background-position: pxToRem(-127) 0;
     background-repeat: no-repeat;
     content: "";
@@ -19,12 +19,12 @@
     height: pxToRem(154);
     top: pxToRem(-72);
     position: absolute;
-    width: 120%;
+    width: 100%;
     z-index: -1;
     @include desktop {
       top: pxToRem(-153);
-      background-size: 94% pxToRem(154);
-      background-position: pxToRem(-63) 0;
+      background-size: 100% pxToRem(154);
+      background-position: 0 0;
     }
   }
 
@@ -46,6 +46,9 @@
     @include media-min(pxToRem(1024, em)) {
       flex-direction: row;
       gap: pxToRem(15);
+    }
+    @include desktop {
+      margin-bottom: pxToRem(25);
     }
     @include desktop-extra {
       gap: pxToRem(102);
@@ -124,7 +127,7 @@
         grid-area: auto/auto/span 6/auto;
       }
       @include desktop-extra {
-        grid-row: 1 / min-content;
+        // grid-row: 1 / min-content;
       }
       &-link {
         font-family: "Harabara", $sans-serif;
@@ -184,7 +187,6 @@
       padding-left: calc(104px + env(safe-area-inset-left));
       padding-right: calc(104px + env(safe-area-inset-right));
       padding-top: pxToRem(12);
-      margin-top: pxToRem(-32);
       padding-bottom: calc(12px + env(safe-area-inset-bottom));
     }
     
