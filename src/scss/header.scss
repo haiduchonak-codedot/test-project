@@ -1,6 +1,5 @@
 html[dir=rtl] {
   #main:target #main-menu {
-    // flex-direction: row-reverse;
     transform: translateX(calc(100vw - 100%));
     @include desktop {
       transform: translateX(0);
@@ -29,7 +28,6 @@ html[dir=rtl] {
 
   #main-menu {
     transform: translateX(0);
-    transition: .6s ease;
     width: 100%;
     display: flex;
     @include desktop {
@@ -60,7 +58,6 @@ html[dir=rtl] {
     align-items: center;
     padding-bottom: pxToRem(5);
     padding-top: pxToRem(2);
-
     @include desktop {
       align-items: flex-end;
       padding-bottom: pxToRem(12);
@@ -91,12 +88,15 @@ html[dir=rtl] {
       }
     }
     .header__main-menu-wrapper {
+      opacity: 0;
+      animation: menuTransition .5s 1 forwards cubic-bezier(0, 1, 0, 1);
       z-index: 1;
       display: block;
       left: 0;
       top: 0;
       position: fixed;
-      transition: .6s ease;
+      transition: .5s ease;
+      transition-property: transform, opacity;
       @include desktop {
         direction: inherit;
         position: relative;
@@ -171,7 +171,7 @@ html[dir=rtl] {
               padding: pxToRem(5) pxToRem(17);
               font-weight: normal;
               text-align: right;
-              color: $pallete-secondary-main;
+              color: var(--pallete-secondary-main);
               width: fit-content;
             }
           }
@@ -213,7 +213,7 @@ html[dir=rtl] {
               display: block;
               font-size: pxToRem(15);
               font-weight: normal;
-              color: $pallete-primary-main;
+              color: var(--pallete-primary-main);
               position: relative;
               padding-left: pxToRem(48);
               line-height: 1rem;
@@ -230,15 +230,15 @@ html[dir=rtl] {
                 font-size: pxToRem(16);
               }
               &:hover {
-                color: $pallete-primary-light;
+                color: var(--pallete-primary-light);
                 &::after {
-                  color: $pallete-primary-light;
+                  color: var(--pallete-primary-light);
                 }
                 .main-menu__item {
                   &:first-child {
                     &::after {
-                      border-bottom: pxToRem(2) solid $pallete-primary-light;
-                      border-left: pxToRem(2) solid $pallete-primary-light;
+                      border-bottom: pxToRem(2) solid var(--pallete-primary-light);
+                      border-left: pxToRem(2) solid var(--pallete-primary-light);
                     }
                   }
                 }
@@ -278,7 +278,7 @@ html[dir=rtl] {
               top: pxToRem(36);
               height: max-content;
               max-height: 400px;
-              border-top: pxToRem(3) solid $pallete-primary-light;
+              border-top: pxToRem(3) solid var(--pallete-primary-light);
               box-shadow: pxToRem(2) pxToRem(4) pxToRem(16) rgba(158, 158, 158, 0.4);
             }
             li.main-menu__item.dropdown {
@@ -313,7 +313,7 @@ html[dir=rtl] {
 
       .contact-btn {
         animation: appearance .2s 2.15s forwards;
-        color: $pallete-secondary-main;
+        color: var(--pallete-secondary-main);
         background-color: #fff;
         margin-left: pxToRem(46);
         margin-right: pxToRem(46);
@@ -323,28 +323,30 @@ html[dir=rtl] {
           margin: 0;
         }
         &:hover {
-          background-color: $pallete-secondary-main;
-          color: $pallete-common-grey-100;
+          background-color: var(--pallete-secondary-main);
+          color: var(--pallete-common-grey-100);
         }
       }
     }
 
     .burger {
       position: absolute;
-      right: pxToRem(18);
-      top: pxToRem(7);
+      right: pxToRem(5);
+      top: pxToRem(3);
       @include desktop {
         display: none;
       }
 
-      padding: pxToRem(25);
+      padding: pxToRem(17) pxToRem(25);
       display: block;
       .header__burger-line {
+        margin-top: pxToRem(8);
+        margin-bottom: pxToRem(8);
+        position: relative;
         animation: appearance .2s 1s forwards;
-        top: calc(50% - 4px);
-        left: 12px;
         &::before, &::after {
           content: "";
+          position: absolute;
         }
         &::before {
           animation: appearance .2s 1.2s forwards;
@@ -352,18 +354,16 @@ html[dir=rtl] {
         }
         &::after {
           animation: appearance .2s 1.4s forwards;
-          top: pxToRem(8);
-          bottom: 0;
+          bottom: pxToRem(-8);
         }
       }
-            
+      
       .header__burger-line, .header__burger-line::before, .header__burger-line::after {
-        position: absolute;
+        display: block;
         width: pxToRem(26);
         height: pxToRem(4);
-        background-color: $pallete-primary-dark;
+        background-color: var(--pallete-primary-dark);
         border-radius: pxToRem(2);
-        right: 0;
         opacity: 0;
       }
     }

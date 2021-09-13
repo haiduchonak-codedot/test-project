@@ -45,8 +45,8 @@ html[dir=rtl] .breadcrumbs__item::after {
           height: pxToRem(6);
           transform: rotate(-135deg);
           margin-left: pxToRem(-1);
-          border-bottom: pxToRem(2) solid $pallete-primary-dark;
-          border-left: pxToRem(2) solid $pallete-primary-dark;
+          border-bottom: pxToRem(2) solid var(--pallete-primary-dark);
+          border-left: pxToRem(2) solid var(--pallete-primary-dark);
         }
         &:last-child::after {
           display: none;
@@ -56,7 +56,7 @@ html[dir=rtl] .breadcrumbs__item::after {
         font-family: "Montserrat", $sans-serif;
         font-weight: normal;
         font-size: pxToRem(12);
-        color: $pallete-primary-dark;
+        color: var(--pallete-primary-dark);
         padding: pxToRem(7) pxToRem(6.5);
         display: flex;
         @include mobile {
@@ -110,6 +110,9 @@ html[dir=rtl] .breadcrumbs__item::after {
       flex-basis: 50%;
       display: flex;
       justify-content: center;
+      @include desktop {
+        padding-top: 14px;
+      }
       @include desktop-extra {
         padding-left: pxToRem(43);
       }
@@ -117,10 +120,6 @@ html[dir=rtl] .breadcrumbs__item::after {
         height: auto;
         max-height: pxToRem(202);
         width: pxToRem(216);
-        @include tablet {
-          // height: pxToRem(298);
-          // width: pxToRem(308);
-        }
         @include tablet {
           min-width: pxToRem(216);
           min-height: pxToRem(202);
@@ -133,7 +132,7 @@ html[dir=rtl] .breadcrumbs__item::after {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          // opacity: 0;
+          transition: .25s ease;
           #background {
             opacity: 0;
             animation: appearance ease 1s 1s forwards;
@@ -148,7 +147,12 @@ html[dir=rtl] .breadcrumbs__item::after {
           }
           #gear {
             opacity: 0;
-            animation: appearance ease 1s 1.4s forwards;
+            animation: appearance ease 1s 2.2s forwards;
+            path {
+              transform-origin: center;
+              transform-box: fill-box;
+              animation: rotate linear 20s 1.4s infinite forwards;
+            }
           }
           #screen {
             opacity: 0;
