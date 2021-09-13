@@ -32,22 +32,19 @@
       @include tablet {
         margin-bottom: 0;
         align-items: center;
-        gap: pxToRem(13);
+        gap: pxToRem(35);
       }
       .reviews__rating {
         &::before {
           content: '★★★★★';
           font-size: pxToRem(24);
           --rating: 4.5;
-          --percent: calc((var(--rating) / 5) * 100% - 3%);
-          background: linear-gradient(90deg, $star-fill-color var(--percent), $star-color var(--percent));
+          --percent: calc((var(--rating) / 5) * 100%);
+          background: linear-gradient(90deg, var(--pallete-secondary-main) var(--percent), var(--empty-star-color) var(--percent));
           background-clip: text;
           -moz-background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          @include media-min($mobile-small) {
-            letter-spacing: 0.4em;
-          }
           @include tablet {
             margin-right: pxToRem(-12);
           }
@@ -67,13 +64,13 @@
     .reviews__button {
       width: pxToRem(220);
       padding: pxToRem(1) pxToRem(15);
-      background-color: $pallete-secondary-main;
+      background-color: var(--pallete-secondary-main);
       color: #fff;
       display: block;
       margin: 0 auto;
       &:hover {
         background-color: transparent;
-        color: $pallete-secondary-main;
+        color: var(--pallete-secondary-main);
       }
       @include tablet {
         margin: 0;

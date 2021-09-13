@@ -28,7 +28,7 @@ html[dir=rtl] {
   @include desktop-extra {
     inset: 0;
     align-items: center;
-    border-radius: 3px;
+    border-radius: pxToRem(3);
     display: flex;
     height: 100%;
     position: fixed;
@@ -86,7 +86,7 @@ html[dir=rtl] {
       .socials__link::after {
         bottom: pxToRem(-10);
         width: pxToRem(48);
-        border-bottom: pxToRem(1) solid $pallete-primary-main;
+        border-bottom: pxToRem(1) solid var(--pallete-primary-main);
       }
     }
   

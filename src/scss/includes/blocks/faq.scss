@@ -31,10 +31,10 @@
       }
     }
     &::before {
-      border-bottom: pxToRem(6) solid $pallete-secondary-light;
+      border-bottom: pxToRem(6) solid var(--pallete-secondary-light);
       border-bottom-left-radius: pxToRem(15);
-      border-left: pxToRem(6) solid $pallete-secondary-light;
-      border-top: pxToRem(6) solid $pallete-secondary-light;
+      border-left: pxToRem(6) solid var(--pallete-secondary-light);
+      border-top: pxToRem(6) solid var(--pallete-secondary-light);
       border-top-left-radius: pxToRem(13);
       left: pxToRem(-24);
       @include desktop-extra {
@@ -42,10 +42,10 @@
       }
     }
     &::after {
-      border-bottom: pxToRem(6) solid $pallete-secondary-light;
+      border-bottom: pxToRem(6) solid var(--pallete-secondary-light);
       border-bottom-right-radius: pxToRem(15);
-      border-right: pxToRem(6) solid $pallete-secondary-light;
-      border-top: pxToRem(6) solid $pallete-secondary-light;
+      border-right: pxToRem(6) solid var(--pallete-secondary-light);
+      border-top: pxToRem(6) solid var(--pallete-secondary-light);
       border-top-right-radius: pxToRem(13);
       right: pxToRem(-24);
       @include desktop-extra {
@@ -63,7 +63,7 @@
         font-family: "Montserrat", $sans-serif;
         font-weight: 600;
         line-height: pxToRem(28);
-        color: $pallete-primary-main;
+        color: var(--pallete-primary-main);
         padding: pxToRem(15) 0;
         border-radius: pxToRem(5);
         flex: none;
@@ -82,7 +82,7 @@
           // margin-left: pxToRem(4);
           // margin-top: pxToRem(8);
           border-radius: 50%;
-          background-color: $pallete-primary-main;
+          background-color: var(--pallete-primary-main);
           flex: none;
         }
       }
@@ -117,7 +117,7 @@
       .faq__extended-item-title {
         display: flex;
         margin: 0;
-        color: $pallete-common-grey-900;
+        color: var(--pallete-common-grey-900);
         letter-spacing: 0.016rem;
         padding-top: pxToRem(18.5);
         padding-bottom: pxToRem(13);
@@ -132,12 +132,12 @@
           content: "";
           display: block;
           flex: none;
-          color: $pallete-common-grey-900;
+          color: var(--pallete-common-grey-900);
           width: pxToRem(14);
           height: pxToRem(14);
           margin-top: pxToRem(7);
-          border-bottom: pxToRem(4) solid $pallete-common-grey-900;
-          border-left: pxToRem(4) solid $pallete-common-grey-900;
+          border-bottom: pxToRem(4) solid var(--pallete-common-grey-900);
+          border-left: pxToRem(4) solid var(--pallete-common-grey-900);
           transform: rotate(-45deg);
           transform-origin: 45% 45%;
         }

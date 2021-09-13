@@ -7,6 +7,18 @@
   }
 }
 
+@keyframes menuTransition {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1
+  }
+}
+
 @keyframes textAppearance {
   from {
     width: 0;
@@ -84,6 +96,18 @@
   }
   to {
     transform: rotateZ(0deg);
+  }
+}
+
+@keyframes pressButton {
+  0% {
+    fill: #66D6A0;
+  }
+  50% {
+    fill: #41a173;
+  }
+  100% {
+    fill: #66D6A0;
   }
 }
 

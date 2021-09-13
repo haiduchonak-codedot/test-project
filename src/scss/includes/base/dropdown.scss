@@ -22,8 +22,8 @@
 	}
 	&:hover {
 		&::after {
-			border-bottom: pxToRem(2) solid $pallete-primary-light;
-			border-left: pxToRem(2) solid $pallete-primary-light;
+			border-bottom: pxToRem(2) solid var(--pallete-primary-light);
+			border-left: pxToRem(2) solid var(--pallete-primary-light);
 			transition: .25s ease;
 		}
 		.main-menu__link {
@@ -43,9 +43,9 @@
 	padding: pxToRem(14) pxToRem(16);
 	margin: 0;
 	& .dropdown__link {
-		color: $pallete-primary-main;
+		color: var(--pallete-primary-main);
 		&:hover {
-			color: $pallete-primary-light;
+			color: var(--pallete-primary-light);
 		}
 	}
 	position: relative;

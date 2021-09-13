@@ -1,60 +1,64 @@
 .proposal {
-  background-color: $pallete-background;
+  svg:first-child {
+    width: 126%;
+    margin-bottom: pxToRem(-6);
+    margin-left: pxToRem(-50);
+    height: pxToRem(86);
+    path {
+      fill: var(--pallete-proposal-background);
+    }
+    @include desktop-extra {
+      height: 129px;
+      margin-bottom: pxToRem(-6);
+      width: 104%;
+    }
+  }
   margin-bottom: pxToRem(142);
-  margin-top: pxToRem(154);
-  padding-bottom: pxToRem(32);
+  margin-top: pxToRem(63);
   position: relative;
   text-align: center;
   z-index: 1;
-  @include tablet {
-    padding-top: pxToRem(20);
-  }
   @include desktop-extra {
     margin-bottom: pxToRem(279);
-    margin-top: pxToRem(347);
-    padding: pxToRem(73) 0;
-    padding-bottom: pxToRem(74);
+    margin-top: pxToRem(212);
   }
-  &::before, &::after {
+  &::after {
     content: '';
     display: block;
     background-repeat: no-repeat;
     position: absolute;
     width: 100%;
     z-index: -1;
-  }
-  &::before {
-    content: '';
-    background-image: url(../../../img/upperWave.svg);
-    height: pxToRem(140);
-    background-position: pxToRem(-72) pxToRem(-9.5);
-    background-size: 136% 102px;
-    top: pxToRem(-91);
-    width: 100%;
-    @include desktop-extra {
-      background-position: 0 pxToRem(32.5);
-      background-size: 101% pxToRem(126);
-      top: pxToRem(-154);
-      height: pxToRem(351);
-    }
-  }
-  &::after {
-    content: '';
-    background-image: url(../../../img/lowerWave.svg);
     background-position: 0 0;
-    background-size: 100% pxToRem(61);
     bottom: pxToRem(-139);
     height: pxToRem(140);
+    -webkit-mask-image: url(../../../img/lowerWave.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% pxToRem(61);
+    background-size: 100% pxToRem(61);
+    background-color: var(--pallete-proposal-background);
     @include desktop-extra {
-      background-position: 0 0;
-      background-repeat: no-repeat;
+      -webkit-mask-size: 100% pxToRem(154);
       background-size: 100% pxToRem(154);
       height: pxToRem(351);
       bottom: pxToRem(-345);
     }
   }
+  &__wrapper {
+    background-color: var(--pallete-proposal-background);
+    padding-bottom: pxToRem(32);
+    padding-bottom: 32px;
+    padding-top: 7px;
+    @include tablet {
+      padding-top: pxToRem(20);
+    }
+    @include desktop-extra {
+      padding: pxToRem(68) 0;
+      padding-bottom: pxToRem(74);
+    }
+  }
   &__title {
-    color: #fff;
+    color: var(--pallete-common-grey-100);
     margin-top: 0;
     margin-bottom: pxToRem(12);
     @include desktop-extra {
@@ -62,7 +66,7 @@
     }
   }
   &__text {
-    color: #fff;
+    color: var(--pallete-common-grey-100);
     margin-top: 0;
     margin-bottom: pxToRem(23);
     line-height: pxToRem(20);
@@ -73,11 +77,11 @@
     }
   }
   &__button {
-    color: $pallete-secondary-main;
-    background-color: #fff;
+    color: var(--pallete-secondary-main);
+    background-color: var(--pallete-common-grey-100);
     &:hover {
-      background-color: $pallete-secondary-main;
-      color: #fff;
+      background-color: var(--pallete-secondary-main);
+      color: var(--pallete-common-grey-100);
     }
   }
 }

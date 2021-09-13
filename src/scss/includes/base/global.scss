@@ -1,18 +1,20 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  &:not(iframe) {
-    transition: 0.25s ease;
-    transition-property: background, border, color, left, margin, padding, right, opacity;
-  }
+  // &:not(iframe) {
+  //   transition: 0.25s ease;
+  //   transition-property: background, border, color, left, margin, padding, right, opacity;
+  // }
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
-}
+} 
 
 html,
 body {
@@ -20,8 +22,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-body
 
 input[type="submit"]:focus {
   outline: none;
@@ -86,18 +86,13 @@ img {
 body {
   min-height: 100vh;
   transition: 0s;
-  color: $color-black;
+  // color: $color-black;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
 
   &.fixed {
     overflow: hidden;
   }
-}
-
-::selection {
-  color: white;
-  background: $color-red;
 }
 
 input[type="text"],
@@ -125,7 +120,7 @@ select {
 
   &:focus::-ms-value {
     color: #12161e;
-    background: #fff;
+    background: var(--pallete-common-grey-100);
   }
 }
 
@@ -156,9 +151,9 @@ a, button, label {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
-  &:not([href]) {
-    cursor: initial;
-  }
+  // &:not([href]) {
+  //   cursor: initial;
+  // }
 }
 
 p {
@@ -188,7 +183,7 @@ h1 {
   text-transform: uppercase;
   font-size: pxToRem(22);
   line-height: pxToRem(38);
-  color: $pallete-primary-dark;
+  color: var(--pallete-primary-dark);
   letter-spacing: 0.05em;
   @include media-min($mobile-extra-small) {
     font-size: pxToRem(24);
@@ -204,15 +199,17 @@ h1 {
 }
 
 h2 {
-  color: $pallete-primary-dark;
+  color: var(--pallete-primary-dark);
   font-size: pxToRem(24);
   line-height: pxToRem(24);
   text-align: center;
   margin: 0;
   @include tablet {
+    line-height: pxToRem(30);
     font-size: pxToRem(30);
   }
   @include desktop-extra {
+    line-height: pxToRem(36);
     font-size: pxToRem(36);
     letter-spacing: 0.1em;
   }
@@ -223,7 +220,7 @@ h3 {
   @include desktop {
     font-size: pxToRem(24);
   }
-  color: $pallete-primary-light;
+  color: var(--pallete-primary-light);
   letter-spacing: 0.05em;
 }
 
@@ -240,7 +237,7 @@ h4 {
 p {
   font-family: "Montserrat", $sans-serif;
   font-weight: normal;
-  color: $pallete-common-grey-900;
+  color: var(--pallete-common-grey-900);
   line-height: pxToRem(26);
 }
 
@@ -256,10 +253,11 @@ span {
   font-size: pxToRem(16);
   line-height: pxToRem(36);
   font-weight: bold;
-  border: pxToRem(2) solid $pallete-secondary-main;
+  border: pxToRem(2) solid var(--pallete-secondary-main);
   box-sizing: border-box;
-  border-radius: $border-radius;
+  border-radius: var(--border-radius);
   min-width: pxToRem(160);
   min-height: pxToRem(42);
   cursor: pointer;
+  transition: .25s;
 }
