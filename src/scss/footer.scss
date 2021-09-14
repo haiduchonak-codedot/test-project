@@ -78,6 +78,12 @@
         padding-left: pxToRem(22);
         padding-right: pxToRem(22);
       }
+      img {
+        height: 100%;
+        width: 100%;
+        max-width: pxToRem(202);
+        max-height: pxToRem(52);
+      }
     }
     &-list {
       display: flex;

@@ -23,6 +23,12 @@
     @include desktop {
       margin: 0 auto;
     }
+    img {
+      height: 100%;
+      width: 100%;
+      max-width: pxToRem(132);
+      min-height: pxToRem(74);
+    }
     .reviews__count {
       margin-bottom: pxToRem(38);
       display: flex;

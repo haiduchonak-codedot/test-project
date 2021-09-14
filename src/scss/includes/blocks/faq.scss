@@ -55,7 +55,8 @@
       }
     }
     .faq__item {
-      margin-right: pxToRem(5);
+      margin-left: pxToRem(2.5);
+      margin-right: pxToRem(2.5);
       @include tablet {
         margin-right: pxToRem(30);
         margin-left: pxToRem(30);

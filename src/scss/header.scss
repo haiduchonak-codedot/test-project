@@ -79,11 +79,13 @@ html[dir=rtl] {
         padding-bottom: pxToRem(3);
       }
       img {
-        width: pxToRem(141);
-        height: pxToRem(38);
+        height: 100%;
+        width: 100%;
+        max-width: pxToRem(141);
+        max-height: pxToRem(38);
         @include desktop-extra {
-          width: pxToRem(208);
-          height: pxToRem(52);
+          max-width: pxToRem(208);
+          max-height: pxToRem(52);
         }
       }
     }
