@@ -6,13 +6,13 @@
     max-width: pxToRem(1016);
   }
   @include desktop-extra {
-    padding-top: pxToRem(79);
+    padding-top: pxToRem(74);
     padding-bottom: pxToRem(79);
   }
   &__title {
     margin-bottom: pxToRem(23);
     @include desktop-extra {
-      margin-bottom: pxToRem(53);
+      margin-bottom: pxToRem(48);
     }
   }
   &__list {
@@ -55,8 +55,12 @@
       }
     }
     .faq__item {
-      margin-right: pxToRem(30);
-      margin-left: pxToRem(30);
+      margin-right: pxToRem(5);
+      @include tablet {
+        margin-right: pxToRem(30);
+        margin-left: pxToRem(30);
+        align-items: center;
+      }
       &-title {
         display: inline-flex;
         font-size: pxToRem(18);
@@ -68,7 +72,8 @@
         border-radius: pxToRem(5);
         flex: none;
         gap: pxToRem(8);
-        align-items: center;
+        align-items: baseline;
+        
         @include desktop-extra {
           padding: pxToRem(14) pxToRem(15);
           font-size: pxToRem(20);
@@ -76,11 +81,8 @@
         &::before {
           content: '';
           display: block;
-          // margin-right: pxToRem(8);
           width: pxToRem(12);
           height: pxToRem(12);
-          // margin-left: pxToRem(4);
-          // margin-top: pxToRem(8);
           border-radius: 50%;
           background-color: var(--pallete-primary-main);
           flex: none;
@@ -99,7 +101,7 @@
     }
     
     @include desktop-extra {
-      margin-top: pxToRem(41);
+      margin-top: pxToRem(39);
     }
     .faq__extended-item {
       position: relative;

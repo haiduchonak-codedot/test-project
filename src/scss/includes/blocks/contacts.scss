@@ -2,7 +2,7 @@
   padding-top: pxToRem(73);
   padding-bottom: pxToRem(73);
   @include desktop-extra {
-    padding-top: pxToRem(130);
+    padding-top: pxToRem(126);
     padding-bottom: pxToRem(130);
   }
 
@@ -14,7 +14,7 @@
   &__title {
     margin-bottom: pxToRem(14);
     @include desktop-extra {
-      margin-bottom: pxToRem(68);
+      margin-bottom: pxToRem(62);
     }
   }
 

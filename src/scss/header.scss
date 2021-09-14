@@ -149,6 +149,19 @@ html[dir=rtl] {
           }
         }
 
+        .main-menu__link-wrapper {
+          display: flex;
+          justify-content: flex-end;
+          .header__main-menu-text {
+            font-size: pxToRem(15);
+            border: 0;
+            padding: pxToRem(5) pxToRem(17);
+            font-weight: normal;
+            text-align: right;
+            color: var(--pallete-secondary-main);
+            width: fit-content;
+          }
+        }
         .main-menu__list {
           display: block;
           margin-top: 0;
@@ -162,19 +175,6 @@ html[dir=rtl] {
             overflow: initial;
           }
 
-          .main-menu__link-wrapper {
-            display: flex;
-            justify-content: flex-end;
-            .header__main-menu-text {
-              font-size: pxToRem(15);
-              border: 0;
-              padding: pxToRem(5) pxToRem(17);
-              font-weight: normal;
-              text-align: right;
-              color: var(--pallete-secondary-main);
-              width: fit-content;
-            }
-          }
 
           .main-menu__item {
             display: block;
