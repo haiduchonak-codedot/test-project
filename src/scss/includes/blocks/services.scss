@@ -1,0 +1,159 @@
+.services {
+  padding-top: pxToRem(40);
+  padding-bottom: pxToRem(39);
+  @include desktop-extra {
+    padding-top: pxToRem(96);
+    padding-bottom: pxToRem(51);
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: pxToRem(38);
+    @include desktop-extra {
+      margin-bottom: pxToRem(72);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: pxToRem(29);
+    row-gap: pxToRem(40);
+    @include media-min($mobile-extra-small) {
+      column-gap: pxToRem(20);
+    }
+    @include desktop {
+      row-gap: pxToRem(60);
+    }
+    .services__item {
+      background: #F4F8FD;
+      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(4) rgba(29, 51, 107, 0.1);
+      border-radius: pxToRem(16);
+      text-align: center;
+      width: pxToRem(145);
+      padding: pxToRem(4);
+      min-height: pxToRem(162);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:hover {
+        background-color: #fff;
+      }
+      @include tablet {
+        min-height: pxToRem(208);
+        width: pxToRem(193);
+        padding: pxToRem(10);
+      }
+      @include desktop {
+        min-height: pxToRem(280);
+        width: pxToRem(282);
+      }
+      @include desktop-extra {
+        min-width: pxToRem(322);
+        height: pxToRem(320);
+      }
+      &-img-wrapper {
+        max-width: pxToRem(52);
+        min-height: pxToRem(52);
+        max-height: pxToRem(52);
+        margin: pxToRem(30.5) 0 pxToRem(22);
+        display: flex;
+        svg {
+          object-fit: scale-down;
+          width: 100%;
+          height: auto;
+          overflow: visible;
+        }
+        @include tablet {
+          max-width: pxToRem(70);
+          min-height: pxToRem(70);
+          max-height: pxToRem(70);
+        }
+        @include desktop {
+          min-height: pxToRem(90);
+          max-height: pxToRem(90);
+          max-width: pxToRem(90);
+        }
+        @include desktop-extra {
+          max-width: pxToRem(112);
+          min-height: pxToRem(112);
+          max-height: pxToRem(112);
+          margin: pxToRem(57) auto pxToRem(48);
+        }
+      }
+      &-title {
+        font-size: pxToRem(12);
+        line-height: pxToRem(22);
+        letter-spacing: 0.05em;
+        color: var(--pallete-primary-main);
+        margin: 0;
+        @include tablet {
+          font-size: pxToRem(15);
+        }
+        @include desktop {
+          font-size: pxToRem(20);
+          line-height: pxToRem(30);
+          margin-top: pxToRem(40);
+        }
+        @include desktop-extra {
+          margin-top: 0;
+        }
+      }
+    }
+    .services__item:hover {
+      #servicesGear, #triangle {
+        animation: rotate 2s 0s 1 linear;
+        transform-origin: center;
+        transform-box: fill-box;
+        animation-direction: normal;
+      }
+      #gamepadButtons {
+        // transition: 1s;
+        path:nth-child(1) {
+          animation: pressButton .3s 0s 1 ease;
+        }
+        path:nth-child(2) {
+          animation: pressButton .3s .2s 1 ease;
+        }
+        path:nth-child(3) {
+          animation: pressButton .3s .4s 1 ease;
+        }
+        path:nth-child(4) {
+          animation: pressButton .3s .6s 1 ease;
+        }
+        path:nth-child(5) {
+          animation: pressButton .3s .8s 1 ease;
+        }
+      }
+
+      #vr {
+        animation: shake 1.2s 0s 1 ease-out forwards;
+      }
+      #code {
+        path:nth-child(1) {
+          animation: accordionPart1 1s 0s 1 ease-out forwards;
+        }
+        path:nth-child(2) {
+          animation: accordionPart2 1s 0s 1 ease-out forwards;
+        }
+        path:nth-child(3) {
+          animation: accordionPart3 1s 0s 1 ease-out forwards;
+        }
+      }
+      #screwdriver {
+        animation: diagonalShake 1s 0s 1 ease-out forwards;
+      }
+      #cubeEdges {
+        path:nth-child(1) {
+          animation: cubeEdgeShakePart1 1s 0s 1 ease-out forwards;
+        }
+        path:nth-child(2) {
+          animation: cubeEdgeShakePart2 1s 0s 1 ease-out forwards;
+        }
+        path:nth-child(3) {
+          animation: cubeEdgeShakePart3 1s 0s 1 ease-out forwards;
+        }
+      }
+    }
+  }
+}

@@ -3,7 +3,28 @@
 }; %>
 <%= _.template(require('./../includes/header.html').default)(data) %>
 
+<main class="main">
+  <%= _.template(require('./../includes/hero.html').default)(data) %>
+  
+  <%= _.template(require('./../includes/info.html').default)(data) %>
 
-<%= _.template(require('./../includes/main.html').default)(data) %>
+  <%= _.template(require('./../includes/reviews.html').default)(data) %>
+  
+  <%= _.template(require('./../includes/services.html').default)(data) %>
+
+  <%= _.template(require('./../includes/proposal.html').default)(data) %>
+
+  <%= _.template(require('./../includes/info.html').default)(data) %>
+
+  <%= _.template(require('./../includes/contacts.html').default)(data) %>
+
+  <%= _.template(require('./../includes/projects.html').default)(data) %>
+
+  <%= _.template(require('./../includes/faq.html').default)(data) %>
+
+  <%= _.template(require('./../includes/socials.html').default)(data) %>
+</main>
 
 <%= _.template(require('./../includes/footer.html').default)(data) %>
+
+<%= _.template(require('./../includes/sprites.html').default)(data) %>

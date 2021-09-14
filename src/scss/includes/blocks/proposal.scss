@@ -1,0 +1,87 @@
+.proposal {
+  margin-bottom: pxToRem(145);
+  margin-top: pxToRem(63);
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  @include desktop-extra {
+    margin-bottom: pxToRem(279);
+    margin-top: pxToRem(212);
+  }
+  svg:first-child {
+    width: 126%;
+    margin-bottom: pxToRem(-6);
+    margin-left: pxToRem(-50);
+    height: pxToRem(86);
+    path {
+      fill: var(--pallete-proposal-background);
+    }
+    @include desktop-extra {
+      height: 129px;
+      margin-bottom: pxToRem(-6);
+      width: 104%;
+    }
+  }
+  &::after {
+    content: '';
+    display: block;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    background-position: 0 0;
+    bottom: pxToRem(-139);
+    height: pxToRem(140);
+    -webkit-mask-image: url(../../../img/lowerWave.svg);
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% pxToRem(61);
+    background-size: 100% pxToRem(61);
+    background-color: var(--pallete-proposal-background);
+    @include desktop-extra {
+      -webkit-mask-size: 100% pxToRem(154);
+      background-size: 100% pxToRem(154);
+      height: pxToRem(351);
+      bottom: pxToRem(-345);
+    }
+  }
+  &__wrapper {
+    background-color: var(--pallete-proposal-background);
+    padding-bottom: pxToRem(32);
+    padding-bottom: 32px;
+    padding-top: 7px;
+    @include tablet {
+      padding-top: pxToRem(20);
+    }
+    @include desktop-extra {
+      padding: pxToRem(68) 0;
+      padding-bottom: pxToRem(74);
+    }
+  }
+  &__title {
+    color: var(--pallete-common-grey-100);
+    margin-top: 0;
+    margin-bottom: pxToRem(12);
+    @include desktop-extra {
+      margin-bottom: pxToRem(17);
+    }
+  }
+  &__text {
+    color: var(--pallete-common-grey-100);
+    margin-top: 0;
+    margin-bottom: pxToRem(23);
+    line-height: pxToRem(20);
+    @include desktop-extra {
+      font-size: pxToRem(24);
+      line-height: pxToRem(29);
+      margin-bottom: pxToRem(36);
+    }
+  }
+  &__button {
+    color: var(--pallete-secondary-main);
+    background-color: var(--pallete-common-grey-100);
+    &:hover {
+      background-color: var(--pallete-secondary-main);
+      color: var(--pallete-common-grey-100);
+    }
+  }
+}

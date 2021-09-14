@@ -1,17 +1,45 @@
-// Colors
-$pallete-primary-main: #0D6EB7;
-$pallete-primary-light: #00A4E8;
-$pallete-primary-dark: #194484;
-$pallete-secondary-main: #06B25F;
-$pallete-common-grey-900: #242424;
-$pallete-common-grey-100: #FFFFFF;
-$border-radius: 6px;
+@function pxToRem($size, $postfix: rem) {
+  // @return $size / $base-size * 1 + $postfix;
+  @return $size + px
+}
 
-$color-black: #1a1a1a;
-$color-red: #f2571f;
+$base-size: 16;
+
+:root {
+  // Colors
+  --pallete-primary-main: #0D6EB7;
+  --pallete-primary-light: #00A4E8;
+  --pallete-primary-dark: #194484;
+  --pallete-proposal-background: #276ED8;
+  --pallete-projects-background: #f6f9fd;
+  --pallete-secondary-main: #06B25F;
+  --pallete-secondary-light: #66d6a0;
+  --pallete-common-grey-900: #242424;
+  --pallete-common-grey-700: #4C4C4C;
+  --pallete-common-grey-100: #FFFFFF;
+  // --color-black: #1a1a1a;
+  --empty-star-color: #E1E1E1;
+  // border radius
+  --border-radius: 6px;
+}
+
+
 
 // Media queries
-$desktop-extra: 1200px;
-$desktop: 992px;
-$tablet: 768px;
-$mobile: 576px;
+$desktop-extra-large: pxToRem(1600, em);
+$desktop-extra: pxToRem(1280, em);
+$desktop: pxToRem(992, em);
+$tablet: pxToRem(768, em);
+$mobile: pxToRem(576, em);
+
+$mobile-middle: pxToRem(475, em);
+$mobile-small: pxToRem(375, em);
+$mobile-extra-small: pxToRem(340, em);
+
+//rating in stars for reviews section
+
+//font
+$sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+//page direction
+// $dir: rtl;

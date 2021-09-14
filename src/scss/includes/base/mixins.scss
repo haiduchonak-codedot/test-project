@@ -1,14 +1,6 @@
 // Placeholder color
 @mixin placeholder-color($color) {
-  &:-moz-placeholder {
-    color: $color !important;
-    opacity: 1 !important;
-  }
   &::-moz-placeholder {
-    color: $color !important;
-    opacity: 1 !important;
-  }
-  &:-ms-input-placeholder {
     color: $color !important;
     opacity: 1 !important;
   }
@@ -16,14 +8,15 @@
     color: $color !important;
     opacity: 1 !important;
   }
+  &::placeholder {
+    color: $color !important;
+    opacity: 1 !important;
+  }
 
-  &:focus:-moz-placeholder {
+  &:focus::placeholder {
     color: transparent !important;
   }
   &:focus::-moz-placeholder {
-    color: transparent !important;
-  }
-  &:focus:-ms-input-placeholder {
     color: transparent !important;
   }
   &:focus::-webkit-input-placeholder {
@@ -73,3 +66,4 @@
     @content;
   }
 }
+

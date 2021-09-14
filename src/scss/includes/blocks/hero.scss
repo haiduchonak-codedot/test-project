@@ -1,0 +1,169 @@
+html[dir=rtl] .breadcrumbs__item::after {
+  transform: rotate(45deg);
+}
+
+.hero {
+  @include tablet {
+    padding-top: pxToRem(31);
+    padding-bottom: pxToRem(14);
+  }
+  &__content {
+    flex-basis: 50%;
+    .breadcrumbs {
+      display: flex;
+      margin-left: pxToRem(-7);
+      flex-wrap:wrap;
+      &__item {
+        opacity: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+        &:nth-child(1) {
+          animation: appearance .2s .5s forwards;
+        }
+        &:nth-child(2) {
+          animation: appearance .2s .7s forwards;
+        }
+        &:nth-child(3) {
+          animation: appearance .2s .9s forwards;
+        }
+        @include desktop {
+          &:nth-child(1) {
+            animation: appearance .2s 1.15s forwards;
+          }
+          &:nth-child(2) {
+            animation: appearance .2s 1.55s forwards;
+          }
+          &:nth-child(3) {
+            animation: appearance .2s 1.95s forwards;
+          }
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: pxToRem(6);
+          height: pxToRem(6);
+          transform: rotate(-135deg);
+          margin-left: pxToRem(-1);
+          border-bottom: pxToRem(2) solid var(--pallete-primary-dark);
+          border-left: pxToRem(2) solid var(--pallete-primary-dark);
+        }
+        &:last-child::after {
+          display: none;
+        }
+      }
+      &__link {
+        font-family: "Montserrat", $sans-serif;
+        font-weight: normal;
+        font-size: pxToRem(12);
+        color: var(--pallete-primary-dark);
+        padding: pxToRem(7) pxToRem(6.5);
+        display: flex;
+        @include mobile {
+          font-size: pxToRem(16);
+        }
+        @include desktop-extra {
+          padding: pxToRem(16) pxToRem(10);
+        }
+      }
+    }
+  }
+  .hero__wrapper {
+    position: relative;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+    .hero__title-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      @include tablet {
+        justify-content: initial
+      }
+    }
+    .hero__title {
+      width: 0;
+      overflow: hidden;
+      white-space: pre;
+      animation: textAppearance 1s .9s ease-in forwards;
+      text-align: center;
+      margin-top: pxToRem(36);
+      margin-bottom: pxToRem(12);
+      @include tablet {
+        text-align: initial;
+        // margin-bottom: pxToRem(36);
+        margin-top: pxToRem(99);
+        margin-bottom: pxToRem(99);
+      }
+      @include desktop {
+        margin-top: pxToRem(119);
+        margin-bottom: pxToRem(119);
+        animation-delay: 1.55s;
+      }
+      @include desktop-extra {
+        margin-top: pxToRem(109);
+        margin-bottom: pxToRem(109);
+      }
+    }
+    .hero__img-wrapper {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: center;
+      @include desktop {
+        padding-top: 14px;
+      }
+      @include desktop-extra {
+        padding-left: pxToRem(43);
+      }
+      .hero__img {
+        height: auto;
+        max-height: pxToRem(202);
+        width: pxToRem(216);
+        @include tablet {
+          min-width: pxToRem(216);
+          min-height: pxToRem(202);
+          max-height: pxToRem(431);
+          height: auto;
+          width: 100%;
+          max-width: 464px;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          transition: .25s ease;
+          #background {
+            opacity: 0;
+            animation: appearance ease 1s 1s forwards;
+          }
+          #lines {
+            opacity: 0;
+            animation: appearance ease 1s 1.2s forwards;
+          }
+          #circle {
+            opacity: 0;
+            animation: appearance ease 1s 1.3s forwards;
+          }
+          #gear {
+            opacity: 0;
+            animation: appearance ease 1s 2.2s forwards;
+            path {
+              transform-origin: center;
+              transform-box: fill-box;
+              animation: rotate linear 20s 1.4s infinite forwards;
+            }
+          }
+          #screen {
+            opacity: 0;
+            animation: appearance ease 1s 1.6s forwards;
+          }
+          #girl {
+            opacity: 0;
+            animation: appearance ease 1s 2s forwards;
+          }
+        }
+      }
+    }
+  }
+}

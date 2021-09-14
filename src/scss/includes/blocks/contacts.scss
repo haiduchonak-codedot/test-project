@@ -1,0 +1,197 @@
+.contacts {
+  padding-top: pxToRem(73);
+  padding-bottom: pxToRem(73);
+  @include desktop-extra {
+    padding-top: pxToRem(126);
+    padding-bottom: pxToRem(130);
+  }
+
+  .container {
+    @include desktop-extra {
+      padding: env(safe-area-inset-top) calc(117px + env(safe-area-inset-left));
+    }
+  }
+  &__title {
+    margin-bottom: pxToRem(14);
+    @include desktop-extra {
+      margin-bottom: pxToRem(62);
+    }
+  }
+
+  &__content {
+    margin-bottom: pxToRem(22);
+    text-align: center;
+    @include desktop {
+      margin-bottom: pxToRem(31);
+    }
+    @include desktop-extra {
+      margin-bottom: pxToRem(94);
+    }
+    .contacts__subtitle {
+      color: var(--pallete-common-grey-900);
+      margin-top: 0;
+      margin-bottom: pxToRem(35);
+      @include desktop-extra {
+        margin-bottom: pxToRem(18);
+      }
+    }
+    
+    .contacts__text {
+      margin-top: 0;
+      @include desktop-extra {
+        margin-bottom: pxToRem(18);
+      }
+    }
+    
+  }
+
+  &__info {
+    @include desktop {
+      display: flex;
+      justify-content: space-around;
+    }
+    @include desktop-extra {
+      justify-content: center;
+    }
+    .contacts__list {
+      flex-basis: 50%;
+      .contacts__item {
+        width: 100%;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        &-icon {
+          width: pxToRem(20);
+          height: pxToRem(20);
+          margin-left: pxToRem(3);
+          // margin-right: pxsToRem(18);
+          flex: none;
+          display: flex;
+          flex-basis: pxToRem(20);
+        }
+
+        &-text {
+          font-family: "Montserrat", $sans-serif;
+          display: inline-flex;
+          font-size: pxToRem(18);
+          line-height: pxToRem(26);
+          text-decoration: none;
+          color: #242424;
+          padding-top: 13.4px;
+          padding-bottom: 13.4px;
+          gap: pxToRem(18);
+          align-items: baseline;
+          @include media-min($mobile-small) {
+            font-size: pxToRem(20);
+          }
+          @include mobile {
+            align-items: center;
+          }
+          @include tablet {
+            padding-top: pxToRem(14);
+            padding-bottom: pxToRem(14);
+            padding-left: pxToRem(11);
+            padding-right: pxToRem(11);
+          }
+        }
+      }
+    }
+  }
+  &__form-wrapper {
+    margin-top: pxToRem(53);
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+    text-align: -webkit-center;
+    text-align: -moz-center;
+    flex-basis: 50%;
+    @include desktop {
+      margin-top: 0;
+    }
+    .contacts__form-bg-icon-container {
+      display: none;
+      @include desktop-extra {
+        display: block;
+      }
+      .contacts__form-bg-icon {
+        z-index: -1;
+        position: absolute;
+      }
+    }
+    #bg-icon-container-1 {
+      #bg-icon-1 {
+        height: pxToRem(154);
+        width: pxToRem(149);
+        left: pxToRem(-43);
+        top: pxToRem(-41);
+        @include desktop-extra {
+          left: pxToRem(27);
+        }
+      }
+    }
+    #bg-icon-container-2 {
+      #bg-icon-2 {
+        width: pxToRem(135);
+        height: pxToRem(108);
+        left: pxToRem(-42);
+        bottom: pxToRem(21);
+        @include desktop-extra {
+          left: pxToRem(8);
+        }
+      }
+    }
+    #bg-icon-container-3 {
+      #bg-icon-3 {
+        width: pxToRem(126);
+        height: pxToRem(229);
+        right: pxToRem(-61);
+        top: pxToRem(-41);
+      }
+    }
+    @include desktop-extra {
+      margin-top: 0;
+    }
+    .contacts__form {
+      text-align: center;
+      background: var(--pallete-common-grey-100);
+      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(29, 51, 107, 0.15);
+      border-radius: pxToRem(6);
+      padding: pxToRem(41) pxToRem(22);
+      max-width: pxToRem(420);
+      @include desktop-extra {
+        padding: pxToRem(65) pxToRem(39);
+        margin-left: pxToRem(109);
+      }
+      &-field {
+        font-family: "Open Sans", $sans-serif;
+        width: 100%;
+        border: pxToRem(1) solid #D7D7D7;
+        box-sizing: border-box;
+        border-radius: pxToRem(4);
+        margin-bottom: pxToRem(20);
+        padding: pxToRem(10) pxToRem(16);
+        color: #242424;
+        &::placeholder {
+          font-family: "Open Sans", $sans-serif;
+          // color: #A9A9A9;
+        }
+      }
+      .form-textarea {
+        min-height: pxToRem(80);
+        margin-bottom: pxToRem(22);
+      }
+      &-button {
+        width: 100%;
+        margin-bottom: 0;
+        padding: pxToRem(5) 0;
+        background-color: var(--pallete-secondary-main);
+        font-size: pxToRem(18);
+        color: var(--pallete-common-grey-100);
+        &:hover {
+          color: var(--pallete-secondary-main);
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

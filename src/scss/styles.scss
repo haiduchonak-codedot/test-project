@@ -5,10 +5,18 @@
 @import "includes/base/utils";
 @import "includes/base/global";
 @import "includes/base/dropdown";
+@import "includes/base/animations.scss";
 
 // Blocks
-@import "includes/blocks/main";
-
+@import "includes/blocks/hero";
+@import "includes/blocks/info";
+@import "includes/blocks/reviews";
+@import "includes/blocks/services";
+@import "includes/blocks/proposal";
+@import "includes/blocks/contacts";
+@import "includes/blocks/projects";
+@import "includes/blocks/faq";
+@import "includes/blocks/socials";
 // Vendor
 //@import "includes/vendor/**/*";
 

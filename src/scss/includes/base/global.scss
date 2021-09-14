@@ -1,16 +1,20 @@
 * {
   box-sizing: border-box;
-
+  text-decoration: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  &:not(iframe) {
-    transition: 0.25s ease;
-    transition-property: background, border, color, left, margin, padding, right, opacity;
-  }
-}
+  // &:not(iframe) {
+  //   transition: 0.25s ease;
+  //   transition-property: background, border, color, left, margin, padding, right, opacity;
+  // }
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+} 
 
 html,
 body {
@@ -82,19 +86,13 @@ img {
 body {
   min-height: 100vh;
   transition: 0s;
-  color: $color-black;
-  overscroll-behavior: none;
+  // color: $color-black;
+  overscroll-behavior: contain;
   scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
 
   &.fixed {
     overflow: hidden;
   }
-}
-
-::selection {
-  color: white;
-  background: $color-red;
 }
 
 input[type="text"],
@@ -110,7 +108,7 @@ textarea {
     outline: none;
   }
 
-  @include placeholder-color(rgba($color-black, 0.5));
+  @include placeholder-color (#A9A9A9);
 
   &.not-valid {
     border-color: #f00;
@@ -122,7 +120,7 @@ select {
 
   &:focus::-ms-value {
     color: #12161e;
-    background: #fff;
+    background: var(--pallete-common-grey-100);
   }
 }
 
@@ -130,13 +128,32 @@ textarea {
   resize: none;
 }
 
-a {
+a, button, label {
   cursor: pointer;
   text-decoration: none;
-
-  &:not([href]) {
-    cursor: initial;
+  outline: 0;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  &:focus {
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
+  &:active {
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  &:hover {
+    outline: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  // &:not([href]) {
+  //   cursor: initial;
+  // }
 }
 
 p {
@@ -149,7 +166,7 @@ button,
 input,
 label,
 select {
-  cursor: auto;
+  cursor: pointer;
 }
 
 strong {
@@ -157,45 +174,90 @@ strong {
 }
 
 h1, h2, h3 {
-  font-family: "Harabara";
+  font-family: "Harabara", $sans-serif;
   font-weight: normal;
+  margin-top: 0;
 }
 
 h1 {
-  font-size: 44px;
-  color: $pallete-primary-dark;
-  line-height: 60px;
+  text-transform: uppercase;
+  font-size: pxToRem(22);
+  line-height: pxToRem(38);
+  color: var(--pallete-primary-dark);
+  letter-spacing: 0.05em;
+  @include media-min($mobile-extra-small) {
+    font-size: pxToRem(24);
+  }
+  @include tablet {
+    font-size: pxToRem(33);
+  }
+  @include desktop-extra {
+    font-size: pxToRem(44);
+    letter-spacing: 0.06em;
+    line-height: pxToRem(60);
+  }
 }
 
 h2 {
-  font-size: 36px;
-  color: $pallete-primary-dark;
+  color: var(--pallete-primary-dark);
+  font-size: pxToRem(24);
+  line-height: pxToRem(24);
+  text-align: center;
+  margin: 0;
+  @include tablet {
+    line-height: pxToRem(30);
+    font-size: pxToRem(30);
+  }
+  @include desktop-extra {
+    line-height: pxToRem(36);
+    font-size: pxToRem(36);
+    letter-spacing: 0.1em;
+  }
 }
 
 h3 {
-  font-size: 24px;
-  color: $pallete-primary-light;
+  font-size: pxToRem(20);
+  @include desktop {
+    font-size: pxToRem(24);
+  }
+  color: var(--pallete-primary-light);
+  letter-spacing: 0.05em;
+}
+
+h4 {
+  font-family: "Montserrat", $sans-serif;
+  font-weight: bold;
+  font-size: pxToRem(18);
+  line-height: pxToRem(28);
+  @include tablet {
+    font-size: pxToRem(24);
+  }
 }
 
 p {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-weight: normal;
-  font-size: 16px;
-  color: $pallete-common-grey-900;
+  color: var(--pallete-common-grey-900);
+  line-height: pxToRem(26);
 }
 
 span {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-style: normal;
   font-weight: normal;
 
 }
 
-button {
-  font: inherit;
-  border: 2px solid $pallete-secondary-main;
+.btn {
+  font-family: "Montserrat", $sans-serif;
+  font-size: pxToRem(16);
+  line-height: pxToRem(36);
+  font-weight: bold;
+  border: pxToRem(2) solid var(--pallete-secondary-main);
   box-sizing: border-box;
-  border-radius: $border-radius;
-  background-color: transparent;
-  width: 160px;
+  border-radius: var(--border-radius);
+  min-width: pxToRem(160);
+  min-height: pxToRem(42);
+  cursor: pointer;
+  transition: .25s;
 }
