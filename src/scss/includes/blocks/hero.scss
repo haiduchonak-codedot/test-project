@@ -154,7 +154,7 @@ html[dir=rtl] .breadcrumbs__item::after {
               animation: rotate linear 20s 1.4s infinite forwards;
             }
           }
-          #screen {
+          .screen {
             opacity: 0;
             animation: appearance ease 1s 1.6s forwards;
           }

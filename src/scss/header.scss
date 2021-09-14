@@ -78,7 +78,7 @@ html[dir=rtl] {
         padding: 0;
         padding-bottom: pxToRem(3);
       }
-      img {
+      picture, img {
         height: 100%;
         width: 100%;
         max-width: pxToRem(141);
