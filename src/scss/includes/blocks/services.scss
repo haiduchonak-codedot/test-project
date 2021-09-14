@@ -2,13 +2,14 @@
   padding-top: pxToRem(40);
   padding-bottom: pxToRem(39);
   @include desktop-extra {
-    padding-top: pxToRem(99);
+    padding-top: pxToRem(96);
+    padding-bottom: pxToRem(51);
   }
   &__title {
     text-align: center;
     margin-bottom: pxToRem(38);
     @include desktop-extra {
-      margin-bottom: pxToRem(78);
+      margin-bottom: pxToRem(72);
     }
   }
 

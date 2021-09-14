@@ -1,4 +1,13 @@
 .proposal {
+  margin-bottom: pxToRem(145);
+  margin-top: pxToRem(63);
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  @include desktop-extra {
+    margin-bottom: pxToRem(279);
+    margin-top: pxToRem(212);
+  }
   svg:first-child {
     width: 126%;
     margin-bottom: pxToRem(-6);
@@ -12,15 +21,6 @@
       margin-bottom: pxToRem(-6);
       width: 104%;
     }
-  }
-  margin-bottom: pxToRem(142);
-  margin-top: pxToRem(63);
-  position: relative;
-  text-align: center;
-  z-index: 1;
-  @include desktop-extra {
-    margin-bottom: pxToRem(279);
-    margin-top: pxToRem(212);
   }
   &::after {
     content: '';

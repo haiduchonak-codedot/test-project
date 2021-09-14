@@ -11,7 +11,7 @@
   @include desktop-extra {
     margin-top: pxToRem(212);
     z-index: 0;
-    padding-top: pxToRem(62);
+    padding-top: pxToRem(56);
     margin-bottom: pxToRem(183);
     padding-bottom: pxToRem(130);
   }
@@ -52,7 +52,7 @@
   &__title {
     margin-bottom: pxToRem(59);
     @include desktop-extra {
-      margin-bottom: pxToRem(91);
+      margin-bottom: pxToRem(83);
     }
   }
 
