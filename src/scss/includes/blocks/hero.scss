@@ -156,6 +156,9 @@ html[dir=rtl] .breadcrumbs__item::after {
               fill: var(--pallete-common-grey-900);
             }
           }
+          #mask0, #mask1, #mask2, #mask3 {
+            mask-type: alpha;
+          }
           #background {
             opacity: 0;
             animation: appearance ease 1s 1s forwards;
