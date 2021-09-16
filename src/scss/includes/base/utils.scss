@@ -25,9 +25,11 @@
   width: 100%;
   max-width: pxToRem(1390);
   margin: 0 auto;
-  padding: env(safe-area-inset-top) calc(30px + env(safe-area-inset-left));
+  @include media(0, $desktop) {
+    padding: env(safe-area-inset-top) calc(30px + env(safe-area-inset-left));
+  }
 
-  @include desktop {
+  @include media($desktop, $desktop-extra) {
     padding: 0 pxToRem(40);
   }
 
@@ -35,9 +37,9 @@
     padding: 0 pxToRem(15);
   }
 
-  @media screen and (max-width: $mobile){
-    padding: 0 pxToRem(30);
-  }
+  // @media screen and (max-width: $mobile){
+  //   padding: 0 pxToRem(30);
+  // }
 }
 
 .clearfix::after {

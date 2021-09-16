@@ -18,14 +18,16 @@ html[dir=rtl] .breadcrumbs__item::after {
         position: relative;
         display: flex;
         align-items: center;
-        &:nth-child(1) {
-          animation: appearance .2s .5s forwards;
-        }
-        &:nth-child(2) {
-          animation: appearance .2s .7s forwards;
-        }
-        &:nth-child(3) {
-          animation: appearance .2s .9s forwards;
+        @include media(0, $desktop) {
+          &:nth-child(1) {
+            animation: appearance .2s .5s forwards;
+          }
+          &:nth-child(2) {
+            animation: appearance .2s .7s forwards;
+          }
+          &:nth-child(3) {
+            animation: appearance .2s .9s forwards;
+          }
         }
         @include desktop {
           &:nth-child(1) {
@@ -55,10 +57,14 @@ html[dir=rtl] .breadcrumbs__item::after {
       &__link {
         font-family: "Montserrat", $sans-serif;
         font-weight: normal;
-        font-size: pxToRem(12);
         color: var(--pallete-primary-dark);
-        padding: pxToRem(7) pxToRem(6.5);
         display: flex;
+        @include media(0, $mobile) {
+          font-size: pxToRem(12);
+        }
+        @include media(0, $desktop-extra) {
+          padding: pxToRem(7) pxToRem(6.5);
+        }
         @include mobile {
           font-size: pxToRem(16);
         }
@@ -77,7 +83,9 @@ html[dir=rtl] .breadcrumbs__item::after {
     .hero__title-wrapper {
       width: 100%;
       display: flex;
-      justify-content: center;
+      @include media(0, $tablet) {
+        justify-content: center;
+      }
       @include tablet {
         justify-content: initial
       }
@@ -87,18 +95,24 @@ html[dir=rtl] .breadcrumbs__item::after {
       overflow: hidden;
       white-space: pre;
       animation: textAppearance 1s .9s ease-in forwards;
-      text-align: center;
-      margin-top: pxToRem(36);
-      margin-bottom: pxToRem(12);
-      @include tablet {
-        text-align: initial;
+      @include media(0, $tablet) {
+        text-align: center;
+        margin-top: pxToRem(36);
+        margin-bottom: pxToRem(12);
+      }
+      @include media($tablet, $desktop) {
         // margin-bottom: pxToRem(36);
         margin-top: pxToRem(99);
         margin-bottom: pxToRem(99);
       }
-      @include desktop {
+      @include tablet {
+        text-align: initial;
+      }
+      @include media($desktop, $desktop-extra) {
         margin-top: pxToRem(119);
         margin-bottom: pxToRem(119);
+      }
+      @include desktop {
         animation-delay: 1.55s;
       }
       @include desktop-extra {
@@ -118,13 +132,14 @@ html[dir=rtl] .breadcrumbs__item::after {
       }
       .hero__img {
         height: auto;
-        max-height: pxToRem(202);
-        width: pxToRem(216);
+        @include media(0, $tablet) {
+          max-height: pxToRem(202);
+          width: pxToRem(216);
+        }
         @include tablet {
           min-width: pxToRem(216);
           min-height: pxToRem(202);
           max-height: pxToRem(431);
-          height: auto;
           width: 100%;
           max-width: 464px;
         }
@@ -133,6 +148,14 @@ html[dir=rtl] .breadcrumbs__item::after {
           height: 100%;
           object-fit: contain;
           transition: .25s ease;
+          .screen #display, .clothes {
+            @include light-theme {
+              fill: var(--pallete-common-grey-100);
+            }
+            @include dark-theme {
+              fill: var(--pallete-common-grey-900);
+            }
+          }
           #background {
             opacity: 0;
             animation: appearance ease 1s 1s forwards;

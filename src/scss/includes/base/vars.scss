@@ -7,18 +7,31 @@ $base-size: 16;
 
 :root {
   // Colors
-  --pallete-primary-main: #0D6EB7;
-  --pallete-primary-light: #00A4E8;
-  --pallete-primary-dark: #194484;
-  --pallete-proposal-background: #276ED8;
-  --pallete-projects-background: #f6f9fd;
   --pallete-secondary-main: #06B25F;
   --pallete-secondary-light: #66d6a0;
   --pallete-common-grey-900: #242424;
   --pallete-common-grey-700: #4C4C4C;
   --pallete-common-grey-100: #FFFFFF;
-  // --color-black: #1a1a1a;
   --empty-star-color: #E1E1E1;
+  @media (prefers-color-scheme: light) {
+    --pallete-primary-main: #0D6EB7;
+    --pallete-primary-light: #00A4E8;
+    --pallete-primary-dark: #194484;
+    --pallete-proposal-background-light: #276ED8;
+    --pallete-sevices-cards-background-light: #F4F8FD;
+    --pallete-projects-background-light: #f6f9fd;
+  }
+  @media (prefers-color-scheme: dark) {
+    --pallete-primary-main: #1b9dff;
+    --pallete-primary-light: #04b6ff;
+    --pallete-primary-dark: #0a54c3;
+    --border-color: #353434;
+    --pallete-sevices-cards-background-dark: #242932;
+    --pallete-services-card-selected: #151414;
+    // --pallete-proposal-background-dark: #2259ad;
+    --pallete-footer-background: #112b52;
+    --pallete-projects-background-dark: #353535;
+  }
   // border radius
   --border-radius: 6px;
 }
@@ -26,20 +39,14 @@ $base-size: 16;
 
 
 // Media queries
-$desktop-extra-large: pxToRem(1600, em);
-$desktop-extra: pxToRem(1280, em);
-$desktop: pxToRem(992, em);
-$tablet: pxToRem(768, em);
-$mobile: pxToRem(576, em);
+$desktop-extra-large: 1600;
+$desktop-extra: 1280;
+$desktop: 992;
+$tablet: 768;
+$mobile: 576;
 
-$mobile-middle: pxToRem(475, em);
-$mobile-small: pxToRem(375, em);
-$mobile-extra-small: pxToRem(340, em);
-
-//rating in stars for reviews section
+$mobile-small: 375;
+$mobile-extra-small: 340;
 
 //font
 $sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-
-//page direction
-// $dir: rtl;

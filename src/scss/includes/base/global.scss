@@ -1,8 +1,8 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  // backface-visibility: hidden;
+  // -webkit-backface-visibility: hidden;
   *::before,
   *::after {
     box-sizing: border-box;
@@ -33,7 +33,6 @@ ul {
   list-style: none;
 }
 
-img,
 video,
 audio {
   max-width: 100%;
@@ -41,8 +40,6 @@ audio {
 }
 
 label,
-button,
-input,
 select {
   cursor: pointer;
 }
@@ -86,7 +83,6 @@ img {
 body {
   min-height: 100vh;
   transition: 0s;
-  // color: $color-black;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
 
@@ -129,8 +125,6 @@ textarea {
 }
 
 a, button, label {
-  cursor: pointer;
-  text-decoration: none;
   outline: 0;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -150,10 +144,6 @@ a, button, label {
     -webkit-appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
-
-  // &:not([href]) {
-  //   cursor: initial;
-  // }
 }
 
 p {
@@ -162,8 +152,6 @@ p {
   }
 }
 
-button,
-input,
 label,
 select {
   cursor: pointer;
@@ -176,19 +164,22 @@ strong {
 h1, h2, h3 {
   font-family: "Harabara", $sans-serif;
   font-weight: normal;
-  margin-top: 0;
 }
 
 h1 {
   text-transform: uppercase;
-  font-size: pxToRem(22);
-  line-height: pxToRem(38);
   color: var(--pallete-primary-dark);
-  letter-spacing: 0.05em;
-  @include media-min($mobile-extra-small) {
+  @include media(0, $desktop-extra) {
+    line-height: pxToRem(38);
+    letter-spacing: 0.05em;
+  }
+  @include media(0, $mobile-extra-small) {
+    font-size: pxToRem(22);
+  }
+  @include media($mobile-extra-small, $tablet) {
     font-size: pxToRem(24);
   }
-  @include tablet {
+  @include media($tablet, $desktop-extra) {
     font-size: pxToRem(33);
   }
   @include desktop-extra {
@@ -200,11 +191,13 @@ h1 {
 
 h2 {
   color: var(--pallete-primary-dark);
-  font-size: pxToRem(24);
-  line-height: pxToRem(24);
   text-align: center;
   margin: 0;
-  @include tablet {
+  @include media(0, $tablet) {
+    font-size: pxToRem(24);
+    line-height: pxToRem(24);
+  }
+  @include media($tablet, $desktop-extra) {
     line-height: pxToRem(30);
     font-size: pxToRem(30);
   }
@@ -216,19 +209,27 @@ h2 {
 }
 
 h3 {
-  font-size: pxToRem(20);
+  color: var(--pallete-primary-light);
+  letter-spacing: 0.05em;
+  @include media(0, $desktop) {
+    font-size: pxToRem(20);
+  }
   @include desktop {
     font-size: pxToRem(24);
   }
-  color: var(--pallete-primary-light);
-  letter-spacing: 0.05em;
 }
 
 h4 {
   font-family: "Montserrat", $sans-serif;
   font-weight: bold;
-  font-size: pxToRem(18);
   line-height: pxToRem(28);
+  color: var(--pallete-common-grey-900);
+  @include dark-theme {
+    color: var(--empty-star-color);
+  }
+  @include media(0, $tablet) {
+    font-size: pxToRem(18);
+  }
   @include tablet {
     font-size: pxToRem(24);
   }
@@ -237,15 +238,17 @@ h4 {
 p {
   font-family: "Montserrat", $sans-serif;
   font-weight: normal;
-  color: var(--pallete-common-grey-900);
   line-height: pxToRem(26);
+  color: var(--pallete-common-grey-900);
+  @include dark-theme {
+    color: var(--empty-star-color);
+  }
 }
 
 span {
   font-family: "Montserrat", $sans-serif;
   font-style: normal;
   font-weight: normal;
-
 }
 
 .btn {
@@ -254,7 +257,6 @@ span {
   line-height: pxToRem(36);
   font-weight: bold;
   border: pxToRem(2) solid var(--pallete-secondary-main);
-  box-sizing: border-box;
   border-radius: var(--border-radius);
   min-width: pxToRem(160);
   min-height: pxToRem(42);
