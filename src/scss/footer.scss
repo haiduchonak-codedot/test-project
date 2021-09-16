@@ -1,71 +1,97 @@
 .footer {
   position: relative;
-  margin-top: pxToRem(114);
-  padding-top: pxToRem(34);
-  background-color: var(--pallete-primary-dark);
   z-index: 0;
+  @include media(0, $desktop-extra) {
+    margin-top: pxToRem(114);
+  }
   @include desktop-extra {
     margin-top: pxToRem(437);
-    padding-top: pxToRem(47);
   }
-  &::before {
-    content: "";
-    -webkit-mask-image: url(../img/footerUpperWave.svg);
-    background-size: 147% pxToRem(74);
-    -webkit-mask-size: 147% pxToRem(74);
-    -webkit-mask-repeat: no-repeat;
-    background-position: pxToRem(-127) 0;
-    background-repeat: no-repeat;
-    background-color: var(--pallete-primary-dark);
-    display: block;
-    height: pxToRem(154);
-    top: pxToRem(-72);
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    @include desktop {
-      top: pxToRem(-153);
-      background-size: 100% pxToRem(154);
-      -webkit-mask-size: 100% pxToRem(154);
-      background-position: 0 0;
-    }
-  }
-
+  
   .container {
     max-width: 1405px;
-    padding: env(safe-area-inset-bottom) calc(10px + env(safe-area-inset-left));
-    @include media-min(pxToRem(1024, em)) {
+    display: flex;
+    justify-content: space-between;
+    // min-width: 100%;
+    @include media(0, 1024) {
+      padding: env(safe-area-inset-bottom) calc(10px + env(safe-area-inset-left));
+      flex-direction: column;
+      gap: pxToRem(34);
+    }
+    @include media-min(1024) {
+      flex-direction: row;
+    }
+    @include media(1024, $desktop-extra) {
       padding: env(safe-area-inset-bottom) calc(40px + env(safe-area-inset-left));
+      gap: pxToRem(15);
     }
     @include desktop-extra {
       padding: 0;
+      gap: pxToRem(30);
     }
   }
-
-  &__wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: pxToRem(34);
-    @include media-min(pxToRem(1024, em)) {
-      flex-direction: row;
-      gap: pxToRem(15);
+  
+  &__top {
+    @include light-theme {
+      background-color: var(--pallete-primary-dark);
+    }
+    @include dark-theme {
+      background-color: var(--pallete-footer-background);
+    }
+    @include media(0, $desktop-extra) {
+      padding-top: pxToRem(34);
     }
     @include desktop {
-      margin-bottom: pxToRem(25);
+      padding-bottom: pxToRem(41);
     }
     @include desktop-extra {
-      gap: pxToRem(102);
+      padding-top: pxToRem(47);
+    }
+    &::before {
+      content: "";
+      -webkit-mask-image: url(../img/footerUpperWave.svg);
+      -webkit-mask-repeat: no-repeat;
+      background-repeat: no-repeat;
+      display: block;
+      height: pxToRem(154);
+      position: absolute;
+      width: 100%;
+      z-index: -1;
+      @include light-theme {
+        background-color: var(--pallete-primary-dark);
+      }
+      @include dark-theme {
+        background-color: var(--pallete-footer-background);
+      }
+      @include media(0, $desktop) {
+        top: pxToRem(-72);
+        background-size: 147% pxToRem(74);
+        -webkit-mask-size: 147% pxToRem(74);
+        background-position: pxToRem(-127) 0;
+      }
+      @include desktop {
+        top: pxToRem(-153); 
+        background-size: 100% pxToRem(154);
+        -webkit-mask-size: 100% pxToRem(154);
+        background-position: 0 0;
+      }
     }
   }
 
   &__socials {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: pxToRem(40);
-    @include media-min(pxToRem(1024, em)) {
+    @include media(0, 1024) {
+      align-items: center;
+    }
+    @include media-min(1024) {
       align-items: flex-start;
-      flex-basis: pxToRem(308);
+    }
+    @include media(1024, $desktop-extra) {
+      flex-basis: pxToRem(300);
+    }
+    @include media(0, $desktop-extra) {
+      gap: pxToRem(40);
     }
     @include desktop-extra {
       gap: pxToRem(32);
@@ -74,7 +100,7 @@
       flex-shrink: 0;
     }
     .footer__logo {
-      @include media-min(pxToRem(1024, em)) {
+      @include media-min(1024) {
         padding-left: pxToRem(22);
         padding-right: pxToRem(22);
       }
@@ -88,7 +114,9 @@
     &-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      @include media(0, $desktop) {
+        justify-content: center;
+      }
       @include desktop {
         justify-content: start;
         row-gap: pxToRem(5);
@@ -97,7 +125,7 @@
         .footer__socials-link {
           display: block;
           padding: pxToRem(20);
-          @include media-min(pxToRem(1024, em)) {
+          @include media(1024, $desktop-extra) {
             padding-left: pxToRem(22);
             padding-right: pxToRem(22);
           }
@@ -107,9 +135,16 @@
           }
           .footer__socials-icon {
             display: block;
-            width: pxToRem(32);
-            height: pxToRem(32);
-            fill: var(--pallete-common-grey-100);
+            @include light-theme {
+              fill: var(--pallete-common-grey-100);
+            }
+            @include dark-theme {
+              fill: var(--empty-star-color);
+            }
+            @include media(0, $desktop-extra) {
+              width: pxToRem(32);
+              height: pxToRem(32);
+            }
             @include desktop-extra {
               width: pxToRem(40);
               height: pxToRem(40);
@@ -121,34 +156,51 @@
   }
 
   &__list {
-    margin-bottom: pxToRem(39);
     display: grid;
     flex-direction: column;
     @include tablet {
-      grid-template-columns: auto;
       grid-template-rows: repeat(auto-fit, pxToRem(48));
+    }
+    @include media($tablet, $desktop-extra) {
+      grid-template-columns: auto;
+      max-width: 650px;
       width: 100%;
+    }
+    @include media(0, $desktop-extra) {
+      margin-bottom: pxToRem(39);
     }
     @include desktop-extra {
       grid-template-columns: repeat(4,minmax(0, max-content));
       column-gap: pxToRem(45);
       margin-bottom: 0;
+      max-width: pxToRem(1048);
+      width: 100%;
     }
     .footer__item {
       @include tablet {
-        padding-bottom: pxToRem(15);
+        
         grid-area: auto/auto/span 6/auto;
+      }
+      @include media($tablet, $desktop-extra) {
+        padding-bottom: pxToRem(15);
       }
       &-link {
         font-family: "Harabara", $sans-serif;
         font-style: normal;
         font-weight: bold;
         display: inline-flex;
-        color: var(--pallete-common-grey-100);
         font-size: pxToRem(20);
         line-height: pxToRem(21);
         letter-spacing: 0.07em;
-        padding: pxToRem(12);
+        @include light-theme {
+          color: var(--pallete-common-grey-100);
+        }
+        @include dark-theme {
+          color: var(--empty-star-color);
+        }
+        @include media(0, $desktop-extra) {
+          padding: pxToRem(12);
+        }
         @include desktop-extra {
           padding: pxToRem(18) pxToRem(12);
         }
@@ -160,10 +212,15 @@
             font-style: normal;
             font-weight: normal;
             display: inline-flex;
-            color: var(--pallete-common-grey-100);
             font-size: pxToRem(16);
             line-height: pxToRem(20);
             padding: pxToRem(9) pxToRem(30);
+            @include light-theme {
+              color: var(--pallete-common-grey-100);
+            }
+            @include dark-theme {
+              color: var(--empty-star-color);
+            }
           }
         }
       }
@@ -179,19 +236,24 @@
       }
     }
   }
-  &__legal {
-    background-color: var(--pallete-common-grey-100);
+  &__bottom {
     bottom: 0;
     left: 0;
     width: 100%;
     font-size: pxToRem(14);
-    padding-top: pxToRem(10);
-    padding-bottom: calc(47px + env(safe-area-inset-bottom));
+    @include media(0, $mobile) {
+      padding-bottom: calc(47px + env(safe-area-inset-bottom));
+    }
     @include mobile {
       display: flex;
       flex-direction: row-reverse;
+      align-items: baseline;
+    }
+    @include media($mobile, $desktop) {
       padding-bottom: env(safe-area-insert-bottom);
-      align-items: center;
+    }
+    @include media(0, $desktop) {
+      padding-top: pxToRem(10);
     }
     @include desktop {
       padding-left: calc(104px + env(safe-area-inset-left));
@@ -200,30 +262,41 @@
       padding-bottom: calc(12px + env(safe-area-inset-bottom));
     }
     
-    .footer__legal-copyright {
+    .footer__copyright {
       margin: 0;
       font-family: "Open Sans", $sans-serif;
-      color: var(--pallete-common-grey-700);
       padding-left: pxToRem(19);
       padding-right: pxToRem(19);
       line-height: 1rem;
+      @include light-theme {
+        color: var(--pallete-common-grey-700);
+      }
+      @include dark-theme {
+        color: var(--empty-star-color);
+      }
       @include mobile {
         flex-basis: 55%;
       }
     }
-    .footer__legal-links {
+    .footer__legal {
       display: flex;
       position: relative;
-      gap: pxToRem(78);
-      border-bottom: pxToRem(1) solid #cfe2f1;
-      padding-left: pxToRem(10);
-      padding-right: pxToRem(10);
       margin-bottom: pxToRem(8);
+      @include media(0, $mobile) {
+        border-bottom: pxToRem(1) solid #cfe2f1;
+        gap: pxToRem(78);
+      }
       @include mobile {
         gap: 0;
         flex-basis: 45%;
         border-bottom: 0;
+      }
+      @include media($mobile, $tablet) {
         justify-content: flex-end;
+      }
+      @include media(0, $tablet) {
+        padding-left: pxToRem(10);
+        padding-right: pxToRem(10);
       }
       @include tablet {
         padding-left: 42px;
@@ -233,8 +306,11 @@
       .footer__legal-link {
         font-family: "Open Sans", $sans-serif;
         display: block;
-        color: var(--pallete-common-grey-700);
         padding: pxToRem(8) pxToRem(9);
+        color: var(--pallete-common-grey-700);
+        @include dark-theme {
+          color: var(--empty-star-color);
+        }
       }
     }
   }

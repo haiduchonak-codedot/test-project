@@ -1,13 +1,16 @@
 .projects {
-  .container {
-    position: relative;
-  }
-  margin-top: pxToRem(237);
-  padding-bottom: pxToRem(90);
-  margin-bottom: pxToRem(130);
-  background-color: var(--pallete-projects-background);
   position: relative;
-  z-index: 1;
+  @include light-theme {
+    background-color: var(--pallete-projects-background-light);
+  }
+  @include dark-theme {
+    background-color: var(--pallete-projects-background-dark);
+  }
+  @include media(0, $desktop-extra) {
+    margin-top: pxToRem(237);
+    padding-bottom: pxToRem(90);
+    margin-bottom: pxToRem(130);
+  }
   @include desktop-extra {
     margin-top: pxToRem(212);
     z-index: 0;
@@ -15,23 +18,36 @@
     margin-bottom: pxToRem(183);
     padding-bottom: pxToRem(130);
   }
+  .container {
+    position: relative;
+  }
   &::before, &::after {
     content: '';
     position: absolute;
     display: block;
     width: 100%;
     background-repeat: no-repeat;
-    background-color: var(--pallete-projects-background);
     -webkit-mask-repeat: no-repeat;
-    z-index: -1;
+    z-index: 1;
+    @include light-theme {
+      background-color: var(--pallete-projects-background-light);
+    }
+    @include dark-theme {
+      background-color: var(--pallete-projects-background-dark);
+    }
   }
   &::before {
     -webkit-mask-image: url(../../../img/projectsUpperWave.svg);
-    background-position: pxToRem(-40) pxToRem(8);
-    background-size: 140% pxToRem(154);
-    -webkit-mask-size: 140% pxToRem(154);
     height: pxToRem(150);
-    top: pxToRem(-150);
+    top: pxToRem(-148);
+    @include media(0, $desktop-extra) {
+      // background-position: pxToRem(-40) pxToRem(8);
+      // background-size: 140% pxToRem(154);
+      // -webkit-mask-size: 140% pxToRem(154);
+      background-position: 0 pxToRem(8);
+      background-size: 101% 100%;
+      -webkit-mask-size: 124% 100%;
+    }
     @include desktop-extra {
       background-position: 0 pxToRem(8);
       background-size: 101% 100%;
@@ -42,7 +58,7 @@
     -webkit-mask-image: url(../../../img/projectsLowerWave.svg);
     background-position: 0 0;
     -webkit-mask-size: 106% 104px;
-    height: pxToRem(185);
+    height: pxToRem(187);
     bottom: pxToRem(-184);
     @include desktop-extra {
       background-size: 102% pxToRem(144);
@@ -50,7 +66,9 @@
   }
 
   &__title {
-    margin-bottom: pxToRem(59);
+    @include media(0, $desktop-extra) {
+      margin-bottom: pxToRem(59);
+    }
     @include desktop-extra {
       margin-bottom: pxToRem(83);
     }
@@ -58,7 +76,9 @@
 
   .slider {
     &__arrow {
-      display: none;
+      @include media(0, $desktop) {
+        display: none;
+      }
       @include desktop {
         display: block;
         cursor: pointer;
@@ -116,10 +136,12 @@
 
     &__content {
       display: flex;
-      flex-direction: column;
       align-items: center;
       scrollbar-width: none;
-      gap: pxToRem(40);
+      @include media(0, $desktop) {
+        flex-direction: column;
+        gap: pxToRem(40);
+      }
       &::-webkit-scrollbar {
         width: 0;
       }
@@ -132,7 +154,8 @@
         gap: pxToRem(80);
         width: 80%;
         padding: pxToRem(25);
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
       }
       @include media-min($desktop-extra-large) {
         width: 100%;
@@ -140,26 +163,27 @@
       .slider__item {
         overflow: hidden;
         position: relative;
-        background: #FFFFFF;
-        box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(29, 51, 107, 0.15);
+        box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0,0,0,0.15);
         border-radius: pxToRem(16);
-        max-width: pxToRem(320);
+        @include light-theme {
+          background-color: var(--pallete-common-grey-100);
+        }
+        @include dark-theme {
+          background-color: var(--pallete-common-grey-900);
+        }
+        @include media(0, $desktop-extra) {
+          max-width: pxToRem(320);
+        }
         @include desktop {
           flex: none;
           margin-bottom: 0;
-          &:last-child {
-            margin-right: 0;
-          }
         }
         @include desktop-extra {
           max-width: pxToRem(400);
           min-height: pxToRem(438);
         }
-        &:last-child {
-          margin-bottom: 0;
-        }
 
-        &-img-wrapper {
+        &-wrapper {
           position: relative;
           max-width: pxToRem(400);
           max-height: pxToRem(224);
@@ -197,10 +221,8 @@
           }
           .slider__item-title {
             margin: 0 0 pxToRem(13);
-            letter-spacing: 0.05em;
-            font-size: pxToRem(18);
-            @include desktop-extra {
-              font-size: pxToRem(24);
+            @include media(0, $desktop-extra) {
+              font-size: pxToRem(18);
             }
           }
     
