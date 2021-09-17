@@ -191,7 +191,6 @@ h1 {
 
 h2 {
   color: var(--pallete-primary-dark);
-  text-align: center;
   margin: 0;
   @include media(0, $tablet) {
     font-size: pxToRem(24);
@@ -208,7 +207,7 @@ h2 {
   }
 }
 
-h3 {
+h3, .h3 {
   color: var(--pallete-primary-light);
   letter-spacing: 0.05em;
   @include media(0, $desktop) {
@@ -219,7 +218,7 @@ h3 {
   }
 }
 
-h4 {
+h4, .h4 {
   font-family: "Montserrat", $sans-serif;
   font-weight: bold;
   line-height: pxToRem(28);
