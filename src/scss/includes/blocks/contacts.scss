@@ -3,6 +3,7 @@
     padding-top: pxToRem(73);
     padding-bottom: pxToRem(73);
   }
+
   @include desktop-extra {
     padding-top: pxToRem(126);
     padding-bottom: pxToRem(130);
@@ -15,6 +16,7 @@
   }
   &__title {
     margin-bottom: pxToRem(14);
+
     @include desktop-extra {
       margin-bottom: pxToRem(62);
     }
@@ -22,56 +24,67 @@
 
   &__content {
     text-align: center;
+
     @include media(0, $desktop) {
       margin-bottom: pxToRem(22);
     }
+
     @include media($desktop, $desktop-extra) {
       margin-bottom: pxToRem(31);
     }
+
     @include desktop-extra {
       margin-bottom: pxToRem(94);
     }
+
     .contacts__subtitle {
       margin-top: 0;
+
       @include media(0, $desktop-extra) {
         margin-bottom: pxToRem(35);
       }
+
       @include desktop-extra {
         margin-bottom: pxToRem(18);
       }
     }
-    
+
     .contacts__text {
       margin-top: 0;
+
       @include desktop-extra {
         margin-bottom: pxToRem(18);
       }
     }
-    
   }
 
   &__info {
     @include desktop {
       display: flex;
     }
+
     @include media($desktop, $desktop-extra) {
       justify-content: space-around;
     }
+
     @include desktop-extra {
       justify-content: center;
     }
+
     .contacts__list {
       flex-basis: 50%;
+
       .contacts__item {
         width: 100%;
+
         &:last-child {
           margin-bottom: 0;
         }
+
         &-icon {
           width: pxToRem(20);
           height: pxToRem(20);
           margin-left: pxToRem(3);
-          // margin-right: pxsToRem(18);
           flex: none;
           display: flex;
           flex-basis: pxToRem(20);
@@ -81,28 +94,36 @@
           display: inline-flex;
           line-height: pxToRem(26);
           gap: pxToRem(18);
+
           @include light-theme {
-            color: var(--pallete-common-grey-900)
+            color: var(--pallete-common-grey-900);
           }
+
           @include dark-theme {
             color: var(--empty-star-color);
           }
+
           @include media(0, $mobile-small) {
             font-size: pxToRem(18);
           }
+
           @include media-min($mobile-small) {
             font-size: pxToRem(20);
           }
+
           @include media(0, $mobile) {
             align-items: baseline;
           }
+
           @include media(0, $tablet) {
             padding-top: 13.4px;
             padding-bottom: 13.4px;
           }
+
           @include mobile {
             align-items: center;
           }
+
           @include tablet {
             padding-top: pxToRem(14);
             padding-bottom: pxToRem(14);
@@ -120,16 +141,20 @@
     text-align: -webkit-center;
     text-align: -moz-center;
     flex-basis: 50%;
+
     @include media(0, $desktop) {
       margin-top: pxToRem(53);
     }
+
     @include desktop {
       margin-top: 0;
     }
+
     .contacts__form-bg-container {
       @include media(0, $desktop-extra) {
         display: none;
       }
+
       .contacts__form-bg-icon {
         z-index: -1;
         position: absolute;
@@ -140,9 +165,11 @@
         height: pxToRem(154);
         width: pxToRem(149);
         top: pxToRem(-41);
+
         @include media(0, $desktop-extra) {
           left: pxToRem(-43);
         }
+
         @include desktop-extra {
           left: pxToRem(27);
         }
@@ -153,9 +180,11 @@
         width: pxToRem(135);
         height: pxToRem(108);
         bottom: pxToRem(21);
+
         @include media(0, $desktop-extra) {
           left: pxToRem(-42);
         }
+
         @include desktop-extra {
           left: pxToRem(8);
         }
@@ -171,27 +200,32 @@
     }
     .contacts__form {
       text-align: center;
-      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0,0,0,0.15);
+      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
       border-radius: pxToRem(6);
       max-width: pxToRem(420);
+
       @include light-theme {
         background: var(--pallete-common-grey-100);
       }
+
       @include dark-theme {
         border: 1px solid var(--border-color);
         background: var(--pallete-common-grey-900);
       }
+
       @include media(0, $desktop-extra) {
         padding: pxToRem(41) pxToRem(22);
       }
+
       @include desktop-extra {
         padding: pxToRem(65) pxToRem(39);
         margin-left: pxToRem(109);
       }
+
       &-field {
         font-family: "Open Sans", $sans-serif;
         width: 100%;
-        border: pxToRem(1) solid #D7D7D7;
+        border: pxToRem(1) solid #d7d7d7;
         box-sizing: border-box;
         border-radius: pxToRem(4);
         margin-bottom: pxToRem(20);
@@ -199,25 +233,29 @@
         color: var(--pallete-common-grey-900);
         &::placeholder {
           font-family: "Open Sans", $sans-serif;
-          // color: #A9A9A9;
         }
       }
+
       .form-textarea {
         min-height: pxToRem(80);
         margin-bottom: pxToRem(22);
       }
+
       &-button {
         width: 100%;
         margin-bottom: 0;
         padding: pxToRem(5) 0;
         background-color: var(--pallete-secondary-main);
         font-size: pxToRem(18);
+
         @include light-theme {
           color: var(--pallete-common-grey-100);
         }
+
         @include dark-theme {
           color: var(--empty-star-color);
         }
+        
         &:hover {
           color: var(--pallete-secondary-main);
           background-color: transparent;

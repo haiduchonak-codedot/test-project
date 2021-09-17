@@ -2,37 +2,45 @@
   position: relative;
   text-align: center;
   z-index: 1;
+
   @include media(0, $desktop-extra) {
     margin-bottom: pxToRem(145);
     margin-top: pxToRem(63);
   }
+
   @include desktop-extra {
     margin-bottom: pxToRem(279);
     margin-top: pxToRem(212);
   }
+
   svg:first-child {
     margin-left: pxToRem(-50);
+
     @include media(0, $desktop-extra) {
       width: 126%;
       margin-bottom: pxToRem(-6);
       height: pxToRem(86);
     }
+
     path {
       @include light-theme {
         fill: var(--pallete-proposal-background-light);
       }
+
       @include dark-theme {
         fill: var(--pallete-footer-background);
       }
     }
+
     @include desktop-extra {
       height: 129px;
       margin-bottom: pxToRem(-6);
       width: 104%;
     }
   }
+
   &::after {
-    content: '';
+    content: "";
     display: block;
     background-repeat: no-repeat;
     position: absolute;
@@ -41,18 +49,22 @@
     background-position: 0 0;
     -webkit-mask-image: url(../../../img/lowerWave.svg);
     -webkit-mask-repeat: no-repeat;
+
     @include light-theme {
       background-color: var(--pallete-proposal-background-light);
     }
+
     @include dark-theme {
       background-color: var(--pallete-footer-background);
     }
+
     @include media(0, $desktop-extra) {
       -webkit-mask-size: 100% pxToRem(61);
       background-size: 100% pxToRem(61);
       bottom: pxToRem(-139);
       height: pxToRem(140);
     }
+
     @include desktop-extra {
       -webkit-mask-size: 100% pxToRem(154);
       background-size: 100% pxToRem(154);
@@ -64,50 +76,62 @@
     @include light-theme {
       background-color: var(--pallete-proposal-background-light);
     }
+
     @include dark-theme {
       background-color: var(--pallete-footer-background);
     }
+
     @include media(0, $tablet) {
       padding-top: 7px;
     }
+
     @include media(0, $desktop-extra) {
       padding-bottom: pxToRem(32);
     }
+
     @include media($tablet, $desktop-extra) {
       padding-top: pxToRem(20);
     }
+
     @include desktop-extra {
       padding: pxToRem(68) 0;
       padding-bottom: pxToRem(74);
     }
   }
   &__title {
+    margin-top: 0;
     @include light-theme {
       color: var(--pallete-common-grey-100);
     }
+
     @include dark-theme {
       color: var(--empty-star-color);
     }
-    margin-top: 0;
+
     @include media(0, $desktop-extra) {
       margin-bottom: pxToRem(12);
     }
+
     @include desktop-extra {
       margin-bottom: pxToRem(17);
     }
   }
   &__subtitle {
+    margin-top: 0;
+    
     @include light-theme {
       color: var(--pallete-common-grey-100);
     }
+    
     @include dark-theme {
       color: var(--empty-star-color);
     }
-    margin-top: 0;
+    
     @include media(0, $desktop-extra) {
       margin-bottom: pxToRem(23);
       line-height: pxToRem(20);
     }
+
     @include desktop-extra {
       font-size: pxToRem(24);
       line-height: pxToRem(29);
@@ -116,12 +140,14 @@
   }
   &__button {
     color: var(--pallete-secondary-main);
+
     @include light-theme {
       background-color: var(--pallete-common-grey-100);
     }
     @include dark-theme {
       background-color: var(--empty-star-color);
     }
+    
     &:hover {
       background-color: var(--pallete-secondary-main);
       color: var(--pallete-common-grey-100);

@@ -14,7 +14,7 @@
   // }
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
-} 
+}
 
 html,
 body {
@@ -104,7 +104,7 @@ textarea {
     outline: none;
   }
 
-  @include placeholder-color (#A9A9A9);
+  @include placeholder-color(#a9a9a9);
 
   &.not-valid {
     border-color: #f00;
@@ -124,7 +124,9 @@ textarea {
   resize: none;
 }
 
-a, button, label {
+a,
+button,
+label {
   outline: 0;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -161,7 +163,9 @@ strong {
   font-weight: 600;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Harabara", $sans-serif;
   font-weight: normal;
 }
@@ -207,7 +211,8 @@ h2 {
   }
 }
 
-h3, .h3 {
+h3,
+.h3 {
   color: var(--pallete-primary-light);
   letter-spacing: 0.05em;
   @include media(0, $desktop) {
@@ -218,7 +223,8 @@ h3, .h3 {
   }
 }
 
-h4, .h4 {
+h4,
+.h4 {
   font-family: "Montserrat", $sans-serif;
   font-weight: bold;
   line-height: pxToRem(28);
@@ -260,5 +266,5 @@ span {
   min-width: pxToRem(160);
   min-height: pxToRem(42);
   cursor: pointer;
-  transition: .25s;
+  transition: 0.25s;
 }

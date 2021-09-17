@@ -2,6 +2,7 @@
   @include media(0, $desktop) {
     margin-left: pxToRem(3);
   }
+
   @include desktop {
     text-align: left;
     display: flex;
@@ -14,33 +15,42 @@
 
 .info {
   padding-bottom: pxToRem(47);
+
   @include media(0, $desktop) {
     padding-top: pxToRem(24);
   }
+
   @include desktop {
     padding-top: pxToRem(23);
   }
+
   .info__content {
     @if $isAnimationsEnabled {
       opacity: 0;
-      animation: slideIn .4s 1.95s forwards;
+      animation: slideIn 0.4s 1.95s forwards;
     }
+
     @include media(0, $desktop) {
       padding-bottom: pxToRem(61);
     }
+
     &:last-child {
       padding-bottom: 0;
     }
+
     @include desktop {
       flex-basis: 49%;
       padding-bottom: 0;
     }
+
     &-title {
       margin-bottom: pxToRem(21);
       margin-top: 0;
+
       @include media(0, $desktop) {
         text-align: center;
       }
+
       @include desktop {
         max-width: pxToRem(553);
       }
@@ -48,9 +58,11 @@
     .info__content-text {
       margin-top: 0;
       margin-bottom: pxToRem(30);
+
       &:last-child {
         margin-bottom: 0;
       }
+      
       @include desktop {
         max-width: pxToRem(553);
       }

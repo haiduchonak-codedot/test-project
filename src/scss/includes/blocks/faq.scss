@@ -1,51 +1,62 @@
 .faq {
   position: relative;
+
   @include media(0, $desktop-extra) {
     padding-top: pxToRem(47);
     padding-bottom: pxToRem(47);
   }
+
   @include desktop-extra {
     padding-top: pxToRem(74);
     padding-bottom: pxToRem(79);
   }
+
   .container {
     max-width: pxToRem(1016);
   }
+
   &__title {
-    
     @include media(0, $desktop-extra) {
       margin-bottom: pxToRem(23);
     }
+
     @include desktop-extra {
       margin-bottom: pxToRem(48);
     }
   }
   &__list {
     position: relative;
-    &::before, &::after {
+
+    &::before,
+    &::after {
       content: "";
       overflow: hidden;
       position: absolute;
+
       @include media(0, $desktop-extra) {
         top: pxToRem(24);
         bottom: pxToRem(28);
         width: pxToRem(19);
       }
+
       @include desktop-extra {
         width: pxToRem(34);
         top: pxToRem(21);
         bottom: pxToRem(21);
       }
     }
+
     &::before {
       border-bottom: pxToRem(6) solid var(--pallete-secondary-light);
       border-bottom-left-radius: pxToRem(15);
       border-left: pxToRem(6) solid var(--pallete-secondary-light);
       border-top: pxToRem(6) solid var(--pallete-secondary-light);
       border-top-left-radius: pxToRem(13);
+
       @include media(0, $desktop-extra) {
         left: pxToRem(-24);
       }
+
       @include desktop-extra {
         left: pxToRem(-15);
       }
@@ -54,27 +65,32 @@
       border-bottom: pxToRem(6) solid var(--pallete-secondary-light);
       border-right: pxToRem(6) solid var(--pallete-secondary-light);
       border-top: pxToRem(6) solid var(--pallete-secondary-light);
+
       @include media(0, $desktop-extra) {
         border-bottom-right-radius: pxToRem(15);
         border-top-right-radius: pxToRem(13);
         right: pxToRem(-24);
       }
+
       @include desktop-extra {
         border-bottom-right-radius: pxToRem(14);
         border-top-right-radius: pxToRem(14);
         right: pxToRem(-15);
       }
     }
+
     .faq__item {
       @include media(0, $tablet) {
         margin-left: pxToRem(2.5);
         margin-right: pxToRem(2.5);
       }
+
       @include tablet {
         margin-right: pxToRem(30);
         margin-left: pxToRem(30);
         align-items: center;
       }
+
       &-title {
         display: inline-flex;
         font-size: pxToRem(18);
@@ -87,13 +103,14 @@
         flex: none;
         gap: pxToRem(8);
         align-items: baseline;
-        
+
         @include desktop-extra {
           padding: pxToRem(14) pxToRem(15);
           font-size: pxToRem(20);
         }
+
         &::before {
-          content: '';
+          content: "";
           display: block;
           width: pxToRem(12);
           height: pxToRem(12);
@@ -108,25 +125,28 @@
     max-width: pxToRem(963);
     margin-left: auto;
     margin-right: auto;
+
     @include desktop {
       padding-left: calc(35px + env(safe-area-inset-left));
       padding-right: calc(37px + env(safe-area-inset-right));
     }
+
     @include media(0, $desktop-extra) {
       margin-top: pxToRem(45);
     }
-    
+
     @include desktop-extra {
       margin-top: pxToRem(39);
     }
+
     .faq__extended-item {
       position: relative;
       border-bottom: pxToRem(1) solid #86b7db;
-      
       padding-left: calc(30px + env(safe-area-inset-left));
       padding-right: calc(30px + env(safe-area-inset-right));
       padding-top: 0;
       padding-bottom: pxToRem(18.5);
+
       @include desktop {
         padding-left: 0;
         padding-right: 0;
@@ -138,15 +158,19 @@
         letter-spacing: 0.016rem;
         padding-top: pxToRem(18.5);
         gap: pxToRem(17);
+
         @include tablet {
           font-size: pxToRem(20);
         }
+
         @include media(0, $desktop-extra) {
           padding-bottom: pxToRem(13);
         }
+
         @include desktop-extra {
           padding-bottom: pxToRem(14);
         }
+
         &::before {
           content: "";
           display: block;
@@ -154,24 +178,28 @@
           width: pxToRem(14);
           height: pxToRem(14);
           margin-top: pxToRem(7);
+          transform: rotate(-45deg);
+          transform-origin: 45% 45%;
+
           @include light-theme {
             border-bottom: pxToRem(4) solid var(--pallete-common-grey-900);
             border-left: pxToRem(4) solid var(--pallete-common-grey-900);
           }
+
           @include dark-theme {
             border-bottom: pxToRem(4) solid var(--empty-star-color);
             border-left: pxToRem(4) solid var(--empty-star-color);
           }
-          transform: rotate(-45deg);
-          transform-origin: 45% 45%;
         }
       }
       &-subtitle {
         display: none;
         letter-spacing: -0.024rem;
+
         @include media(0, $desktop-extra) {
           padding-left: pxToRem(40);
         }
+
         @include desktop-extra {
           padding-left: pxToRem(35);
         }
@@ -181,8 +209,9 @@
       & > p {
         display: block;
       }
+      
       & > h4::before {
-        transform: rotate(135deg) translate(pxToRem(3),pxToRem(-6))!important;
+        transform: rotate(135deg) translate(pxToRem(3), pxToRem(-6)) !important;
       }
     }
   }
