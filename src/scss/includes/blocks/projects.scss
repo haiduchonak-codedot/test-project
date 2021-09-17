@@ -209,7 +209,7 @@
           height: 100%;
           border-radius: pxToRem(16);
           z-index: 1;
-          &:hover ~ .slider__item-img-wrapper > picture{
+          &:hover ~ .slider__item-wrapper > .slider__item-img > img {
             transform: scale(1.1);
           }
         }
