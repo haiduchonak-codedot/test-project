@@ -1,4 +1,4 @@
-html[dir=rtl] .breadcrumbs__item::after {
+html[dir="rtl"] .breadcrumbs__item::after {
   transform: rotate(45deg);
 }
 
@@ -9,43 +9,49 @@ html[dir=rtl] .breadcrumbs__item::after {
   }
   &__content {
     flex-basis: 50%;
+
     .breadcrumbs {
       display: flex;
       margin-left: pxToRem(-7);
-      flex-wrap:wrap;
+      flex-wrap: wrap;
       &__item {
-        @if $isAnimationsEnabled {
-          opacity: 0;
-        }
         position: relative;
         display: flex;
         align-items: center;
         @if $isAnimationsEnabled {
+          opacity: 0;
+        }
+
+        @if $isAnimationsEnabled {
           @include media(0, $desktop) {
             &:nth-child(1) {
-              animation: appearance .2s .5s forwards;
+              animation: appearance 0.2s 0.5s forwards;
             }
+
             &:nth-child(2) {
-              animation: appearance .2s .7s forwards;
+              animation: appearance 0.2s 0.7s forwards;
             }
+
             &:nth-child(3) {
-              animation: appearance .2s .9s forwards;
+              animation: appearance 0.2s 0.9s forwards;
             }
           }
           @include desktop {
             &:nth-child(1) {
-              animation: appearance .2s 1.15s forwards;
+              animation: appearance 0.2s 1.15s forwards;
             }
+
             &:nth-child(2) {
-              animation: appearance .2s 1.55s forwards;
+              animation: appearance 0.2s 1.55s forwards;
             }
+
             &:nth-child(3) {
-              animation: appearance .2s 1.95s forwards;
+              animation: appearance 0.2s 1.95s forwards;
             }
           }
         }
         &::after {
-          content: '';
+          content: "";
           display: block;
           width: pxToRem(6);
           height: pxToRem(6);
@@ -54,6 +60,7 @@ html[dir=rtl] .breadcrumbs__item::after {
           border-bottom: pxToRem(2) solid var(--pallete-primary-dark);
           border-left: pxToRem(2) solid var(--pallete-primary-dark);
         }
+
         &:last-child::after {
           display: none;
         }
@@ -63,15 +70,19 @@ html[dir=rtl] .breadcrumbs__item::after {
         font-weight: normal;
         color: var(--pallete-primary-dark);
         display: flex;
+
         @include media(0, $mobile) {
           font-size: pxToRem(12);
         }
+
         @include media(0, $desktop-extra) {
           padding: pxToRem(7) pxToRem(6.5);
         }
+
         @include mobile {
           font-size: pxToRem(16);
         }
+
         @include desktop-extra {
           padding: pxToRem(16) pxToRem(10);
         }
@@ -80,6 +91,7 @@ html[dir=rtl] .breadcrumbs__item::after {
   }
   .hero__wrapper {
     position: relative;
+
     @include tablet {
       display: flex;
       justify-content: space-between;
@@ -87,40 +99,48 @@ html[dir=rtl] .breadcrumbs__item::after {
     .hero__title-wrapper {
       width: 100%;
       display: flex;
+
       @include media(0, $tablet) {
         justify-content: center;
       }
+
       @include tablet {
-        justify-content: initial
+        justify-content: initial;
       }
     }
     .hero__title {
       overflow: hidden;
       white-space: pre;
+
       @if $isAnimationsEnabled {
         width: 0;
-        animation: textAppearance 1s .9s ease-in forwards;
+        animation: textAppearance 1s 0.9s ease-in forwards;
       }
+
       @include media(0, $tablet) {
         text-align: center;
         margin-top: pxToRem(36);
         margin-bottom: pxToRem(12);
       }
+
       @include media($tablet, $desktop) {
-        // margin-bottom: pxToRem(36);
         margin-top: pxToRem(99);
         margin-bottom: pxToRem(99);
       }
+
       @include tablet {
         text-align: initial;
       }
+
       @include media($desktop, $desktop-extra) {
         margin-top: pxToRem(119);
         margin-bottom: pxToRem(119);
       }
+
       @include desktop {
         animation-delay: 1.55s;
       }
+
       @include desktop-extra {
         margin-top: pxToRem(109);
         margin-bottom: pxToRem(109);
@@ -130,18 +150,23 @@ html[dir=rtl] .breadcrumbs__item::after {
       flex-basis: 50%;
       display: flex;
       justify-content: center;
+
       @include desktop {
         padding-top: 14px;
       }
+
       @include desktop-extra {
         padding-left: pxToRem(43);
       }
+
       .hero__img {
         height: auto;
+
         @include media(0, $tablet) {
           max-height: pxToRem(202);
           width: pxToRem(216);
         }
+
         @include tablet {
           min-width: pxToRem(216);
           min-height: pxToRem(202);
@@ -149,12 +174,15 @@ html[dir=rtl] .breadcrumbs__item::after {
           width: 100%;
           max-width: 464px;
         }
+
         svg {
           width: 100%;
           height: 100%;
           object-fit: contain;
-          transition: .25s ease;
-          .screen #display, .clothes {
+          transition: 0.25s ease;
+
+          .screen #display,
+          .clothes {
             @include light-theme {
               fill: var(--pallete-common-grey-100);
             }
@@ -162,35 +190,46 @@ html[dir=rtl] .breadcrumbs__item::after {
               fill: var(--pallete-common-grey-900);
             }
           }
-          #mask0, #mask1, #mask2, #mask3 {
+
+          #mask0,
+          #mask1,
+          #mask2,
+          #mask3 {
             mask-type: alpha;
           }
+
           @if $isAnimationsEnabled {
             #background {
               opacity: 0;
               animation: appearance ease 1s 1s forwards;
             }
+
             #lines {
               opacity: 0;
               animation: appearance ease 1s 1.2s forwards;
             }
+
             #circle {
               opacity: 0;
               animation: appearance ease 1s 1.3s forwards;
             }
+
             #gear {
               opacity: 0;
               animation: appearance ease 1s 2.2s forwards;
+
               path {
                 transform-origin: center;
                 transform-box: fill-box;
                 animation: rotate linear 20s 1.4s infinite forwards;
               }
             }
+
             .screen {
               opacity: 0;
               animation: appearance ease 1s 1.6s forwards;
             }
+            
             #girl {
               opacity: 0;
               animation: appearance ease 1s 2s forwards;

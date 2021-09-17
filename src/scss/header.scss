@@ -1,8 +1,9 @@
-html[dir=rtl] {
+html[dir="rtl"] {
   #main:target #main-menu {
     @include media(0, $desktop) {
       transform: translateX(calc(100vw - 100%));
     }
+
     @include desktop {
       transform: translateX(0);
     }
@@ -12,6 +13,7 @@ html[dir=rtl] {
     @include media(0, $desktop) {
       transform: translateX(calc(100vw + 10%));
     }
+
     @include desktop {
       transform: translateX(0);
     }
@@ -22,6 +24,7 @@ html[dir=rtl] {
   @include media(0, $desktop) {
     transform: translateX(-110%);
   }
+
   @include desktop {
     transform: translateX(0);
   }
@@ -30,6 +33,7 @@ html[dir=rtl] {
   @include media(0, $desktop) {
     overflow: hidden;
   }
+
   @include desktop {
     overflow: auto;
   }
@@ -38,11 +42,14 @@ html[dir=rtl] {
     transform: translateX(0);
     width: 100%;
     display: flex;
+
     @include desktop {
       background-color: transparent;
     }
+
     .header__menu-backdrop {
       width: 100%;
+
       @include desktop {
         display: none;
       }
@@ -58,6 +65,7 @@ html[dir=rtl] {
 
 .header {
   font-family: "Montserrat", $sans-serif;
+
   .container {
     padding: 0 pxToRem(15);
   }
@@ -65,38 +73,48 @@ html[dir=rtl] {
   &__wrapper {
     display: flex;
     justify-content: space-between;
+
     @include media(0, $desktop) {
       align-items: center;
       padding-bottom: pxToRem(5);
       padding-top: pxToRem(2);
     }
+
     @include desktop {
       align-items: flex-end;
     }
+
     @include media($desktop, $desktop-extra) {
       padding-bottom: pxToRem(12);
       padding-top: pxToRem(6);
     }
+
     @include desktop-extra {
       padding-bottom: pxToRem(19);
       padding-top: pxToRem(7);
       gap: pxToRem(136);
     }
+
     .logo {
       display: block;
       flex: none;
+
       @if $isAnimationsEnabled {
         opacity: 0;
-        animation: appearance .3s .5s 1 forwards;
+        animation: appearance 0.3s 0.5s 1 forwards;
       }
+
       @include media(0, $desktop-extra) {
         padding: pxToRem(7) pxToRem(15);
       }
+
       @include desktop-extra {
         padding: 0;
         padding-bottom: pxToRem(3);
       }
-      picture, img {
+
+      picture,
+      img {
         height: 100%;
         width: 100%;
         @include media(0, $desktop-extra) {
@@ -110,48 +128,59 @@ html[dir=rtl] {
       }
     }
     .header__menu-wrapper {
-      @if $isAnimationsEnabled {
-        opacity: 0;
-        animation: menuTransition .5s 1 forwards cubic-bezier(0, 1, 0, 1);
-      }
       z-index: 1;
       display: block;
       left: 0;
       top: 0;
-      transition: .5s ease;
+      transition: 0.5s ease;
       transition-property: transform, opacity;
+
+      @if $isAnimationsEnabled {
+        opacity: 0;
+        animation: menuTransition 0.5s 1 forwards cubic-bezier(0, 1, 0, 1);
+      }
+
       @include media(0, $desktop) {
         position: fixed;
       }
+
       @include desktop {
         direction: inherit;
         position: relative;
       }
+
       @include media($desktop, $desktop-extra) {
         width: auto;
       }
+
       @include desktop-extra {
         width: 100%;
       }
+
       .header__menu {
         width: 100%;
         flex: none;
+
         @include dark-theme {
           border-right: 1px solid var(--border-color);
         }
+
         @include media(0, $desktop) {
           max-width: pxToRem(275);
-          box-shadow: pxToRem(0) pxToRem(0) pxToRem(18) pxToRem(10) rgba(0,0,0,0.3);
+          box-shadow: pxToRem(0) pxToRem(0) pxToRem(18) pxToRem(10) rgba(0, 0, 0, 0.3);
           height: 100vh;
           overflow: auto;
           padding-bottom: calc(77px + env(safe-area-inset-bottom));
+
           @include light-theme {
             background-color: var(--pallete-common-grey-100);
           }
+
           @include dark-theme {
             background-color: var(--pallete-common-grey-900);
           }
         }
+
         @include tablet {
           min-width: pxToRem(365);
         }
@@ -169,15 +198,19 @@ html[dir=rtl] {
           padding-bottom: 0;
           align-items: flex-end;
         }
+
         @include media($desktop, 1075) {
           gap: pxToRem(10);
         }
+
         @include media(1075, $desktop-extra) {
           gap: pxToRem(50);
         }
+
         @include desktop-extra {
           gap: pxToRem(28);
         }
+
         .header__menu-link-wrapper {
           display: flex;
           justify-content: flex-end;
@@ -198,12 +231,14 @@ html[dir=rtl] {
           }
         }
         .header__menu-list {
-          @include media(0, $desktop) {
-            display: block;
-          }
           margin-top: 0;
           z-index: 2;
           transition: 0.5s ease-in-out;
+
+          @include media(0, $desktop) {
+            display: block;
+          }
+
           @include desktop {
             display: flex;
             height: auto;
@@ -211,40 +246,48 @@ html[dir=rtl] {
             overflow: initial;
           }
 
-
           .header__menu-item {
             display: block;
+
             @include desktop {
               @if $isAnimationsEnabled {
                 opacity: 0;
-                transition: .2s ease-in;
+                transition: 0.2s ease-in;
+
                 &:nth-child(1) {
-                  animation: appearance .2s .75s forwards;
+                  animation: appearance 0.2s 0.75s forwards;
                 }
+
                 &:nth-child(2) {
-                  animation: appearance .2s .95s forwards;
+                  animation: appearance 0.2s 0.95s forwards;
                 }
+
                 &:nth-child(3) {
-                  animation: appearance .2s 1.15s forwards;
+                  animation: appearance 0.2s 1.15s forwards;
                 }
+
                 &:nth-child(4) {
-                  animation: appearance .2s 1.35s forwards;
+                  animation: appearance 0.2s 1.35s forwards;
                 }
+
                 &:nth-child(5) {
-                  animation: appearance .2s 1.55s forwards;
+                  animation: appearance 0.2s 1.55s forwards;
                 }
+
                 &:nth-child(6) {
-                  animation: appearance .2s 1.75s forwards;
+                  animation: appearance 0.2s 1.75s forwards;
                 }
+
                 &:nth-child(7) {
-                  animation: appearance .2s 1.95s forwards;
+                  animation: appearance 0.2s 1.95s forwards;
                 }
               }
               &:hover {
                 .dropdown__content {
                   display: block;
+
                   @if $isAnimationsEnabled {
-                    animation: dropdown 1.5s 0s cubic-bezier(.12, .70, .53, 1) forwards;
+                    animation: dropdown 1.5s 0s cubic-bezier(0.12, 0.7, 0.53, 1) forwards;
                   }
                 }
               }
@@ -253,6 +296,7 @@ html[dir=rtl] {
               color: var(--pallete-primary-main);
               position: relative;
               line-height: 1rem;
+
               @include media(0, $desktop) {
                 display: block;
                 font-weight: normal;
@@ -261,20 +305,25 @@ html[dir=rtl] {
                 padding-bottom: pxToRem(5.5);
                 padding-left: pxToRem(48);
               }
+
               @include media(0, $desktop-extra) {
                 font-size: pxToRem(15);
               }
+
               @include desktop {
                 font-weight: bold;
                 gap: pxToRem(4);
               }
+
               @include media($desktop, $desktop-extra) {
                 padding: pxToRem(15) pxToRem(6.5);
               }
+
               @include desktop-extra {
                 font-size: pxToRem(16);
                 padding: pxToRem(13) pxToRem(10.5);
               }
+
               &:hover {
                 color: var(--pallete-primary-light);
                 &::after {
@@ -294,6 +343,7 @@ html[dir=rtl] {
               @include desktop {
                 display: flex;
               }
+
               @include desktop-extra {
                 padding-right: pxToRem(12.5);
                 padding-left: pxToRem(12.5);
@@ -312,17 +362,20 @@ html[dir=rtl] {
       .contact-btn {
         color: var(--pallete-secondary-main);
         background-color: transparent;
+
         @include media(0, $desktop) {
           margin-left: pxToRem(46);
           margin-right: pxToRem(46);
           margin-top: pxToRem(26);
         }
+
         @include desktop {
+          margin: 0;
+
           @if $isAnimationsEnabled {
             opacity: 0;
-            animation: appearance .2s 2.15s forwards;
+            animation: appearance 0.2s 2.15s forwards;
           }
-          margin: 0;
         }
         &:hover {
           background-color: var(--pallete-secondary-main);
@@ -339,6 +392,7 @@ html[dir=rtl] {
         padding: pxToRem(17) pxToRem(25);
         display: block;
       }
+
       @include desktop {
         display: none;
       }
@@ -347,28 +401,35 @@ html[dir=rtl] {
         margin-top: pxToRem(8);
         margin-bottom: pxToRem(8);
         position: relative;
+
         @if $isAnimationsEnabled {
-          animation: appearance .2s 1s forwards;
+          animation: appearance 0.2s 1s forwards;
         }
-        &::before, &::after {
+
+        &::before,
+        &::after {
           content: "";
           position: absolute;
         }
+
         &::before {
           @if $isAnimationsEnabled {
-            animation: appearance .2s 1.2s forwards;
+            animation: appearance 0.2s 1.2s forwards;
           }
           top: pxToRem(-8);
         }
+        
         &::after {
           @if $isAnimationsEnabled {
-            animation: appearance .2s 1.4s forwards;
+            animation: appearance 0.2s 1.4s forwards;
           }
           bottom: pxToRem(-8);
         }
       }
-      
-      .header__burger-line, .header__burger-line::before, .header__burger-line::after {
+
+      .header__burger-line,
+      .header__burger-line::before,
+      .header__burger-line::after {
         display: block;
         width: pxToRem(26);
         height: pxToRem(4);
