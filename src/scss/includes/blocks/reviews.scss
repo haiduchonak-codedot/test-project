@@ -1,80 +1,140 @@
 .reviews {
   padding-top: pxToRem(47);
-  padding-bottom: pxToRem(40);
-  @include desktop-extra {
-    padding-bottom: pxToRem(96);
+  box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
+  border-radius: pxToRem(16);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include light-theme {
+    background-color: var(--pallete-common-grey-100);
   }
-  &__content {
-    background: #FFFFFF;
-    box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(29, 51, 107, 0.15);
-    border-radius: pxToRem(16);  
-    text-align: center;
+
+  @include dark-theme {
+    background-color: var(--pallete-commot-grey-900);
+    border: 1px solid var(--border-color);
+  }
+
+  @include media(0, $tablet) {
     padding: pxToRem(32) 0 pxToRem(54);
     max-width: pxToRem(320);
-    margin-left: auto;
-    margin-right: auto;
-    @include tablet {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: pxToRem(32);
-      max-width: pxToRem(898);
+  }
+
+  @include media(0, $desktop-extra) {
+    margin-top: pxToRem(50);
+  }
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: pxToRem(32);
+  }
+
+  @include media($tablet, $desktop-extra) {
+    max-width: 750px;
+  }
+
+  @include media(0, $desktop-extra) {
+    margin-bottom: pxToRem(40);
+  }
+
+  @include desktop-extra {
+    max-width: pxToRem(898);
+    margin-top: pxToRem(45);
+    margin-bottom: pxToRem(96);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    max-width: pxToRem(132);
+    min-height: pxToRem(74);
+
+    @include dark-theme {
+      filter: invert(0.86) hue-rotate(180deg);
     }
-    @include desktop {
-      margin: 0 auto;
-    }
-    .reviews__count {
+  }
+  .reviews__count {
+    display: flex;
+    justify-content: center;
+
+    @include media(0, $tablet) {
       margin-bottom: pxToRem(38);
-      display: flex;
-      justify-content: center;
       align-items: baseline;
       gap: pxToRem(8);
-      @include tablet {
-        margin-bottom: 0;
-        align-items: center;
-        gap: pxToRem(35);
-      }
-      .reviews__rating {
-        &::before {
-          content: '★★★★★';
-          font-size: pxToRem(24);
-          --rating: 4.5;
-          --percent: calc((var(--rating) / 5) * 100%);
-          background: linear-gradient(90deg, var(--pallete-secondary-main) var(--percent), var(--empty-star-color) var(--percent));
-          background-clip: text;
-          -moz-background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          @include tablet {
-            margin-right: pxToRem(-12);
-          }
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+      align-items: center;
+      gap: pxToRem(35);
+    }
+
+    .reviews__rating {
+      &::before {
+        content: "★★★★★";
+        font-size: pxToRem(24);
+        --rating: 4.5;
+        --percent: calc((var(--rating) / 5) * 100%);
+        background: linear-gradient(
+          90deg,
+          var(--pallete-secondary-main) var(--percent),
+          var(--empty-star-color) var(--percent)
+        );
+        background-clip: text;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include tablet {
+          margin-right: pxToRem(-12);
         }
       }
     }
-    .reviews__img {
-      margin-bottom: pxToRem(22);
-      @include tablet {
-        margin-bottom: 0;
+
+    span {
+      @include light-theme {
+        color: var(--pallete-common-grey-900);
+      }
+
+      @include dark-theme {
+        color: var(--empty-star-color);
       }
     }
-    .reviews__text {
+
+    .reviews__grade {
       font-weight: bold;
       font-size: pxToRem(18);
     }
-    .reviews__button {
-      width: pxToRem(220);
-      padding: pxToRem(1) pxToRem(15);
-      background-color: var(--pallete-secondary-main);
-      color: #fff;
-      display: block;
+  }
+  .reviews__img img {
+    @include media(0, $tablet) {
+      margin-bottom: pxToRem(22);
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+  .reviews__button {
+    width: pxToRem(220);
+    padding: pxToRem(1) pxToRem(15);
+    background-color: var(--pallete-secondary-main);
+    color: #fff;
+    display: block;
+
+    @include media(0, $tablet) {
       margin: 0 auto;
-      &:hover {
-        background-color: transparent;
-        color: var(--pallete-secondary-main);
-      }
-      @include tablet {
-        margin: 0;
-      }
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: var(--pallete-secondary-main);
+    }
+    
+    @include tablet {
+      margin: 0;
     }
   }
 }
