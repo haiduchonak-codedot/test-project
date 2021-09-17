@@ -7,15 +7,16 @@ $base-size: 16;
 
 :root {
   // Colors
-  --pallete-secondary-main: #06B25F;
+  --pallete-secondary-main: #00672e;
   --pallete-secondary-light: #66d6a0;
   --pallete-common-grey-900: #242424;
   --pallete-common-grey-700: #4C4C4C;
   --pallete-common-grey-100: #FFFFFF;
   --empty-star-color: #E1E1E1;
   @media (prefers-color-scheme: light) {
-    --pallete-primary-main: #0D6EB7;
-    --pallete-primary-light: #00A4E8;
+    --pallete-primary-main: #0056b1;
+    // --pallete-primary-light: #00A4E8;
+    --pallete-primary-light: #0075db;
     --pallete-primary-dark: #194484;
     --pallete-proposal-background-light: #276ED8;
     --pallete-sevices-cards-background-light: #F4F8FD;
