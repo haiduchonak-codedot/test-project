@@ -83,10 +83,12 @@ html[dir=rtl] {
       gap: pxToRem(136);
     }
     .logo {
-      opacity: 0;
       display: block;
       flex: none;
-      animation: appearance .3s .5s 1 forwards;
+      @if $isAnimationsEnabled {
+        opacity: 0;
+        animation: appearance .3s .5s 1 forwards;
+      }
       @include media(0, $desktop-extra) {
         padding: pxToRem(7) pxToRem(15);
       }
@@ -108,8 +110,10 @@ html[dir=rtl] {
       }
     }
     .header__menu-wrapper {
-      opacity: 0;
-      animation: menuTransition .5s 1 forwards cubic-bezier(0, 1, 0, 1);
+      @if $isAnimationsEnabled {
+        opacity: 0;
+        animation: menuTransition .5s 1 forwards cubic-bezier(0, 1, 0, 1);
+      }
       z-index: 1;
       display: block;
       left: 0;
@@ -211,33 +215,37 @@ html[dir=rtl] {
           .header__menu-item {
             display: block;
             @include desktop {
-              opacity: 0;
-              transition: .2s ease-in;
-              &:nth-child(1) {
-                animation: appearance .2s .75s forwards;
-              }
-              &:nth-child(2) {
-                animation: appearance .2s .95s forwards;
-              }
-              &:nth-child(3) {
-                animation: appearance .2s 1.15s forwards;
-              }
-              &:nth-child(4) {
-                animation: appearance .2s 1.35s forwards;
-              }
-              &:nth-child(5) {
-                animation: appearance .2s 1.55s forwards;
-              }
-              &:nth-child(6) {
-                animation: appearance .2s 1.75s forwards;
-              }
-              &:nth-child(7) {
-                animation: appearance .2s 1.95s forwards;
+              @if $isAnimationsEnabled {
+                opacity: 0;
+                transition: .2s ease-in;
+                &:nth-child(1) {
+                  animation: appearance .2s .75s forwards;
+                }
+                &:nth-child(2) {
+                  animation: appearance .2s .95s forwards;
+                }
+                &:nth-child(3) {
+                  animation: appearance .2s 1.15s forwards;
+                }
+                &:nth-child(4) {
+                  animation: appearance .2s 1.35s forwards;
+                }
+                &:nth-child(5) {
+                  animation: appearance .2s 1.55s forwards;
+                }
+                &:nth-child(6) {
+                  animation: appearance .2s 1.75s forwards;
+                }
+                &:nth-child(7) {
+                  animation: appearance .2s 1.95s forwards;
+                }
               }
               &:hover {
                 .dropdown__content {
                   display: block;
-                  animation: dropdown 1.5s 0s cubic-bezier(.12, .70, .53, 1) forwards;
+                  @if $isAnimationsEnabled {
+                    animation: dropdown 1.5s 0s cubic-bezier(.12, .70, .53, 1) forwards;
+                  }
                 }
               }
             }
@@ -302,7 +310,6 @@ html[dir=rtl] {
       }
 
       .contact-btn {
-        animation: appearance .2s 2.15s forwards;
         color: var(--pallete-secondary-main);
         background-color: transparent;
         @include media(0, $desktop) {
@@ -311,7 +318,10 @@ html[dir=rtl] {
           margin-top: pxToRem(26);
         }
         @include desktop {
-          opacity: 0;
+          @if $isAnimationsEnabled {
+            opacity: 0;
+            animation: appearance .2s 2.15s forwards;
+          }
           margin: 0;
         }
         &:hover {
@@ -337,17 +347,23 @@ html[dir=rtl] {
         margin-top: pxToRem(8);
         margin-bottom: pxToRem(8);
         position: relative;
-        animation: appearance .2s 1s forwards;
+        @if $isAnimationsEnabled {
+          animation: appearance .2s 1s forwards;
+        }
         &::before, &::after {
           content: "";
           position: absolute;
         }
         &::before {
-          animation: appearance .2s 1.2s forwards;
+          @if $isAnimationsEnabled {
+            animation: appearance .2s 1.2s forwards;
+          }
           top: pxToRem(-8);
         }
         &::after {
-          animation: appearance .2s 1.4s forwards;
+          @if $isAnimationsEnabled {
+            animation: appearance .2s 1.4s forwards;
+          }
           bottom: pxToRem(-8);
         }
       }
