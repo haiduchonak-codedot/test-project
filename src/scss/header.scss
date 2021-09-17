@@ -29,6 +29,7 @@ html[dir="rtl"] {
     transform: translateX(0);
   }
 }
+
 #main:target {
   @include media(0, $desktop) {
     overflow: hidden;
@@ -60,6 +61,48 @@ html[dir="rtl"] {
 @include dark-theme {
   .page-wrapper {
     background-color: var(--pallete-common-grey-900);
+  }
+}
+
+#animations-loading:target {
+  .logo {
+    opacity: 0;
+    animation: appearance 0.3s 0.5s 1 forwards;
+  }
+
+  .header__menu-item {
+    @include desktop {
+      opacity: 0;
+      transition: 0.2s ease-in;
+
+      &:nth-child(1) {
+        animation: appearance 0.2s 0.75s forwards;
+      }
+
+      &:nth-child(2) {
+        animation: appearance 0.2s 0.95s forwards;
+      }
+
+      &:nth-child(3) {
+        animation: appearance 0.2s 1.15s forwards;
+      }
+
+      &:nth-child(4) {
+        animation: appearance 0.2s 1.35s forwards;
+      }
+
+      &:nth-child(5) {
+        animation: appearance 0.2s 1.55s forwards;
+      }
+
+      &:nth-child(6) {
+        animation: appearance 0.2s 1.75s forwards;
+      }
+
+      &:nth-child(7) {
+        animation: appearance 0.2s 1.95s forwards;
+      }
+    }
   }
 }
 
@@ -99,11 +142,6 @@ html[dir="rtl"] {
       display: block;
       flex: none;
 
-      @if $isAnimationsEnabled {
-        opacity: 0;
-        animation: appearance 0.3s 0.5s 1 forwards;
-      }
-
       @include media(0, $desktop-extra) {
         padding: pxToRem(7) pxToRem(15);
       }
@@ -134,11 +172,8 @@ html[dir="rtl"] {
       top: 0;
       transition: 0.5s ease;
       transition-property: transform, opacity;
-
-      @if $isAnimationsEnabled {
-        opacity: 0;
-        animation: menuTransition 0.5s 1 forwards cubic-bezier(0, 1, 0, 1);
-      }
+      opacity: 0;
+      animation: menuTransition 0.5s 1 forwards cubic-bezier(0, 1, 0, 1);
 
       @include media(0, $desktop) {
         position: fixed;
@@ -230,6 +265,7 @@ html[dir="rtl"] {
             }
           }
         }
+
         .header__menu-list {
           margin-top: 0;
           z-index: 2;
@@ -250,38 +286,6 @@ html[dir="rtl"] {
             display: block;
 
             @include desktop {
-              @if $isAnimationsEnabled {
-                opacity: 0;
-                transition: 0.2s ease-in;
-
-                &:nth-child(1) {
-                  animation: appearance 0.2s 0.75s forwards;
-                }
-
-                &:nth-child(2) {
-                  animation: appearance 0.2s 0.95s forwards;
-                }
-
-                &:nth-child(3) {
-                  animation: appearance 0.2s 1.15s forwards;
-                }
-
-                &:nth-child(4) {
-                  animation: appearance 0.2s 1.35s forwards;
-                }
-
-                &:nth-child(5) {
-                  animation: appearance 0.2s 1.55s forwards;
-                }
-
-                &:nth-child(6) {
-                  animation: appearance 0.2s 1.75s forwards;
-                }
-
-                &:nth-child(7) {
-                  animation: appearance 0.2s 1.95s forwards;
-                }
-              }
               &:hover {
                 .dropdown__content {
                   display: block;
@@ -418,7 +422,7 @@ html[dir="rtl"] {
           }
           top: pxToRem(-8);
         }
-        
+
         &::after {
           @if $isAnimationsEnabled {
             animation: appearance 0.2s 1.4s forwards;
