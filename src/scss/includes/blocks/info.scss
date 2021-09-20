@@ -1,3 +1,10 @@
+#animations-loading:target {
+  .info__content {
+    opacity: 0;
+    animation: slideIn 0.4s 1.95s forwards;
+  }
+}
+
 .info__wrapper {
   @include media(0, $desktop) {
     margin-left: pxToRem(3);
@@ -25,11 +32,6 @@
   }
 
   .info__content {
-    @if $isAnimationsEnabled {
-      opacity: 0;
-      animation: slideIn 0.4s 1.95s forwards;
-    }
-
     @include media(0, $desktop) {
       padding-bottom: pxToRem(61);
     }
@@ -62,7 +64,7 @@
       &:last-child {
         margin-bottom: 0;
       }
-      
+
       @include desktop {
         max-width: pxToRem(553);
       }
