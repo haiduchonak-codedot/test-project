@@ -1,17 +1,11 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
-  // backface-visibility: hidden;
-  // -webkit-backface-visibility: hidden;
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  // &:not(iframe) {
-  //   transition: 0.25s ease;
-  //   transition-property: background, border, color, left, margin, padding, right, opacity;
-  // }
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
 }
@@ -33,47 +27,13 @@ ul {
   list-style: none;
 }
 
-video,
-audio {
-  max-width: 100%;
-  height: auto;
-}
-
 label,
 select {
   cursor: pointer;
 }
 
-label[for] {
-  cursor: pointer;
-}
-
-abbr[title],
-acronym[title],
-dfn {
-  cursor: help;
-}
-
 textarea {
   resize: vertical;
-}
-
-[disabled] {
-  cursor: default;
-}
-
-[aria-disabled="true"] {
-  cursor: default;
-  pointer-events: none;
-}
-
-.no-js button[type="button"] {
-  display: none;
-}
-
-sub,
-sup {
-  line-height: 0;
 }
 
 img {
@@ -81,6 +41,7 @@ img {
 }
 
 body {
+  font-family: $font-family-text;
   min-height: 100vh;
   transition: 0s;
   overscroll-behavior: contain;
@@ -159,14 +120,10 @@ select {
   cursor: pointer;
 }
 
-strong {
-  font-weight: 600;
-}
-
 h1,
 h2,
 h3 {
-  font-family: "Harabara", $sans-serif;
+  font-family: $font-family-heading;
   font-weight: normal;
 }
 
@@ -225,9 +182,10 @@ h3,
 
 h4,
 .h4 {
-  font-family: "Montserrat", $sans-serif;
+  font-family: $font-family-text;
   font-weight: bold;
   line-height: pxToRem(28);
+  letter-spacing: 0;
   color: var(--pallete-common-grey-900);
   @include dark-theme {
     color: var(--empty-star-color);
@@ -240,9 +198,14 @@ h4,
   }
 }
 
-p {
-  font-family: "Montserrat", $sans-serif;
+p,
+span {
+  // font-family: $font-family-text;
   font-weight: normal;
+  font-style: normal;
+}
+
+p {
   line-height: pxToRem(26);
   color: var(--pallete-common-grey-900);
   @include dark-theme {
@@ -250,14 +213,8 @@ p {
   }
 }
 
-span {
-  font-family: "Montserrat", $sans-serif;
-  font-style: normal;
-  font-weight: normal;
-}
-
 .btn {
-  font-family: "Montserrat", $sans-serif;
+  font-family: $font-family-text;
   font-size: pxToRem(16);
   line-height: pxToRem(36);
   font-weight: bold;

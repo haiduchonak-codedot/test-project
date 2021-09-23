@@ -248,7 +248,6 @@
       .footer__sublist {
         .footer__subitem {
           &-link {
-            font-family: "Montserrat", $sans-serif;
             font-style: normal;
             font-weight: normal;
             display: inline-flex;
@@ -313,7 +312,6 @@
 
     .footer__copyright {
       margin: 0;
-      font-family: "Open Sans", $sans-serif;
       padding-left: pxToRem(19);
       padding-right: pxToRem(19);
       line-height: 1rem;
@@ -363,7 +361,6 @@
       }
 
       .footer__legal-link {
-        font-family: "Open Sans", $sans-serif;
         display: block;
         padding: pxToRem(8) pxToRem(9);
         color: var(--pallete-common-grey-700);
