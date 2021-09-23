@@ -44,7 +44,7 @@
     }
   }
   &::before {
-    -webkit-mask-image: url(../../../img/projectsUpperWave.svg);
+    -webkit-mask-image: url(../../../img/projects-upper-wave.svg);
     height: pxToRem(150);
     top: pxToRem(-148);
 
@@ -62,7 +62,7 @@
   }
 
   &::after {
-    -webkit-mask-image: url(../../../img/projectsLowerWave.svg);
+    -webkit-mask-image: url(../../../img/projects-lower-wave.svg);
     background-position: 0 0;
     -webkit-mask-size: 106% 104px;
     height: pxToRem(187);
