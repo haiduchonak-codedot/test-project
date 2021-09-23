@@ -223,7 +223,7 @@
       }
 
       &-field {
-        font-family: "Open Sans", $sans-serif;
+        font-family: $font-family-text;
         width: 100%;
         border: pxToRem(1) solid #d7d7d7;
         box-sizing: border-box;
@@ -232,7 +232,7 @@
         padding: pxToRem(10) pxToRem(16);
         color: var(--pallete-common-grey-900);
         &::placeholder {
-          font-family: "Open Sans", $sans-serif;
+          font-family: $font-family-text;
         }
       }
 
