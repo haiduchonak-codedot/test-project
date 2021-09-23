@@ -1,71 +1,137 @@
 .proposal {
-  background-color: $pallete-background;
-  margin-bottom: pxToRem(142);
-  margin-top: pxToRem(154);
-  padding-bottom: pxToRem(32);
   position: relative;
   text-align: center;
   z-index: 1;
-  @include tablet {
-    padding-top: pxToRem(20);
+
+  @include media(0, $desktop-extra) {
+    margin-bottom: pxToRem(145);
+    margin-top: pxToRem(63);
   }
+
   @include desktop-extra {
     margin-bottom: pxToRem(279);
-    margin-top: pxToRem(347);
-    padding: pxToRem(73) 0;
-    padding-bottom: pxToRem(74);
+    margin-top: pxToRem(212);
   }
-  &::before, &::after {
-    content: '';
+
+  svg:first-child {
+    margin-left: pxToRem(-50);
+
+    @include media(0, $desktop-extra) {
+      width: 126%;
+      margin-bottom: pxToRem(-6);
+      height: pxToRem(86);
+    }
+
+    path {
+      @include light-theme {
+        fill: var(--pallete-proposal-background-light);
+      }
+
+      @include dark-theme {
+        fill: var(--pallete-footer-background);
+      }
+    }
+
+    @include desktop-extra {
+      height: 129px;
+      margin-bottom: pxToRem(-6);
+      width: 104%;
+    }
+  }
+
+  &::after {
+    content: "";
     display: block;
     background-repeat: no-repeat;
     position: absolute;
     width: 100%;
     z-index: -1;
-  }
-  &::before {
-    content: '';
-    background-image: url(../../../img/upperWave.svg);
-    height: pxToRem(140);
-    background-position: pxToRem(-72) pxToRem(-9.5);
-    background-size: 136% 102px;
-    top: pxToRem(-91);
-    width: 100%;
-    @include desktop-extra {
-      background-position: 0 pxToRem(32.5);
-      background-size: 101% pxToRem(126);
-      top: pxToRem(-154);
-      height: pxToRem(351);
-    }
-  }
-  &::after {
-    content: '';
-    background-image: url(../../../img/lowerWave.svg);
     background-position: 0 0;
-    background-size: 100% pxToRem(61);
-    bottom: pxToRem(-139);
-    height: pxToRem(140);
+    -webkit-mask-image: url(../../../img/lowerWave.svg);
+    -webkit-mask-repeat: no-repeat;
+
+    @include light-theme {
+      background-color: var(--pallete-proposal-background-light);
+    }
+
+    @include dark-theme {
+      background-color: var(--pallete-footer-background);
+    }
+
+    @include media(0, $desktop-extra) {
+      -webkit-mask-size: 100% pxToRem(61);
+      background-size: 100% pxToRem(61);
+      bottom: pxToRem(-139);
+      height: pxToRem(140);
+    }
+
     @include desktop-extra {
-      background-position: 0 0;
-      background-repeat: no-repeat;
+      -webkit-mask-size: 100% pxToRem(154);
       background-size: 100% pxToRem(154);
       height: pxToRem(351);
       bottom: pxToRem(-345);
     }
   }
+  &__wrapper {
+    @include light-theme {
+      background-color: var(--pallete-proposal-background-light);
+    }
+
+    @include dark-theme {
+      background-color: var(--pallete-footer-background);
+    }
+
+    @include media(0, $tablet) {
+      padding-top: 7px;
+    }
+
+    @include media(0, $desktop-extra) {
+      padding-bottom: pxToRem(32);
+    }
+
+    @include media($tablet, $desktop-extra) {
+      padding-top: pxToRem(20);
+    }
+
+    @include desktop-extra {
+      padding: pxToRem(68) 0;
+      padding-bottom: pxToRem(74);
+    }
+  }
   &__title {
-    color: #fff;
     margin-top: 0;
-    margin-bottom: pxToRem(12);
+    @include light-theme {
+      color: var(--pallete-common-grey-100);
+    }
+
+    @include dark-theme {
+      color: var(--empty-star-color);
+    }
+
+    @include media(0, $desktop-extra) {
+      margin-bottom: pxToRem(12);
+    }
+
     @include desktop-extra {
       margin-bottom: pxToRem(17);
     }
   }
-  &__text {
-    color: #fff;
+  &__subtitle {
     margin-top: 0;
-    margin-bottom: pxToRem(23);
-    line-height: pxToRem(20);
+    
+    @include light-theme {
+      color: var(--pallete-common-grey-100);
+    }
+    
+    @include dark-theme {
+      color: var(--empty-star-color);
+    }
+    
+    @include media(0, $desktop-extra) {
+      margin-bottom: pxToRem(23);
+      line-height: pxToRem(20);
+    }
+
     @include desktop-extra {
       font-size: pxToRem(24);
       line-height: pxToRem(29);
@@ -73,11 +139,18 @@
     }
   }
   &__button {
-    color: $pallete-secondary-main;
-    background-color: #fff;
+    color: var(--pallete-secondary-main);
+
+    @include light-theme {
+      background-color: var(--pallete-common-grey-100);
+    }
+    @include dark-theme {
+      background-color: var(--empty-star-color);
+    }
+    
     &:hover {
-      background-color: $pallete-secondary-main;
-      color: #fff;
+      background-color: var(--pallete-secondary-main);
+      color: var(--pallete-common-grey-100);
     }
   }
 }

@@ -1,11 +1,40 @@
-body#main:not(:target) #main-menu {
-  transform: translateX(-110%);
+html[dir="rtl"] {
+  #main:target #main-menu {
+    @include media(0, $desktop) {
+      transform: translateX(calc(100vw - 100%));
+    }
+
+    @include desktop {
+      transform: translateX(0);
+    }
+  }
+
+  #main:not(:target) #main-menu {
+    @include media(0, $desktop) {
+      transform: translateX(calc(100vw + 10%));
+    }
+
+    @include desktop {
+      transform: translateX(0);
+    }
+  }
+}
+
+#main:not(:target) #main-menu {
+  @include media(0, $desktop) {
+    transform: translateX(-110%);
+  }
+
   @include desktop {
     transform: translateX(0);
   }
 }
-body#main:target {
-  overflow: hidden;
+
+#main:target {
+  @include media(0, $desktop) {
+    overflow: hidden;
+  }
+
   @include desktop {
     overflow: auto;
   }
@@ -14,11 +43,14 @@ body#main:target {
     transform: translateX(0);
     width: 100%;
     display: flex;
+
     @include desktop {
       background-color: transparent;
     }
-    .main-menu__backdrop {
+
+    .header__menu-backdrop {
       width: 100%;
+
       @include desktop {
         display: none;
       }
@@ -26,12 +58,84 @@ body#main:target {
   }
 }
 
+@include dark-theme {
+  .page-wrapper {
+    background-color: var(--pallete-common-grey-900);
+  }
+}
+
+#animations-loading:target {
+  .logo {
+    opacity: 0;
+    animation: appearance 0.3s 0.5s 1 forwards;
+  }
+
+  .header__menu-item {
+    @include desktop {
+      opacity: 0;
+      transition: 0.2s ease-in;
+
+      &:nth-child(1) {
+        animation: appearance 0.2s 0.75s forwards;
+      }
+
+      &:nth-child(2) {
+        animation: appearance 0.2s 0.95s forwards;
+      }
+
+      &:nth-child(3) {
+        animation: appearance 0.2s 1.15s forwards;
+      }
+
+      &:nth-child(4) {
+        animation: appearance 0.2s 1.35s forwards;
+      }
+
+      &:nth-child(5) {
+        animation: appearance 0.2s 1.55s forwards;
+      }
+
+      &:nth-child(6) {
+        animation: appearance 0.2s 1.75s forwards;
+      }
+
+      &:nth-child(7) {
+        animation: appearance 0.2s 1.95s forwards;
+      }
+    }
+
+    .burger {
+      .header__burger-line,
+      .header__burger-line::before,
+      .header__burger-line::after {
+        opacity: 0;
+      }
+      
+      .header__burger-line {
+        animation: appearance 0.2s 1s forwards;
+
+        &::before {
+          animation: appearance 0.2s 1.2s forwards;
+        }
+
+        &::after {
+          animation: appearance 0.2s 1.4s forwards;
+        }
+      }
+    }
+  }
+
+  .contact-btn {
+    @include desktop {
+      opacity: 0;
+      animation: appearance 0.2s 2.15s forwards;
+    }
+  }
+}
+
 .header {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: bold;
-  font-size: pxToRem(16);
-  line-height: pxToRem(36);
+  font-family: "Montserrat", $sans-serif;
+
   .container {
     padding: 0 pxToRem(15);
   }
@@ -39,59 +143,106 @@ body#main:target {
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    padding-bottom: pxToRem(5);
-    padding-top: pxToRem(2);
+
+    @include media(0, $desktop) {
+      align-items: center;
+      padding-bottom: pxToRem(5);
+      padding-top: pxToRem(2);
+    }
 
     @include desktop {
+      align-items: flex-end;
+    }
+
+    @include media($desktop, $desktop-extra) {
       padding-bottom: pxToRem(12);
       padding-top: pxToRem(6);
     }
+
     @include desktop-extra {
       padding-bottom: pxToRem(19);
       padding-top: pxToRem(7);
       gap: pxToRem(136);
     }
+
     .logo {
       display: block;
-      padding: pxToRem(7) pxToRem(15);
       flex: none;
+
+      @include media(0, $desktop-extra) {
+        padding: pxToRem(7) pxToRem(15);
+      }
+
       @include desktop-extra {
         padding: 0;
         padding-bottom: pxToRem(3);
       }
+
+      picture,
       img {
-        width: pxToRem(141);
-        height: pxToRem(38);
+        height: 100%;
+        width: 100%;
+        @include media(0, $desktop-extra) {
+          max-width: pxToRem(141);
+          max-height: pxToRem(38);
+        }
         @include desktop-extra {
-          width: pxToRem(208);
-          height: pxToRem(52);
+          max-width: pxToRem(208);
+          max-height: pxToRem(52);
         }
       }
     }
-    .header__main-menu-wrapper {
+    .header__menu-wrapper {
       z-index: 1;
       display: block;
       left: 0;
       top: 0;
-      position: fixed;
-      transition: .6s ease;
+      transition: 0.5s ease;
+      transition-property: transform, opacity;
+      opacity: 0;
+      animation: menuTransition 0.5s 1 forwards cubic-bezier(0, 1, 0, 1);
+
+      @include media(0, $desktop) {
+        position: fixed;
+      }
+
       @include desktop {
+        direction: inherit;
         position: relative;
+      }
+
+      @include media($desktop, $desktop-extra) {
         width: auto;
       }
+
       @include desktop-extra {
         width: 100%;
       }
-      .header__main-menu {
-        max-width: pxToRem(275);
+
+      .header__menu {
         width: 100%;
         flex: none;
-        box-shadow: pxToRem(14) 0 pxToRem(10) pxToRem(-7) rgba(0, 0, 0, 0.3);
-        height: 100vh;
-        overflow: auto;
-        background-color: #fff;
-        padding-bottom: calc(77px + env(safe-area-inset-bottom));
+
+        @include dark-theme {
+          border-right: 1px solid var(--border-color);
+        }
+
+        @include media(0, $desktop) {
+          max-width: pxToRem(275);
+          box-shadow: pxToRem(0) pxToRem(0) pxToRem(18) pxToRem(10) rgba(0, 0, 0, 0.3);
+          height: 100vh;
+          overflow: auto;
+          padding-bottom: calc(77px + env(safe-area-inset-bottom));
+
+          @include light-theme {
+            background-color: var(--pallete-common-grey-100);
+          }
+
+          @include dark-theme {
+            background-color: var(--pallete-common-grey-900);
+          }
+        }
+
         @include tablet {
           min-width: pxToRem(365);
         }
@@ -103,16 +254,18 @@ body#main:target {
           box-shadow: none;
           background-color: transparent;
           position: relative;
-          align-items: center;
           height: auto;
           justify-content: space-between;
-          gap: pxToRem(10);
           overflow: visible;
           padding-bottom: 0;
           align-items: flex-end;
         }
 
-        @include media-min(pxToRem(1075, em)) {
+        @include media($desktop, 1075) {
+          gap: pxToRem(10);
+        }
+
+        @include media(1075, $desktop-extra) {
           gap: pxToRem(50);
         }
 
@@ -120,88 +273,105 @@ body#main:target {
           gap: pxToRem(28);
         }
 
-        &-text {
-          display: block;
-          @include desktop {
-            display: none;
-          }
-        }
-
-        .main-menu__list {
-          display: block;
-          margin-top: 0;
-          z-index: 2;
-          transition: 0.5s ease-in-out;
-
-          @include desktop {
-            display: flex;
-            height: auto;
-            align-items: center;
-            padding: 0;
-            overflow: initial;
-          }
-
-          .main-menu__link-wrapper {
-            display: flex;
-            justify-content: flex-end;
-            .header__main-menu-text {
+        .header__menu-link-wrapper {
+          display: flex;
+          justify-content: flex-end;
+          .header__menu-text {
+            @include media(0, $desktop) {
               font-size: pxToRem(15);
               border: 0;
               padding: pxToRem(5) pxToRem(17);
               font-weight: normal;
               text-align: right;
-              color: $pallete-secondary-main;
+              color: var(--pallete-secondary-main);
               width: fit-content;
+              display: block;
+            }
+            @include desktop {
+              display: none;
             }
           }
+        }
 
-          .main-menu__item {
+        .header__menu-list {
+          margin-top: 0;
+          z-index: 2;
+          @include media(0, $desktop) {
+            transition: 0.5s ease-in-out;
             display: block;
+          }
+          
+          @include desktop {
+            transition: none;
+            display: flex;
+            height: auto;
+            align-items: center;
+            overflow: initial;
+          }
+
+          .header__menu-item {
+            display: block;
+
             @include desktop {
               &:hover {
                 .dropdown__content {
                   display: block;
+                  animation: dropdown 1.5s 0s cubic-bezier(0.12, 0.7, 0.53, 1) forwards;
                 }
               }
             }
-            .main-menu__link {
-              display: block;
-              font-size: pxToRem(15);
-              font-weight: normal;
-              color: $pallete-primary-main;
+            .header__menu-link {
+              color: var(--pallete-primary-main);
               position: relative;
-              padding-left: pxToRem(48);
               line-height: 1rem;
-              padding-top: pxToRem(5.5);
-              padding-bottom: pxToRem(5.5);
-              padding-right: pxToRem(35);
+
+              @include media(0, $desktop) {
+                display: block;
+                font-weight: normal;
+                padding-top: pxToRem(5.5);
+                padding-right: pxToRem(35);
+                padding-bottom: pxToRem(5.5);
+                padding-left: pxToRem(48);
+              }
+
+              @include media(0, $desktop-extra) {
+                font-size: pxToRem(15);
+              }
+
               @include desktop {
-                padding: pxToRem(15) pxToRem(6.5);
                 font-weight: bold;
+                gap: pxToRem(4);
               }
+
+              @include media($desktop, $desktop-extra) {
+                padding: pxToRem(15) pxToRem(6.5);
+              }
+
               @include desktop-extra {
-                padding: pxToRem(13) pxToRem(10.5);
                 font-size: pxToRem(16);
+                padding: pxToRem(13) pxToRem(10.5);
               }
+
               &:hover {
-                color: $pallete-primary-light;
+                color: var(--pallete-primary-light);
                 &::after {
-                  color: $pallete-primary-light;
+                  color: var(--pallete-primary-light);
                 }
-                .main-menu__item {
+                .header__menu-item {
                   &:first-child {
                     &::after {
-                      border-bottom: pxToRem(2) solid $pallete-primary-light;
-                      border-left: pxToRem(2) solid $pallete-primary-light;
+                      border-bottom: pxToRem(2) solid var(--pallete-primary-light);
+                      border-left: pxToRem(2) solid var(--pallete-primary-light);
                     }
                   }
                 }
               }
             }
-            a.main-menu__link.dropdown__menu-link {
+            a.header__menu-link.dropdown__menu-link {
               @include desktop {
                 display: flex;
               }
+
               @include desktop-extra {
                 padding-right: pxToRem(12.5);
                 padding-left: pxToRem(12.5);
@@ -209,85 +379,74 @@ body#main:target {
             }
           }
 
-          .main-menu__item::after {
+          .header__menu-item::after {
             width: 0;
             height: 0;
             border: 0;
-          }
-          .dropdown__content {
-            display: block;
-            border: 0;
-            box-shadow: none;
-            margin: 0;
-            padding: 0;
-            li.main-menu__item.dropdown {
-              &:last-child {
-                margin-right: 0;
-              }
-            }
-            .dropdown__item {
-              position: relative;
-            }
-            .dropdown__link {
-              font-size: pxToRem(13);
-              font-weight: normal;
-              display: block;
-              padding: pxToRem(3.75) pxToRem(35) pxToRem(3.75) pxToRem(66);
-              line-height: 1rem;
-              @include desktop {
-                font-weight: bold;
-                font-size: pxToRem(16);
-                padding: pxToRem(10) 0;
-              }
-            }
-            @include desktop {
-              border-top: initial;
-              display: none;
-              width: max-content;
-              position: absolute;
-              margin-left: pxToRem(11);
-              top: pxToRem(36);
-              padding: 0 pxToRem(16) pxToRem(16);
-              border-top: pxToRem(3) solid $pallete-primary-light;
-              box-shadow: pxToRem(2) pxToRem(4) pxToRem(16) rgba(158, 158, 158, 0.4);
-            }
           }
         }
       }
 
       .contact-btn {
-        color: $pallete-secondary-main;
-        background-color: #fff;
-        margin-left: pxToRem(46);
-        margin-top: pxToRem(26);
+        color: var(--pallete-secondary-main);
+        background-color: transparent;
+
+        @include media(0, $desktop) {
+          margin-left: pxToRem(46);
+          margin-right: pxToRem(46);
+          margin-top: pxToRem(26);
+        }
+
         @include desktop {
-          margin-left: 0;
-          margin-top: 0;
+          margin: 0;
         }
         &:hover {
-          background-color: $pallete-secondary-main;
-          color: $pallete-common-grey-100;
+          background-color: var(--pallete-secondary-main);
+          color: var(--pallete-common-grey-100);
         }
       }
     }
 
     .burger {
+      @include media(0, $desktop - 1) {
+        right: pxToRem(5);
+        top: pxToRem(3);
+        padding: pxToRem(17) pxToRem(25);
+        display: block;
+      }
+
       @include desktop {
         display: none;
       }
 
-      padding: pxToRem(15);
-      display: block;
-
       .header__burger-line {
+        margin-top: pxToRem(8);
+        margin-bottom: pxToRem(8);
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+        }
+
+        &::before {
+          top: pxToRem(-8);
+        }
+
+        &::after {
+          bottom: pxToRem(-8);
+        }
+      }
+
+      .header__burger-line,
+      .header__burger-line::before,
+      .header__burger-line::after {
+        display: block;
         width: pxToRem(26);
         height: pxToRem(4);
-        background-color: $pallete-primary-dark;
-        margin-bottom: pxToRem(4);
+        background-color: var(--pallete-primary-dark);
         border-radius: pxToRem(2);
-        &:last-child {
-          margin-bottom: 0;
-        }
       }
     }
   }

@@ -1,60 +1,94 @@
 .projects {
-  .container {
-    position: relative;
-  }
-  margin-top: pxToRem(234);
-  padding-bottom: pxToRem(90);
-  margin-bottom: pxToRem(130);
-  background-color: #f6f9fd;
   position: relative;
-  z-index: 1;
+  @include light-theme {
+    background-color: var(--pallete-projects-background-light);
+  }
+
+  @include dark-theme {
+    background-color: var(--pallete-projects-background-dark);
+  }
+
+  @include media(0, $desktop-extra) {
+    margin-top: pxToRem(237);
+    padding-bottom: pxToRem(90);
+    margin-bottom: pxToRem(130);
+  }
+
   @include desktop-extra {
     margin-top: pxToRem(212);
     z-index: 0;
-    padding-top: pxToRem(62);
+    padding-top: pxToRem(56);
     margin-bottom: pxToRem(183);
     padding-bottom: pxToRem(130);
   }
-  &::before, &::after {
-    content: '';
+
+  .container {
+    position: relative;
+  }
+
+  &::before,
+  &::after {
+    content: "";
     position: absolute;
     display: block;
     width: 100%;
     background-repeat: no-repeat;
-    z-index: -1;
+    -webkit-mask-repeat: no-repeat;
+    z-index: 1;
+    @include light-theme {
+      background-color: var(--pallete-projects-background-light);
+    }
+
+    @include dark-theme {
+      background-color: var(--pallete-projects-background-dark);
+    }
   }
   &::before {
-    background-image: url(../../../img/projectsUpperWave.svg);
-    background-position: pxToRem(-40) pxToRem(8);
-    background-size: 140% pxToRem(154);
+    -webkit-mask-image: url(../../../img/projectsUpperWave.svg);
     height: pxToRem(150);
-    top: pxToRem(-150);
+    top: pxToRem(-148);
+
+    @include media(0, $desktop-extra) {
+      background-position: 0 pxToRem(8);
+      background-size: 101% 100%;
+      -webkit-mask-size: 124% 100%;
+    }
+
     @include desktop-extra {
       background-position: 0 pxToRem(8);
       background-size: 101% 100%;
+      -webkit-mask-size: 101% 100%;
     }
   }
+
   &::after {
-    background-image: url(../../../img/projectsLowerWave.svg);
+    -webkit-mask-image: url(../../../img/projectsLowerWave.svg);
     background-position: 0 0;
-    background-size: 106% 104px;
-    height: pxToRem(185);
+    -webkit-mask-size: 106% 104px;
+    height: pxToRem(187);
     bottom: pxToRem(-184);
+
     @include desktop-extra {
       background-size: 102% pxToRem(144);
     }
   }
 
   &__title {
-    margin-bottom: pxToRem(59);
+    @include media(0, $desktop-extra) {
+      margin-bottom: pxToRem(59);
+    }
+
     @include desktop-extra {
-      margin-bottom: pxToRem(91);
+      margin-bottom: pxToRem(83);
     }
   }
 
   .slider {
     &__arrow {
-      display: none;
+      @include media(0, $desktop) {
+        display: none;
+      }
+
       @include desktop {
         display: block;
         cursor: pointer;
@@ -66,7 +100,9 @@
         border-radius: 0;
         top: calc(56% - 15px);
         background-color: transparent;
-        &::before, &::after {
+
+        &::before,
+        &::after {
           content: "";
           position: absolute;
           display: block;
@@ -79,30 +115,37 @@
     }
     .left-arrow {
       left: 6%;
+
       @include media-min($desktop-extra-large) {
         left: -4.4%;
       }
+
       &::before {
         left: 0;
         bottom: pxToRem(16);
         transform: rotate(48deg);
       }
+
       &::after {
         top: pxToRem(14);
-        left:0;
+        left: 0;
         transform: rotate(-45deg);
       }
     }
+
     .right-arrow {
       right: 6%;
+
       @include media-min($desktop-extra-large) {
         right: -4.4%;
       }
+
       &::before {
         bottom: pxToRem(16);
         right: pxToRem(3);
         transform: rotate(133deg);
       }
+
       &::after {
         right: pxToRem(2);
         top: pxToRem(13.5);
@@ -112,71 +155,84 @@
 
     &__content {
       display: flex;
-      flex-direction: column;
       align-items: center;
       scrollbar-width: none;
-      gap: pxToRem(40);
+
+      @include media(0, $desktop) {
+        flex-direction: column;
+        gap: pxToRem(40);
+      }
+
       &::-webkit-scrollbar {
         width: 0;
       }
+
       &::-moz-scrollbar {
         width: 0;
       }
+
       @include desktop {
         overflow: auto;
         flex-direction: row;
         gap: pxToRem(80);
         width: 80%;
         padding: pxToRem(25);
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
       }
+
       @include media-min($desktop-extra-large) {
         width: 100%;
       }
+
       .slider__item {
         overflow: hidden;
         position: relative;
-        background: #FFFFFF;
-        box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(29, 51, 107, 0.15);
+        box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
         border-radius: pxToRem(16);
-        max-width: pxToRem(320);
+
+        @include light-theme {
+          background-color: var(--pallete-common-grey-100);
+        }
+
+        @include dark-theme {
+          background-color: var(--pallete-common-grey-900);
+        }
+
+        @include media(0, $desktop-extra) {
+          max-width: pxToRem(320);
+        }
+
         @include desktop {
           flex: none;
           margin-bottom: 0;
-          &:last-child {
-            margin-right: 0;
-          }
         }
+
         @include desktop-extra {
           max-width: pxToRem(400);
           min-height: pxToRem(438);
         }
-        &:last-child {
-          margin-bottom: 0;
-        }
 
-        &-img-wrapper {
+        &-wrapper {
           position: relative;
           max-width: pxToRem(400);
-          // max-height: pxToRem(280);
-          // min-height: pxToRem(280);
-          
           max-height: pxToRem(224);
           overflow: hidden;
           display: flex;
           align-items: center;
           width: 100%;
           height: 100%;
-          @include media-min($mobile-extra-small) {
-            min-height: pxToRem(224);
-          }
+
           @include desktop-extra {
             min-height: pxToRem(280);
           }
+
+          picture,
           img {
             width: 100%;
             height: 100%;
             object-fit: contain;
+            transition: 0.25s ease;
           }
         }
 
@@ -186,22 +242,27 @@
           height: 100%;
           border-radius: pxToRem(16);
           z-index: 1;
+
+          &:hover ~ .slider__item-wrapper > .slider__item-img > img {
+            transform: scale(1.1);
+          }
         }
-  
+
         &-content {
           padding: pxToRem(16) pxToRem(13) pxToRem(16);
+
           @include desktop-extra {
             padding-top: pxToRem(24);
           }
+
           .slider__item-title {
             margin: 0 0 pxToRem(13);
-            letter-spacing: 0.05em;
-            font-size: pxToRem(18);
-            @include desktop-extra {
-              font-size: pxToRem(24);
+            
+            @include media(0, $desktop-extra) {
+              font-size: pxToRem(18);
             }
           }
-    
+
           .slider__item-text {
             @include desktop-extra {
               width: 98%;

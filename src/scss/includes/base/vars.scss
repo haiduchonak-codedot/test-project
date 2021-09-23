@@ -1,36 +1,53 @@
 @function pxToRem($size, $postfix: rem) {
-  // @return $size / $base-size * 1 + $postfix;
-  @return $size + px
+  @return $size / $base-size * 1 + $postfix;
 }
 
 $base-size: 16;
 
-// Colors
-$pallete-primary-main: #0D6EB7;
-$pallete-primary-light: #00A4E8;
-$pallete-primary-dark: #194484;
-$pallete-background: #276ED8;
-$pallete-secondary-main: #06B25F;
-$pallete-secondary-light: #66d6a0;
-$pallete-common-grey-900: #242424;
-$pallete-common-grey-700: #4C4C4C;
-$pallete-common-grey-100: #FFFFFF;
-$border-radius: 6px;
+:root {
+  --pallete-secondary-main: #00672e;
+  --pallete-secondary-light: #66d6a0;
+  --pallete-common-grey-900: #242424;
+  --pallete-common-grey-700: #4c4c4c;
+  --pallete-common-grey-100: #ffffff;
+  --empty-star-color: #e1e1e1;
 
-$color-black: #1a1a1a;
-$color-red: #f2571f;
+  // Main colors for light theme
+  @media (prefers-color-scheme: light) {
+    --pallete-primary-main: #0056b1;
+    --pallete-primary-light: #0075db;
+    --pallete-primary-dark: #194484;
+    --pallete-proposal-background-light: #276ed8;
+    --pallete-sevices-cards-background-light: #f4f8fd;
+    --pallete-projects-background-light: #f6f9fd;
+  }
+
+  // Main colors for dark theme
+  @media (prefers-color-scheme: dark) {
+    --pallete-primary-main: #1b9dff;
+    --pallete-primary-light: #04b6ff;
+    --pallete-primary-dark: #0a54c3;
+    --border-color: #353434;
+    --pallete-sevices-cards-background-dark: #242932;
+    --pallete-services-card-selected: #151414;
+    --pallete-footer-background: #112b52;
+    --pallete-projects-background-dark: #353535;
+  }
+
+  --border-radius: 6px;
+}
 
 // Media queries
-$desktop-extra-large: pxToRem(1600, em);
-$desktop-extra: pxToRem(1280, em);
-$desktop: pxToRem(992, em);
-$tablet: pxToRem(768, em);
-$mobile: pxToRem(576, em);
+$desktop-extra-large: 1600;
+$desktop-extra: 1280;
+$desktop: 992;
+$tablet: 768;
+$mobile: 576;
 
-$mobile-middle: pxToRem(475, em);
-$mobile-small: pxToRem(375, em);
-$mobile-extra-small: pxToRem(340, em);
+$mobile-small: 375;
+$mobile-extra-small: 340;
 
-//rating in stars for reviews section
-$star-color: #E1E1E1;
-$star-fill-color: $pallete-secondary-main;
+// Main alternative fonts
+$sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+  "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+  "Noto Color Emoji";

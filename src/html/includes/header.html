@@ -1,92 +1,105 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, minimum-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="stanassets">
+    <meta property="og:description" content="vr app development">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="#">
+    <meta property="og:site_name" content="stanassets.com">
+    <meta name="description" content="vr app development">
     <title><%=title%></title>
-    <link rel="stylesheet" href="css/main.min.css" />
-    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link rel="preload" as="style" href="css/main.min.css"/>
+    <link rel="preload" as="font" href="fonts/Montserrat/Montserrat-Bold.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="fonts/Montserrat/Montserrat-Regular.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="fonts/Montserrat/Montserrat-SemiBold.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="fonts/Harabara/Harabara.woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="fonts/OpenSans/OpenSans-Regular.woff2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.min.css"/>    
+    <link rel="shortcut icon" href="favicon/favicon.ico"/>
   </head>
   <body id="main">
-    <div class="page-wrapper">
+    <div class="page-wrapper" id="animations-loading">
       <header class="header">
         <div class="container">
           <div class="header__wrapper">
-            <a href="#" class="logo">
+            <a aria-label="logo" href="#" class="logo">
               <picture>
-                <source media="(max-width: 1279px)" srcset="../../img/logo-208w.png">
-                <source media="(min-width: 1280px)" srcset="../../img/logo-416w.png">
-                <img src="../img/logo-416w" alt="logo" class="logo__icon">
+                <source srcset="../../img/logo@1x.webp 1x,
+                                ../../img/logo@2x.webp 2x" type="image/webp"> 
+                <img src="../../img/logo@1x.png" srcset="../../img/logo@2x.png 2x" alt="logo">
               </picture>
             </a>
-            <a class="burger" id="hamburger" href="#main">
-              <div class="header__burger-line" id="line1"></div>
-              <div class="header__burger-line" id="line2"></div>
-              <div class="header__burger-line" id="line3"></div>
+            <a aria-label="burger menu link" class="burger" id="hamburger" href="#main">
+              <span class="header__burger-line"></span>
             </a>
-            <div class="header__main-menu-wrapper" id="main-menu">
-              <nav class="header__main-menu">
-                <ul class="main-menu__list" id="menu">
-                  <div class="main-menu__link-wrapper">
-                    <a class="header__main-menu-text" href="#">close</a>
+            <div class="header__menu-wrapper" id="main-menu">
+              <div class="header__menu">
+                <nav>
+                  <div class="header__menu-link-wrapper">
+                    <a class="header__menu-text" href="#">close</a>
                   </div>
-                  <li class="main-menu__item dropdown">
-                    <a href="#main" class="main-menu__link dropdown__menu-link">
-                      SERVICES
-                    </a>
-                    <ul class="dropdown__content">
-                      <li class="dropdown__item"><a href="" class="dropdown__link">MOBILE APPLICATION DEVELOPMENT</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">GAME DEVELOPMENT OUTSOURCING</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">VR APP DEVELOPMENT</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">DEDICATED DEVELOPERS</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">SDK DEVELOPMENT</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">3D MODELLING SERVICES</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">AR APP DEVELOPMENT</a></li>
-                    </ul>
-                  </li>
-                  <li class="main-menu__item dropdown">
-                    <a href="#main" class="main-menu__link dropdown__menu-link">
-                      TECHNOLOGIES
-                    </a>
-                    <ul class="dropdown__content">
-                      <li class="dropdown__item"><a href="" class="dropdown__link">ANDROID</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">IOS</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">UNITY</a></li>
-                    </ul>
-                  </li>
-                  <li class="main-menu__item">
-                    <a href="" class="main-menu__link">
-                      PRODUCTS
-                    </a>
-                  </li>
-                  <li class="main-menu__item">
-                    <a href="" class="main-menu__link">
-                      PORTFOLIO
-                    </a>
-                  </li>
-                  <li class="main-menu__item">
-                    <a href="" class="main-menu__link">
-                      BLOG
-                    </a>
-                  </li>
-                  <li class="main-menu__item dropdown">
-                    <a href="#main" class="main-menu__link dropdown__menu-link">
-                      ABOUT US
-                    </a>
-                    <ul class="dropdown__content">
-                      <li class="dropdown__item"><a href="" class="dropdown__link">CONTACTS</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">TEAM</a></li>
-                      <li class="dropdown__item"><a href="" class="dropdown__link">JOIN THE TEAM</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <button href="#" class="btn contact-btn">
+                  <ul class="header__menu-list" id="menu">
+                    <li class="header__menu-item dropdown">
+                      <a href="#main" class="header__menu-link dropdown__menu-link">
+                        SERVICES
+                      </a>
+                      <ul class="dropdown__content">
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">MOBILE APPLICATION DEVELOPMENT</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">GAME DEVELOPMENT OUTSOURCING</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">VR APP DEVELOPMENT</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">DEDICATED DEVELOPERS</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">SDK DEVELOPMENT</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">3D MODELLING SERVICES</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">AR APP DEVELOPMENT</a></li>
+                      </ul>
+                    </li>
+                    <li class="header__menu-item dropdown">
+                      <a href="#main" class="header__menu-link dropdown__menu-link">
+                        TECHNOLOGIES
+                      </a>
+                      <ul class="dropdown__content">
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">ANDROID</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">IOS</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">UNITY</a></li>
+                      </ul>
+                    </li>
+                    <li class="header__menu-item">
+                      <a href="#" class="header__menu-link">
+                        PRODUCTS
+                      </a>
+                    </li>
+                    <li class="header__menu-item">
+                      <a href="#" class="header__menu-link">
+                        PORTFOLIO
+                      </a>
+                    </li>
+                    <li class="header__menu-item">
+                      <a href="#" class="header__menu-link">
+                        BLOG
+                      </a>
+                    </li>
+                    <li class="header__menu-item dropdown">
+                      <a href="#main" class="header__menu-link dropdown__menu-link">
+                        ABOUT US
+                      </a>
+                      <ul class="dropdown__content">
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">CONTACTS</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">TEAM</a></li>
+                        <li class="dropdown__item"><a href="#" class="dropdown__link">JOIN THE TEAM</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <button class="btn contact-btn">
                   CONTACT US
                 </button>
-              </nav>
-              <a href="#" class="main-menu__backdrop"></a>
+              </div>
+              <a aria-label="close menu" href="#" class="header__menu-backdrop"></a>
             </div>
+          </div>
         </div>
       </header>
       

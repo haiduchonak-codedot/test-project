@@ -1,15 +1,19 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
+  // backface-visibility: hidden;
+  // -webkit-backface-visibility: hidden;
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  &:not(iframe) {
-    transition: 0.25s ease;
-    transition-property: background, border, color, left, margin, padding, right, opacity;
-  }
+  // &:not(iframe) {
+  //   transition: 0.25s ease;
+  //   transition-property: background, border, color, left, margin, padding, right, opacity;
+  // }
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
 }
 
 html,
@@ -18,8 +22,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-body
 
 input[type="submit"]:focus {
   outline: none;
@@ -31,7 +33,6 @@ ul {
   list-style: none;
 }
 
-img,
 video,
 audio {
   max-width: 100%;
@@ -39,8 +40,6 @@ audio {
 }
 
 label,
-button,
-input,
 select {
   cursor: pointer;
 }
@@ -84,19 +83,12 @@ img {
 body {
   min-height: 100vh;
   transition: 0s;
-  color: $color-black;
-  overscroll-behavior: none;
+  overscroll-behavior: contain;
   scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
 
   &.fixed {
     overflow: hidden;
   }
-}
-
-::selection {
-  color: white;
-  background: $color-red;
 }
 
 input[type="text"],
@@ -112,7 +104,7 @@ textarea {
     outline: none;
   }
 
-  @include placeholder-color (#A9A9A9);
+  @include placeholder-color(#a9a9a9);
 
   &.not-valid {
     border-color: #f00;
@@ -124,7 +116,7 @@ select {
 
   &:focus::-ms-value {
     color: #12161e;
-    background: #fff;
+    background: var(--pallete-common-grey-100);
   }
 }
 
@@ -132,9 +124,9 @@ textarea {
   resize: none;
 }
 
-a, button, label {
-  cursor: pointer;
-  text-decoration: none;
+a,
+button,
+label {
   outline: 0;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -154,10 +146,6 @@ a, button, label {
     -webkit-appearance: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
-
-  &:not([href]) {
-    cursor: initial;
-  }
 }
 
 p {
@@ -166,8 +154,6 @@ p {
   }
 }
 
-button,
-input,
 label,
 select {
   cursor: pointer;
@@ -177,22 +163,27 @@ strong {
   font-weight: 600;
 }
 
-h1, h2, h3 {
-  font-family: "Harabara";
+h1,
+h2,
+h3 {
+  font-family: "Harabara", $sans-serif;
   font-weight: normal;
-  margin-top: 0;
 }
 
 h1 {
   text-transform: uppercase;
-  font-size: pxToRem(22);
-  line-height: pxToRem(38);
-  color: $pallete-primary-dark;
-  letter-spacing: 0.05em;
-  @include media-min($mobile-extra-small) {
+  color: var(--pallete-primary-dark);
+  @include media(0, $desktop-extra) {
+    line-height: pxToRem(38);
+    letter-spacing: 0.05em;
+  }
+  @include media(0, $mobile-extra-small) {
+    font-size: pxToRem(22);
+  }
+  @include media($mobile-extra-small, $tablet) {
     font-size: pxToRem(24);
   }
-  @include tablet {
+  @include media($tablet, $desktop-extra) {
     font-size: pxToRem(33);
   }
   @include desktop-extra {
@@ -203,62 +194,77 @@ h1 {
 }
 
 h2 {
-  color: $pallete-primary-dark;
-  font-size: pxToRem(24);
-  line-height: pxToRem(24);
-  text-align: center;
+  color: var(--pallete-primary-dark);
   margin: 0;
-  @include tablet {
+  @include media(0, $tablet) {
+    font-size: pxToRem(24);
+    line-height: pxToRem(24);
+  }
+  @include media($tablet, $desktop-extra) {
+    line-height: pxToRem(30);
     font-size: pxToRem(30);
   }
   @include desktop-extra {
+    line-height: pxToRem(36);
     font-size: pxToRem(36);
     letter-spacing: 0.1em;
   }
 }
 
-h3 {
-  font-size: pxToRem(20);
+h3,
+.h3 {
+  color: var(--pallete-primary-light);
+  letter-spacing: 0.05em;
+  @include media(0, $desktop) {
+    font-size: pxToRem(20);
+  }
   @include desktop {
     font-size: pxToRem(24);
   }
-  color: $pallete-primary-light;
-  letter-spacing: 0.05em;
 }
 
-h4 {
-  font-family: "Montserrat";
+h4,
+.h4 {
+  font-family: "Montserrat", $sans-serif;
   font-weight: bold;
-  font-size: pxToRem(18);
   line-height: pxToRem(28);
+  color: var(--pallete-common-grey-900);
+  @include dark-theme {
+    color: var(--empty-star-color);
+  }
+  @include media(0, $tablet) {
+    font-size: pxToRem(18);
+  }
   @include tablet {
     font-size: pxToRem(24);
   }
 }
 
 p {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-weight: normal;
-  color: $pallete-common-grey-900;
   line-height: pxToRem(26);
+  color: var(--pallete-common-grey-900);
+  @include dark-theme {
+    color: var(--empty-star-color);
+  }
 }
 
 span {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-style: normal;
   font-weight: normal;
-
 }
 
 .btn {
-  font-family: "Montserrat";
+  font-family: "Montserrat", $sans-serif;
   font-size: pxToRem(16);
   line-height: pxToRem(36);
   font-weight: bold;
-  border: pxToRem(2) solid $pallete-secondary-main;
-  box-sizing: border-box;
-  border-radius: $border-radius;
+  border: pxToRem(2) solid var(--pallete-secondary-main);
+  border-radius: var(--border-radius);
   min-width: pxToRem(160);
   min-height: pxToRem(42);
   cursor: pointer;
+  transition: 0.25s;
 }

@@ -1,14 +1,21 @@
 .services {
-  padding-top: pxToRem(40);
-  padding-bottom: pxToRem(39);
-  @include desktop-extra {
-    padding-top: pxToRem(99);
+  @include media(0, $desktop-extra) {
+    padding-top: pxToRem(40);
+    padding-bottom: pxToRem(39);
   }
+
+  @include desktop-extra {
+    padding-top: pxToRem(96);
+    padding-bottom: pxToRem(51);
+  }
+
   &__title {
-    text-align: center;
-    margin-bottom: pxToRem(38);
+    @include media(0, $desktop-extra) {
+      margin-bottom: pxToRem(38);
+    }
+
     @include desktop-extra {
-      margin-bottom: pxToRem(78);
+      margin-bottom: pxToRem(72);
     }
   }
 
@@ -16,85 +23,204 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: pxToRem(29);
-    row-gap: pxToRem(40);
+
+    @include media(0, $mobile-extra-small) {
+      column-gap: pxToRem(29);
+    }
+
     @include media-min($mobile-extra-small) {
       column-gap: pxToRem(20);
     }
+
+    @include media(0, $desktop) {
+      row-gap: pxToRem(40);
+    }
+
     @include desktop {
       row-gap: pxToRem(60);
     }
+
     .services__item {
-      background: #F4F8FD;
-      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(4) rgba(29, 51, 107, 0.1);
+      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(4) rgba(0, 0, 0, 0.2);
       border-radius: pxToRem(16);
       text-align: center;
-      width: pxToRem(145);
-      padding: pxToRem(4);
-      min-height: pxToRem(162);
       display: flex;
       flex-direction: column;
       align-items: center;
-      &:hover {
-        background-color: #fff;
+
+      @include light-theme {
+        background-color: var(--pallete-sevices-cards-background-light);
       }
-      @include tablet {
+
+      @include dark-theme {
+        background-color: var(--pallete-sevices-cards-background-dark);
+      }
+
+      @include media(0, $tablet) {
+        min-height: pxToRem(162);
+        width: pxToRem(145);
+        padding: pxToRem(4);
+      }
+
+      @include media($tablet, $desktop) {
         min-height: pxToRem(208);
         width: pxToRem(193);
+      }
+
+      @include tablet {
         padding: pxToRem(10);
       }
+
       @include desktop {
         min-height: pxToRem(280);
         width: pxToRem(282);
       }
+
       @include desktop-extra {
         min-width: pxToRem(322);
         height: pxToRem(320);
       }
-      &-img-wrapper {
-        max-width: pxToRem(52);
-        min-height: pxToRem(52);
-        max-height: pxToRem(52);
-        margin: pxToRem(30.5) 0 pxToRem(22);
-        display: flex;
-        img {
-          object-fit: scale-down;
-          width: 100%;
-          height: auto;
+
+      &:hover {
+        transition: 0.25s ease-in;
+        @include light-theme {
+          background-color: var(--pallete-common-grey-100);
         }
-        @include tablet {
+        @include dark-theme {
+          background-color: var(--pallete-common-grey-900);
+        }
+      }
+      &-wrapper {
+        display: flex;
+
+        @include media(0, $tablet) {
+          max-width: pxToRem(52);
+          min-height: pxToRem(52);
+          max-height: pxToRem(52);
+        }
+
+        @include media(0, $desktop-extra) {
+          margin: pxToRem(30.5) 0 pxToRem(22);
+        }
+
+        @include media($tablet, $desktop) {
           max-width: pxToRem(70);
           min-height: pxToRem(70);
           max-height: pxToRem(70);
         }
-        @include desktop {
+
+        @include media($desktop, $desktop-extra) {
+          max-width: pxToRem(90);
           min-height: pxToRem(90);
           max-height: pxToRem(90);
-          max-width: pxToRem(90);
         }
+
         @include desktop-extra {
           max-width: pxToRem(112);
           min-height: pxToRem(112);
           max-height: pxToRem(112);
           margin: pxToRem(57) auto pxToRem(48);
         }
+
+        svg {
+          object-fit: scale-down;
+          width: 100%;
+          height: auto;
+          overflow: visible;
+        }
       }
       &-title {
-        font-size: pxToRem(12);
-        line-height: pxToRem(22);
-        letter-spacing: 0.05em;
-        color: $pallete-primary-main;
+        color: var(--pallete-primary-main);
         margin: 0;
-        @include tablet {
+
+        @include media(0, $tablet) {
+          font-size: pxToRem(12);
+          line-height: pxToRem(22);
+        }
+
+        @include media($tablet, $desktop) {
           font-size: pxToRem(15);
         }
+
+        @include media($desktop, $desktop-extra) {
+          margin-top: pxToRem(40);
+        }
+
         @include desktop {
           font-size: pxToRem(20);
           line-height: pxToRem(30);
-          margin-top: pxToRem(40);
         }
+
         @include desktop-extra {
           margin-top: 0;
+        }
+      }
+    }
+
+    .services__item:hover {
+      #servicesGear,
+      #triangle {
+        animation: rotate 2s 0s 1 linear;
+        transform-origin: center;
+        transform-box: fill-box;
+        animation-direction: normal;
+      }
+
+      #gamepadButtons {
+        path:nth-child(1) {
+          animation: pressButton 0.3s 0s 1 ease;
+        }
+
+        path:nth-child(2) {
+          animation: pressButton 0.3s 0.2s 1 ease;
+        }
+
+        path:nth-child(3) {
+          animation: pressButton 0.3s 0.4s 1 ease;
+        }
+
+        path:nth-child(4) {
+          animation: pressButton 0.3s 0.6s 1 ease;
+        }
+
+        path:nth-child(5) {
+          animation: pressButton 0.3s 0.8s 1 ease;
+        }
+      }
+
+      #vr {
+        animation: shake 1.2s 0s 1 ease-out forwards;
+      }
+
+      #code {
+        path:nth-child(1) {
+          animation: accordionPart1 1s 0s 1 ease-out forwards;
+        }
+
+        path:nth-child(2) {
+          animation: accordionPart2 1s 0s 1 ease-out forwards;
+        }
+
+        path:nth-child(3) {
+          animation: accordionPart3 1s 0s 1 ease-out forwards;
+        }
+      }
+
+      #screwdriver {
+        animation: diagonalShake 1s 0s 1 ease-out forwards;
+      }
+
+      #cubeEdges {
+        path:nth-child(1) {
+          animation: cubeEdgeShakePart1 1s 0s 1 ease-out forwards;
+        }
+
+        path:nth-child(2) {
+          animation: cubeEdgeShakePart2 1s 0s 1 ease-out forwards;
+        }
+        
+        path:nth-child(3) {
+          animation: cubeEdgeShakePart3 1s 0s 1 ease-out forwards;
         }
       }
     }
