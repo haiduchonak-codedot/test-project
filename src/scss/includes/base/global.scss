@@ -119,6 +119,10 @@ select {
   cursor: pointer;
 }
 
+button  {
+  font-family: $font-family-text;
+}
+
 h1,
 h2,
 h3 {
@@ -214,7 +218,6 @@ p {
 
 .btn {
   display: block;
-  font-family: $font-family-text;
   font-size: pxToRem(16);
   // line-height: pxToRem(36);
   line-height: pxToRem(42);
