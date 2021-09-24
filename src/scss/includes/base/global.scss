@@ -10,11 +10,23 @@
   text-rendering: optimizeSpeed;
 }
 
+html {
+  @include dark-theme {
+    background-color: var(--pallete-common-grey-900);
+  }
+}
+
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.page-wrapper {
+  @include dark-theme {
+    background-color: var(--pallete-common-grey-900);
+  }
 }
 
 input[type="submit"]:focus {
@@ -46,10 +58,6 @@ body {
   transition: 0s;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
-
-  &.fixed {
-    overflow: hidden;
-  }
 }
 
 input[type="text"],
@@ -69,15 +77,6 @@ textarea {
 
   &.not-valid {
     border-color: #f00;
-  }
-}
-
-select {
-  -webkit-appearance: none;
-
-  &:focus::-ms-value {
-    color: #12161e;
-    background: var(--pallete-common-grey-100);
   }
 }
 
@@ -214,9 +213,11 @@ p {
 }
 
 .btn {
+  display: block;
   font-family: $font-family-text;
   font-size: pxToRem(16);
-  line-height: pxToRem(36);
+  // line-height: pxToRem(36);
+  line-height: pxToRem(42);
   font-weight: bold;
   border: pxToRem(2) solid var(--pallete-secondary-main);
   border-radius: var(--border-radius);

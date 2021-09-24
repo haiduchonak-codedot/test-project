@@ -40,9 +40,11 @@ html[dir="rtl"] {
   }
 
   #main-menu {
-    transform: translateX(0);
-    width: 100%;
-    display: flex;
+    @include media(0, $desktop) {
+      transform: translateX(0);
+      width: 100%;
+      display: flex;
+    }
 
     @include desktop {
       background-color: transparent;
@@ -58,60 +60,56 @@ html[dir="rtl"] {
   }
 }
 
-@include dark-theme {
-  .page-wrapper {
-    background-color: var(--pallete-common-grey-900);
-  }
-}
-
 #animations-loading:target {
-  .logo {
-    opacity: 0;
-    animation: appearance 0.3s 0.5s 1 forwards;
-  }
-
-  .header__menu-item {
-    @include desktop {
+  .header {
+    &__logo {
       opacity: 0;
-      transition: 0.2s ease-in;
-
-      &:nth-child(1) {
-        animation: appearance 0.2s 0.75s forwards;
-      }
-
-      &:nth-child(2) {
-        animation: appearance 0.2s 0.95s forwards;
-      }
-
-      &:nth-child(3) {
-        animation: appearance 0.2s 1.15s forwards;
-      }
-
-      &:nth-child(4) {
-        animation: appearance 0.2s 1.35s forwards;
-      }
-
-      &:nth-child(5) {
-        animation: appearance 0.2s 1.55s forwards;
-      }
-
-      &:nth-child(6) {
-        animation: appearance 0.2s 1.75s forwards;
-      }
-
-      &:nth-child(7) {
-        animation: appearance 0.2s 1.95s forwards;
+      animation: appearance 0.3s 0.5s 1 forwards;
+    }
+  
+    &__menu-item {
+      @include desktop {
+        opacity: 0;
+        transition: 0.2s ease-in;
+  
+        &:nth-child(1) {
+          animation: appearance 0.2s 0.75s forwards;
+        }
+  
+        &:nth-child(2) {
+          animation: appearance 0.2s 0.95s forwards;
+        }
+  
+        &:nth-child(3) {
+          animation: appearance 0.2s 1.15s forwards;
+        }
+  
+        &:nth-child(4) {
+          animation: appearance 0.2s 1.35s forwards;
+        }
+  
+        &:nth-child(5) {
+          animation: appearance 0.2s 1.55s forwards;
+        }
+  
+        &:nth-child(6) {
+          animation: appearance 0.2s 1.75s forwards;
+        }
+  
+        &:nth-child(7) {
+          animation: appearance 0.2s 1.95s forwards;
+        }
       }
     }
 
-    .burger {
-      .header__burger-line,
-      .header__burger-line::before,
-      .header__burger-line::after {
+    &__burger {
+      &-line,
+      &-line::before,
+      &-line::after {
         opacity: 0;
       }
-      
-      .header__burger-line {
+
+      &-line {
         animation: appearance 0.2s 1s forwards;
 
         &::before {
@@ -122,330 +120,319 @@ html[dir="rtl"] {
           animation: appearance 0.2s 1.4s forwards;
         }
       }
+      
+    }
+  
+    &__btn {
+      @include desktop {
+        opacity: 0;
+        animation: appearance 0.2s 2.15s forwards;
+      }
     }
   }
+}
 
-  .contact-btn {
-    @include desktop {
-      opacity: 0;
-      animation: appearance 0.2s 2.15s forwards;
-    }
-  }
+.container {
+  padding: 0 pxToRem(15);
 }
 
 .header {
-  .container {
-    padding: 0 pxToRem(15);
+  display: flex;
+  justify-content: space-between;
+
+  @include media(0, $desktop) {
+    align-items: center;
+    padding-bottom: pxToRem(5);
+    padding-top: pxToRem(2);
   }
 
-  &__wrapper {
-    display: flex;
-    justify-content: space-between;
+  @include desktop {
+    align-items: flex-end;
+  }
 
-    @include media(0, $desktop) {
-      align-items: center;
-      padding-bottom: pxToRem(5);
-      padding-top: pxToRem(2);
-    }
+  @include media($desktop, $desktop-extra) {
+    padding-bottom: pxToRem(12);
+    padding-top: pxToRem(6);
+  }
 
-    @include desktop {
-      align-items: flex-end;
-    }
+  @include desktop-extra {
+    padding-bottom: pxToRem(19);
+    padding-top: pxToRem(7);
+    gap: pxToRem(136);
+  }
 
-    @include media($desktop, $desktop-extra) {
-      padding-bottom: pxToRem(12);
-      padding-top: pxToRem(6);
+  &__logo-link {
+    display: block;
+    flex: none;
+
+    @include media(0, $desktop-extra) {
+      padding: pxToRem(7) pxToRem(15);
     }
 
     @include desktop-extra {
-      padding-bottom: pxToRem(19);
-      padding-top: pxToRem(7);
-      gap: pxToRem(136);
+      padding: 0;
+      padding-bottom: pxToRem(3);
     }
 
-    .logo {
-      display: block;
-      flex: none;
+  }
 
-      @include media(0, $desktop-extra) {
-        padding: pxToRem(7) pxToRem(15);
-      }
+  &__logo {
+    height: 100%;
+    width: 100%;
 
-      @include desktop-extra {
-        padding: 0;
-        padding-bottom: pxToRem(3);
-      }
-
-      picture,
-      img {
-        height: 100%;
-        width: 100%;
-        @include media(0, $desktop-extra) {
-          max-width: pxToRem(141);
-          max-height: pxToRem(38);
-        }
-        @include desktop-extra {
-          max-width: pxToRem(208);
-          max-height: pxToRem(52);
-        }
-      }
+    @include media(0, $desktop-extra) {
+      max-width: pxToRem(141);
+      max-height: pxToRem(38);
     }
-    .header__menu-wrapper {
-      z-index: 1;
-      display: block;
-      left: 0;
-      top: 0;
-      transition: 0.5s ease;
-      transition-property: transform, opacity;
+
+    @include desktop-extra {
+      max-width: pxToRem(208);
+      max-height: pxToRem(52);
+    }
+  }
+
+  &__menu-wrapper {
+    z-index: 1;
+    display: block;
+    left: 0;
+    top: 0;
+    transition: 0.5s ease;
+    transition-property: transform, opacity;
+    
+    @include media(0, $desktop) {
+      position: fixed;
       opacity: 0;
       animation: menuTransition 0.5s 1 forwards cubic-bezier(0, 1, 0, 1);
+    }
 
-      @include media(0, $desktop) {
-        position: fixed;
+    @include desktop {
+      direction: inherit;
+      position: relative;
+    }
+
+    @include media($desktop, $desktop-extra) {
+      width: auto;
+    }
+
+    @include desktop-extra {
+      width: 100%;
+    }
+
+  }
+  
+  &__menu {
+    width: 100%;
+    flex: none;
+
+    @include dark-theme {
+      border-right: 1px solid var(--border-color);
+    }
+
+    @include media(0, $desktop) {
+      max-width: pxToRem(275);
+      box-shadow: pxToRem(0) pxToRem(0) pxToRem(18) pxToRem(10) rgba(0, 0, 0, 0.3);
+      height: 100vh;
+      overflow: auto;
+      padding-bottom: calc(77px + env(safe-area-inset-bottom));
+
+      @include light-theme {
+        background-color: var(--pallete-common-grey-100);
       }
 
-      @include desktop {
-        direction: inherit;
-        position: relative;
-      }
-
-      @include media($desktop, $desktop-extra) {
-        width: auto;
-      }
-
-      @include desktop-extra {
-        width: 100%;
-      }
-
-      .header__menu {
-        width: 100%;
-        flex: none;
-
-        @include dark-theme {
-          border-right: 1px solid var(--border-color);
-        }
-
-        @include media(0, $desktop) {
-          max-width: pxToRem(275);
-          box-shadow: pxToRem(0) pxToRem(0) pxToRem(18) pxToRem(10) rgba(0, 0, 0, 0.3);
-          height: 100vh;
-          overflow: auto;
-          padding-bottom: calc(77px + env(safe-area-inset-bottom));
-
-          @include light-theme {
-            background-color: var(--pallete-common-grey-100);
-          }
-
-          @include dark-theme {
-            background-color: var(--pallete-common-grey-900);
-          }
-        }
-
-        @include tablet {
-          min-width: pxToRem(365);
-        }
-        @include desktop {
-          display: flex;
-          margin-left: 0;
-          position: relative;
-          max-width: 100%;
-          box-shadow: none;
-          background-color: transparent;
-          position: relative;
-          height: auto;
-          justify-content: space-between;
-          overflow: visible;
-          padding-bottom: 0;
-          align-items: flex-end;
-        }
-
-        @include media($desktop, 1075) {
-          gap: pxToRem(10);
-        }
-
-        @include media(1075, $desktop-extra) {
-          gap: pxToRem(50);
-        }
-
-        @include desktop-extra {
-          gap: pxToRem(28);
-        }
-
-        .header__menu-link-wrapper {
-          display: flex;
-          justify-content: flex-end;
-          .header__menu-text {
-            @include media(0, $desktop) {
-              font-size: pxToRem(15);
-              border: 0;
-              padding: pxToRem(5) pxToRem(17);
-              font-weight: normal;
-              text-align: right;
-              color: var(--pallete-secondary-main);
-              width: fit-content;
-              display: block;
-            }
-            @include desktop {
-              display: none;
-            }
-          }
-        }
-
-        .header__menu-list {
-          margin-top: 0;
-          z-index: 2;
-          @include media(0, $desktop) {
-            transition: 0.5s ease-in-out;
-            display: block;
-          }
-          
-          @include desktop {
-            transition: none;
-            display: flex;
-            height: auto;
-            align-items: center;
-            overflow: initial;
-          }
-
-          .header__menu-item {
-            display: block;
-
-            @include desktop {
-              &:hover {
-                .dropdown__content {
-                  display: block;
-                  animation: dropdown 1.5s 0s cubic-bezier(0.12, 0.7, 0.53, 1) forwards;
-                }
-              }
-            }
-            .header__menu-link {
-              color: var(--pallete-primary-main);
-              position: relative;
-              line-height: 1rem;
-
-              @include media(0, $desktop) {
-                display: block;
-                font-weight: normal;
-                padding-top: pxToRem(5.5);
-                padding-right: pxToRem(35);
-                padding-bottom: pxToRem(5.5);
-                padding-left: pxToRem(48);
-              }
-
-              @include media(0, $desktop-extra) {
-                font-size: pxToRem(15);
-              }
-
-              @include desktop {
-                font-weight: bold;
-                gap: pxToRem(4);
-              }
-
-              @include media($desktop, $desktop-extra) {
-                padding: pxToRem(15) pxToRem(6.5);
-              }
-
-              @include desktop-extra {
-                font-size: pxToRem(16);
-                padding: pxToRem(13) pxToRem(10.5);
-              }
-
-              &:hover {
-                color: var(--pallete-primary-light);
-                &::after {
-                  color: var(--pallete-primary-light);
-                }
-                .header__menu-item {
-                  &:first-child {
-                    &::after {
-                      border-bottom: pxToRem(2) solid var(--pallete-primary-light);
-                      border-left: pxToRem(2) solid var(--pallete-primary-light);
-                    }
-                  }
-                }
-              }
-            }
-            a.header__menu-link.dropdown__menu-link {
-              @include desktop {
-                display: flex;
-              }
-
-              @include desktop-extra {
-                padding-right: pxToRem(12.5);
-                padding-left: pxToRem(12.5);
-              }
-            }
-          }
-
-          .header__menu-item::after {
-            width: 0;
-            height: 0;
-            border: 0;
-          }
-        }
-      }
-
-      .contact-btn {
-        color: var(--pallete-secondary-main);
-        background-color: transparent;
-
-        @include media(0, $desktop) {
-          margin-left: pxToRem(46);
-          margin-right: pxToRem(46);
-          margin-top: pxToRem(26);
-        }
-
-        @include desktop {
-          margin: 0;
-        }
-        &:hover {
-          background-color: var(--pallete-secondary-main);
-          color: var(--pallete-common-grey-100);
-        }
+      @include dark-theme {
+        background-color: var(--pallete-common-grey-900);
       }
     }
 
-    .burger {
-      @include media(0, $desktop - 1) {
-        right: pxToRem(5);
-        top: pxToRem(3);
-        padding: pxToRem(17) pxToRem(25);
-        display: block;
-      }
+    @include tablet {
+      min-width: pxToRem(365);
+    }
 
-      @include desktop {
-        display: none;
-      }
+    @include desktop {
+      display: flex;
+      margin-left: 0;
+      position: relative;
+      max-width: 100%;
+      box-shadow: none;
+      background-color: transparent;
+      position: relative;
+      height: auto;
+      justify-content: space-between;
+      overflow: visible;
+      padding-bottom: 0;
+      align-items: flex-end;
+    }
 
-      .header__burger-line {
-        margin-top: pxToRem(8);
-        margin-bottom: pxToRem(8);
-        position: relative;
+    @include media($desktop, 1075) {
+      gap: pxToRem(10);
+    }
 
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
+    @include media(1075, $desktop-extra) {
+      gap: pxToRem(50);
+    }
+
+    @include desktop-extra {
+      gap: pxToRem(28);
+    }
+
+  }
+
+  &__menu-link-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__menu-text {
+    @include media(0, $desktop) {
+      font-size: pxToRem(15);
+      border: 0;
+      padding: pxToRem(5) pxToRem(17);
+      font-weight: normal;
+      text-align: right;
+      color: var(--pallete-secondary-main);
+      width: fit-content;
+      display: block;
+    }
+
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__menu-list {
+    margin-top: 0;
+    z-index: 2;
+
+    @include media(0, $desktop) {
+      transition: 0.5s ease-in-out;
+      display: block;
+    }
+    
+    @include desktop {
+      transition: none;
+      display: flex;
+      height: auto;
+      align-items: center;
+      overflow: initial;
+    }
+
+  }
+
+  &__menu-item {
+    display: block;
+
+    @include desktop {
+      &:hover {
+        .dropdown__list {
+          display: block;
+          animation: dropdown 1.5s 0s cubic-bezier(0.12, 0.7, 0.53, 1) forwards;
         }
-
-        &::before {
-          top: pxToRem(-8);
-        }
-
-        &::after {
-          bottom: pxToRem(-8);
-        }
-      }
-
-      .header__burger-line,
-      .header__burger-line::before,
-      .header__burger-line::after {
-        display: block;
-        width: pxToRem(26);
-        height: pxToRem(4);
-        background-color: var(--pallete-primary-dark);
-        border-radius: pxToRem(2);
       }
     }
   }
+
+  &__menu-link {
+    color: var(--pallete-primary-main);
+    position: relative;
+
+    @include media(0, $desktop) {
+      display: block;
+      font-weight: normal;
+      padding-top: pxToRem(5.5);
+      padding-right: pxToRem(35);
+      padding-bottom: pxToRem(5.5);
+      padding-left: pxToRem(48);
+    }
+
+    @include media(0, $desktop-extra) {
+      font-size: pxToRem(15);
+    }
+
+    @include desktop {
+      font-weight: bold;
+      gap: pxToRem(4);
+    }
+
+    @include media($desktop, $desktop-extra) {
+      padding: pxToRem(15) pxToRem(6.5);
+    }
+
+    @include desktop-extra {
+      font-size: pxToRem(16);
+      padding: pxToRem(13) pxToRem(11.5);
+    }
+
+    &:hover {
+      transition: color .5s ease;
+      color: var(--pallete-primary-light);
+      &::after {
+        color: var(--pallete-primary-light);
+      }
+    }
+  }
+
+  &__btn {
+    color: var(--pallete-secondary-main);
+    background-color: transparent;
+    text-align: center;
+    max-width: pxToRem(160);
+
+    @include media(0, $desktop) {
+      margin-left: pxToRem(46);
+      margin-right: pxToRem(46);
+      margin-top: pxToRem(26);
+    }
+
+    @include desktop {
+      margin: 0;
+    }
+    &:hover {
+      background-color: var(--pallete-secondary-main);
+      color: var(--pallete-common-grey-100);
+    }
+  }
+
+  &__burger {
+    @include media(0, $desktop - 1) {
+      right: pxToRem(5);
+      top: pxToRem(3);
+      padding: pxToRem(17) pxToRem(25);
+      display: block;
+    }
+  
+    @include desktop {
+      display: none;
+    }
+  
+    &-line {
+      margin-top: pxToRem(8);
+      margin-bottom: pxToRem(8);
+      position: relative;
+  
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+      }
+  
+      &::before {
+        top: pxToRem(-8);
+      }
+  
+      &::after {
+        bottom: pxToRem(-8);
+      }
+    }
+  
+    &-line,
+    &-line::before,
+    &-line::after {
+      display: block;
+      width: pxToRem(26);
+      height: pxToRem(4);
+      background-color: var(--pallete-primary-dark);
+      border-radius: pxToRem(2);
+    }
+  }
 }
+
