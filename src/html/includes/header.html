@@ -1,81 +1,77 @@
-      <header class="header">
-        <div class="container">
-          <div class="header__wrapper">
-            <a aria-label="logo" href="#" class="logo">
-              <picture>
-                <source srcset="../../img/logo-1x.webp 1x,
-                                ../../img/logo-2x.webp 2x" type="image/webp"> 
-                <img src="../../img/logo-1x.png" srcset="../../img/logo-2x.png 2x" alt="logo">
-              </picture>
-            </a>
-            <a aria-label="burger menu link" class="burger" id="hamburger" href="#main">
-              <span class="header__burger-line"></span>
-            </a>
-            <div class="header__menu-wrapper" id="main-menu">
-              <div class="header__menu">
-                <nav>
-                  <div class="header__menu-link-wrapper">
-                    <a class="header__menu-text" href="#">close</a>
-                  </div>
-                  <ul class="header__menu-list" id="menu">
-                    <li class="header__menu-item dropdown">
-                      <a href="#main" class="header__menu-link dropdown__menu-link">
-                        SERVICES
-                      </a>
-                      <ul class="dropdown__content">
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">MOBILE APPLICATION DEVELOPMENT</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">GAME DEVELOPMENT OUTSOURCING</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">VR APP DEVELOPMENT</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">DEDICATED DEVELOPERS</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">SDK DEVELOPMENT</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">3D MODELLING SERVICES</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">AR APP DEVELOPMENT</a></li>
-                      </ul>
-                    </li>
-                    <li class="header__menu-item dropdown">
-                      <a href="#main" class="header__menu-link dropdown__menu-link">
-                        TECHNOLOGIES
-                      </a>
-                      <ul class="dropdown__content">
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">ANDROID</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">IOS</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">UNITY</a></li>
-                      </ul>
-                    </li>
-                    <li class="header__menu-item">
-                      <a href="#" class="header__menu-link">
-                        PRODUCTS
-                      </a>
-                    </li>
-                    <li class="header__menu-item">
-                      <a href="#" class="header__menu-link">
-                        PORTFOLIO
-                      </a>
-                    </li>
-                    <li class="header__menu-item">
-                      <a href="#" class="header__menu-link">
-                        BLOG
-                      </a>
-                    </li>
-                    <li class="header__menu-item dropdown">
-                      <a href="#main" class="header__menu-link dropdown__menu-link">
-                        ABOUT US
-                      </a>
-                      <ul class="dropdown__content">
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">CONTACTS</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">TEAM</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">JOIN THE TEAM</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </nav>
-                <button class="btn contact-btn">
-                  CONTACT US
-                </button>
+      <header class="container header">
+        <a aria-label="logo" href="#" class="header__logo-link">
+          <picture>
+            <source srcset="../../img/logo-1x.webp 1x,
+                            ../../img/logo-2x.webp 2x" type="image/webp"> 
+            <img class="header__logo" src="../../img/logo-1x.png" srcset="../../img/logo-2x.png 2x" alt="logo">
+          </picture>
+        </a>
+        <a aria-label="burger menu link" class="header__burger" id="hamburger" href="#main">
+          <span class="header__burger-line"></span>
+        </a>
+        <div class="header__menu-wrapper" id="main-menu">
+          <div class="header__menu">
+            <nav>
+              <div class="header__menu-link-wrapper">
+                <a class="header__menu-text" href="#">close</a>
               </div>
-              <a aria-label="close menu" href="#" class="header__menu-backdrop"></a>
-            </div>
+              <ul class="header__menu-list" id="menu">
+                <li class="header__menu-item dropdown">
+                  <a href="#main" class="dropdown__menu-link header__menu-link ">
+                    SERVICES
+                  </a>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">MOBILE APPLICATION DEVELOPMENT</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">GAME DEVELOPMENT OUTSOURCING</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">VR APP DEVELOPMENT</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">DEDICATED DEVELOPERS</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">SDK DEVELOPMENT</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">3D MODELLING SERVICES</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">AR APP DEVELOPMENT</a></li>
+                  </ul>
+                </li>
+                <li class="header__menu-item dropdown">
+                  <a href="#main" class="header__menu-link dropdown__menu-link">
+                    TECHNOLOGIES
+                  </a>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">ANDROID</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">IOS</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">UNITY</a></li>
+                  </ul>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+                    PRODUCTS
+                  </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+                    PORTFOLIO
+                  </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+                    BLOG
+                  </a>
+                </li>
+                <li class="header__menu-item dropdown">
+                  <a href="#main" class="header__menu-link dropdown__menu-link">
+                    ABOUT US
+                  </a>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">CONTACTS</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">TEAM</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__link">JOIN THE TEAM</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <a class="btn header__btn">
+              CONTACT US
+            </a>
           </div>
+          <a aria-label="close menu" href="#" class="header__menu-backdrop"></a>
         </div>
       </header>
       
