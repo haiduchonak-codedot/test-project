@@ -1,7 +1,7 @@
 .dropdown {
   position: relative;
 
-  &__menu-link {
+  &__link {
     align-items: center;
 		
 		@include desktop {
@@ -38,7 +38,7 @@
 			transition: 0.25s ease;
 		}
 		
-		.menu__link {
+		&__item-link {
 			color: var(--pallete-primary-light);
 		}
 	}
@@ -85,7 +85,7 @@
 		}
 	}
 
-	&__link {
+	&__item-link {
 		display: block;
 		line-height: 1rem;
 		transition: color .25s ease;

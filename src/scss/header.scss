@@ -102,28 +102,25 @@ html[dir="rtl"] {
       }
     }
 
-    &__burger {
-      &-line,
-      &-line::before,
-      &-line::after {
-        opacity: 0;
+    &__burger-line,
+    &__burger-line::before,
+    &__burger-line::after {
+      opacity: 0;
+    }
+
+    &__burger-line {
+      animation: appearance 0.2s 1s forwards;
+
+      &::before {
+        animation: appearance 0.2s 1.2s forwards;
       }
 
-      &-line {
-        animation: appearance 0.2s 1s forwards;
-
-        &::before {
-          animation: appearance 0.2s 1.2s forwards;
-        }
-
-        &::after {
-          animation: appearance 0.2s 1.4s forwards;
-        }
+      &::after {
+        animation: appearance 0.2s 1.4s forwards;
       }
-      
     }
   
-    &__btn {
+    &__contact-link {
       @include desktop {
         opacity: 0;
         animation: appearance 0.2s 2.15s forwards;
@@ -371,7 +368,7 @@ html[dir="rtl"] {
     }
   }
 
-  &__btn {
+  &__contact-link {
     color: var(--pallete-secondary-main);
     background-color: transparent;
     text-align: center;
@@ -392,7 +389,7 @@ html[dir="rtl"] {
     }
   }
 
-  &__burger {
+  &__burger-link {
     @include media(0, $desktop - 1) {
       right: pxToRem(5);
       top: pxToRem(3);
@@ -404,35 +401,35 @@ html[dir="rtl"] {
       display: none;
     }
   
-    &-line {
-      margin-top: pxToRem(8);
-      margin-bottom: pxToRem(8);
-      position: relative;
-  
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-      }
-  
-      &::before {
-        top: pxToRem(-8);
-      }
-  
-      &::after {
-        bottom: pxToRem(-8);
-      }
+  }
+  &__burger-line {
+    margin-top: pxToRem(8);
+    margin-bottom: pxToRem(8);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
     }
-  
-    &-line,
-    &-line::before,
-    &-line::after {
-      display: block;
-      width: pxToRem(26);
-      height: pxToRem(4);
-      background-color: var(--pallete-primary-dark);
-      border-radius: pxToRem(2);
+
+    &::before {
+      top: pxToRem(-8);
     }
+
+    &::after {
+      bottom: pxToRem(-8);
+    }
+  }
+
+  &__burger-line,
+  &__burger-line::before,
+  &__burger-line::after {
+    display: block;
+    width: pxToRem(26);
+    height: pxToRem(4);
+    background-color: var(--pallete-primary-dark);
+    border-radius: pxToRem(2);
   }
 }
 
