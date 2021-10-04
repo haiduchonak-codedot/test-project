@@ -220,8 +220,7 @@ p {
 .btn {
   display: block;
   font-size: pxToRem(16);
-  // line-height: pxToRem(36);
-  line-height: pxToRem(42);
+  line-height: pxToRem(37);
   font-weight: bold;
   border: pxToRem(2) solid var(--pallete-secondary-main);
   border-radius: var(--border-radius);
