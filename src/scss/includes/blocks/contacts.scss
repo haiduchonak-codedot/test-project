@@ -146,50 +146,6 @@
     }
   }
 
-  #bg-icon-container-1 {
-    #bg-icon-1 {
-      animation: moveIcon1 1s .5s infinite ease forwards;
-      height: pxToRem(154);
-      width: pxToRem(149);
-      top: pxToRem(-41);
-
-      @include media(0, $desktop-extra) {
-        left: pxToRem(-43);
-      }
-
-      @include desktop-extra {
-        left: pxToRem(7);
-      }
-    }
-  }
-
-  #bg-icon-container-2 {
-    #bg-icon-2 {
-      animation: moveIcon2 1s 0s infinite ease forwards;
-      width: pxToRem(135);
-      height: pxToRem(108);
-      bottom: pxToRem(26);
-
-      @include media(0, $desktop-extra) {
-        left: pxToRem(-42);
-      }
-
-      @include desktop-extra {
-        left: pxToRem(-13);
-      }
-    }
-  }
-
-  #bg-icon-container-3 {
-    #bg-icon-3 {
-      animation: moveIcon3 1s 0s infinite ease forwards;
-      width: pxToRem(126);
-      height: pxToRem(229);
-      right: pxToRem(-12);
-      top: pxToRem(-41);
-    }
-  }
-
   &__form {
     text-align: center;
     box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
@@ -223,8 +179,12 @@
     &-icon {
       z-index: -1;
       position: absolute;
-    }
 
+      @include media(0, $desktop-extra) {
+        display: none;
+      }
+    }
+    
     &-field {
       font-family: $font-family-text;
       width: 100%;
@@ -265,6 +225,56 @@
         color: var(--pallete-secondary-main);
         background-color: transparent;
       }
+    }
+  }
+}
+
+#bg-icon-container-1 {
+  #bg-icon-1 {
+    animation: moveIcon1 2s 0s infinite ease forwards;
+    height: pxToRem(154);
+    width: pxToRem(149);
+    top: pxToRem(-41);
+
+    @include media(0, $desktop-extra) {
+      left: pxToRem(-43);
+      display: none;
+    }
+
+    @include desktop-extra {
+      left: pxToRem(7);
+    }
+  }
+}
+
+#bg-icon-container-2 {
+  #bg-icon-2 {
+    animation: moveIcon2 2s 0s infinite ease forwards;
+    width: pxToRem(135);
+    height: pxToRem(108);
+    bottom: pxToRem(26);
+
+    @include media(0, $desktop-extra) {
+      left: pxToRem(-42);
+      display: none;
+    }
+
+    @include desktop-extra {
+      left: pxToRem(-13);
+    }
+  }
+}
+
+#bg-icon-container-3 {
+  #bg-icon-3 {
+    animation: moveIcon3 2s 0s infinite ease forwards;
+    width: pxToRem(126);
+    height: pxToRem(229);
+    right: pxToRem(-12);
+    top: pxToRem(-41);
+
+    @include media(0, $desktop-extra) {
+      display: none;
     }
   }
 }
