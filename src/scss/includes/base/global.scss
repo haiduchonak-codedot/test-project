@@ -133,6 +133,7 @@ h3 {
 h1 {
   text-transform: uppercase;
   color: var(--pallete-primary-dark);
+  margin: 0;
   @include media(0, $desktop-extra) {
     line-height: pxToRem(38);
     letter-spacing: 0.05em;
