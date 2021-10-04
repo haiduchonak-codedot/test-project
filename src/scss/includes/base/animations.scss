@@ -215,3 +215,39 @@
     transform: translate(0);
   }
 }
+
+@keyframes moveIcon1 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-5%, -5%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes moveIcon2 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(5%, -5%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes moveIcon3 {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(-5%, 5%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
