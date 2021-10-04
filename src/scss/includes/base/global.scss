@@ -224,7 +224,7 @@ p {
   font-weight: bold;
   border: pxToRem(2) solid var(--pallete-secondary-main);
   border-radius: var(--border-radius);
-  min-width: pxToRem(160);
+  width: pxToRem(160);
   min-height: pxToRem(42);
   cursor: pointer;
   transition: 0.25s;
