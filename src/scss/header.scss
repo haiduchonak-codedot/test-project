@@ -262,7 +262,7 @@ html[dir="rtl"] {
     }
 
     @include media($desktop, 1075) {
-      gap: pxToRem(10);
+      gap: pxToRem(9);
     }
 
     @include media(1075, $desktop-extra) {
