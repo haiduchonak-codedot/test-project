@@ -22,6 +22,10 @@
     padding-bottom: pxToRem(130);
   }
 
+  @media print {
+    page-break-before: always;
+  }
+
   .container {
     position: relative;
     padding: 0;
@@ -121,7 +125,11 @@
     @include media-min($desktop-extra-large) {
       width: 100%;
     }
-    
+
+    // @media print {
+    //   page-break-inside: avoid;
+    // }
+
   }
 
   &__item {
@@ -129,6 +137,12 @@
     position: relative;
     box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
     border-radius: pxToRem(16);
+
+    &:last-child {
+      @media print {
+        margin-top: pxToRem(60);
+      }
+    }
     
     @include light-theme {
       background-color: var(--pallete-common-grey-100);
@@ -150,6 +164,10 @@
     @include desktop-extra {
       max-width: pxToRem(400);
       min-height: pxToRem(438);
+    }
+
+    @media print {
+      margin-top: pxToRem(160);
     }
     
     &-wrapper {

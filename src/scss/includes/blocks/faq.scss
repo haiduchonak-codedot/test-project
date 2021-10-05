@@ -13,6 +13,10 @@
     padding-top: pxToRem(74);
     padding-bottom: pxToRem(79);
   }
+  
+  @media print {
+    page-break-before: always;
+  }
 
   &__title {
     @include media(0, $desktop-extra) {
