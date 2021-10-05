@@ -13,6 +13,10 @@
         margin-top: pxToRem(212);
     }
 
+    @media print {
+        page-break-before: always;
+    }
+
     &__wave {
         margin-left: pxToRem(-50);
 
@@ -35,6 +39,10 @@
             height: 129px;
             margin-bottom: pxToRem(-6);
             width: 104%;
+        }
+
+        @media print {
+            display: none;
         }
     }
 

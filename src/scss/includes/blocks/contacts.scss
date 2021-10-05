@@ -144,6 +144,10 @@
     @include desktop {
       margin-top: 0;
     }
+
+    @media print {
+      page-break-before: always;
+    }
   }
 
   &__form {
