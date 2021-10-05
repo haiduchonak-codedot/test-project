@@ -198,6 +198,15 @@
       &::placeholder {
         font-family: $font-family-text;
       }
+
+      @include light-theme {
+        color: var(--pallete-common-grey-900);
+      }
+
+      @include dark-theme {
+        color: var(--empty-star-color);
+        border-color: var(--border-color);
+      }
     }
 
     &-textarea {
@@ -237,7 +246,6 @@
     top: pxToRem(-41);
 
     @include media(0, $desktop-extra) {
-      left: pxToRem(-43);
       display: none;
     }
 
