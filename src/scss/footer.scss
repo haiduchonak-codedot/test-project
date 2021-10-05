@@ -59,7 +59,7 @@
 
     &::before {
       content: "";
-      -webkit-mask-image: url(../img/footerUpperWave.svg);
+      -webkit-mask-image: url(../img/footer-upper-wave.svg);
       -webkit-mask-repeat: no-repeat;
       background-repeat: no-repeat;
       display: block;
@@ -119,91 +119,90 @@
       flex-shrink: 0;
     }
 
-    .footer__logo {
-      @include media-min(1024) {
-        padding-left: pxToRem(22);
-        padding-right: pxToRem(22);
-      }
-
-      img {
-        height: 100%;
-        width: 100%;
-        max-width: pxToRem(202);
-        max-height: pxToRem(52);
-      }
-    }
     &-list {
       display: flex;
       flex-wrap: wrap;
-
+      
       @include media(0, $desktop) {
         justify-content: center;
       }
-
+      
       @include desktop {
         justify-content: start;
         row-gap: pxToRem(5);
       }
+    }
 
-      .footer__socials-item {
-        .footer__socials-link {
-          display: block;
-          padding: pxToRem(20);
-
-          @include media(1024, $desktop-extra) {
-            padding-left: pxToRem(22);
-            padding-right: pxToRem(22);
-          }
-
-          @include desktop-extra {
-            padding-left: pxToRem(22.5);
-            padding-right: pxToRem(22.5);
-          }
-
-          .footer__socials-icon {
-            display: block;
-
-            @include light-theme {
-              fill: var(--pallete-common-grey-100);
-            }
-
-            @include dark-theme {
-              fill: var(--empty-star-color);
-            }
-
-            @include media(0, $desktop-extra) {
-              width: pxToRem(32);
-              height: pxToRem(32);
-            }
-
-            @include desktop-extra {
-              width: pxToRem(40);
-              height: pxToRem(40);
-            }
-          }
-        }
+    &-link {
+      display: block;
+      padding: pxToRem(20);
+      
+      @include media(1024, $desktop-extra) {
+        padding-left: pxToRem(22);
+        padding-right: pxToRem(22);
+      }
+      
+      @include desktop-extra {
+        padding-left: pxToRem(22.5);
+        padding-right: pxToRem(22.5);
+      } 
+    }
+    
+    &-icon {
+      display: block;
+      
+      @include light-theme {
+        fill: var(--pallete-common-grey-100);
+      }
+      
+      @include dark-theme {
+        fill: var(--empty-star-color);
+      }
+      
+      @include media(0, $desktop-extra) {
+        width: pxToRem(32);
+        height: pxToRem(32);
+      }
+      
+      @include desktop-extra {
+        width: pxToRem(40);
+        height: pxToRem(40);
       }
     }
+  }
+  
+  &__logo-link {
+    @include media-min(1024) {
+      padding-left: pxToRem(22);
+      padding-right: pxToRem(22);
+    }
+  }
+
+  &__logo {
+    height: 100%;
+    width: 100%;
+    max-width: pxToRem(202);
+    max-height: pxToRem(52);
   }
 
   &__list {
     display: grid;
     flex-direction: column;
-
+    
     @include tablet {
       grid-template-rows: repeat(auto-fit, pxToRem(48));
     }
-
+    
     @include media($tablet, $desktop-extra) {
       grid-template-columns: auto;
       max-width: 650px;
       width: 100%;
     }
-
+    
     @include media(0, $desktop-extra) {
       margin-bottom: pxToRem(39);
     }
-
+    
     @include desktop-extra {
       grid-template-columns: repeat(4, minmax(0, max-content));
       column-gap: pxToRem(45);
@@ -211,75 +210,76 @@
       max-width: pxToRem(1048);
       width: 100%;
     }
-
-    .footer__item {
-      @include tablet {
-        grid-area: auto/auto/span 6 / auto;
-      }
-
-      @include media($tablet, $desktop-extra) {
-        padding-bottom: pxToRem(15);
-      }
-      &-link {
-        font-family: "Harabara", $sans-serif;
-        font-style: normal;
-        font-weight: bold;
-        display: inline-flex;
-        font-size: pxToRem(20);
-        line-height: pxToRem(21);
-        letter-spacing: 0.07em;
-
-        @include light-theme {
-          color: var(--pallete-common-grey-100);
-        }
-
-        @include dark-theme {
-          color: var(--empty-star-color);
-        }
-
-        @include media(0, $desktop-extra) {
-          padding: pxToRem(12);
-        }
-
-        @include desktop-extra {
-          padding: pxToRem(18) pxToRem(12);
-        }
-      }
-      .footer__sublist {
-        .footer__subitem {
-          &-link {
-            font-family: "Montserrat", $sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            display: inline-flex;
-            font-size: pxToRem(16);
-            line-height: pxToRem(20);
-            padding: pxToRem(9) pxToRem(30);
-
-            @include light-theme {
-              color: var(--pallete-common-grey-100);
-            }
-
-            @include dark-theme {
-              color: var(--empty-star-color);
-            }
-          }
-        }
-      }
-    }
+    
     .nowrap {
       padding-bottom: 0;
       order: 1;
-
+      
       @include tablet {
         grid-area: auto/2/auto/auto;
       }
-
+      
       @include desktop-extra {
         grid-column: -1 / 4;
       }
     }
   }
+
+  &__item {
+    @include tablet {
+      grid-area: auto/auto/span 6 / auto;
+    }
+    
+    @include media($tablet, $desktop-extra) {
+      padding-bottom: pxToRem(15);
+    }
+
+    &-link {
+      font-family: "Harabara", $sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      display: inline-flex;
+      font-size: pxToRem(20);
+      line-height: pxToRem(21);
+      letter-spacing: 0.07em;
+
+      @include light-theme {
+        color: var(--pallete-common-grey-100);
+      }
+
+      @include dark-theme {
+        color: var(--empty-star-color);
+      }
+
+      @include media(0, $desktop-extra) {
+        padding: pxToRem(12);
+      }
+
+      @include desktop-extra {
+        padding: pxToRem(18) pxToRem(12);
+      }
+    }
+  }
+
+  &__subitem {
+    &-link {
+      font-style: normal;
+      font-weight: normal;
+      display: inline-flex;
+      font-size: pxToRem(16);
+      line-height: pxToRem(20);
+      padding: pxToRem(9) pxToRem(30);
+
+      @include light-theme {
+        color: var(--pallete-common-grey-100);
+      }
+
+      @include dark-theme {
+        color: var(--empty-star-color);
+      }
+    }
+  }
+
   &__bottom {
     bottom: 0;
     left: 0;
@@ -311,66 +311,65 @@
       padding-bottom: calc(12px + env(safe-area-inset-bottom));
     }
 
-    .footer__copyright {
-      margin: 0;
-      font-family: "Open Sans", $sans-serif;
-      padding-left: pxToRem(19);
-      padding-right: pxToRem(19);
-      line-height: 1rem;
+  }
 
-      @include light-theme {
-        color: var(--pallete-common-grey-700);
-      }
+  &__copyright {
+    margin: 0;
+    padding-left: pxToRem(19);
+    padding-right: pxToRem(19);
+    line-height: 1rem;
 
-      @include dark-theme {
-        color: var(--empty-star-color);
-      }
-
-      @include mobile {
-        flex-basis: 55%;
-      }
+    @include light-theme {
+      color: var(--pallete-common-grey-700);
     }
 
-    .footer__legal {
-      display: flex;
-      position: relative;
-      margin-bottom: pxToRem(8);
+    @include dark-theme {
+      color: var(--empty-star-color);
+    }
 
-      @include media(0, $mobile) {
-        border-bottom: pxToRem(1) solid #cfe2f1;
-        gap: pxToRem(78);
-      }
+    @include mobile {
+      flex-basis: 55%;
+    }
+  }
 
-      @include mobile {
-        gap: 0;
-        flex-basis: 45%;
-        border-bottom: 0;
-      }
+  &__legal {
+    display: flex;
+    position: relative;
+    margin-bottom: pxToRem(8);
 
-      @include media($mobile, $tablet) {
-        justify-content: flex-end;
-      }
+    @include media(0, $mobile) {
+      border-bottom: pxToRem(1) solid #cfe2f1;
+      gap: pxToRem(78);
+    }
 
-      @include media(0, $tablet) {
-        padding-left: pxToRem(10);
-        padding-right: pxToRem(10);
-      }
+    @include mobile {
+      gap: 0;
+      flex-basis: 45%;
+      border-bottom: 0;
+    }
 
-      @include tablet {
-        padding-left: 42px;
-        justify-content: space-evenly;
-        padding-right: 0;
-      }
+    @include media($mobile, $tablet) {
+      justify-content: flex-end;
+    }
 
-      .footer__legal-link {
-        font-family: "Open Sans", $sans-serif;
-        display: block;
-        padding: pxToRem(8) pxToRem(9);
-        color: var(--pallete-common-grey-700);
-        
-        @include dark-theme {
-          color: var(--empty-star-color);
-        }
+    @include media(0, $tablet) {
+      padding-left: pxToRem(10);
+      padding-right: pxToRem(10);
+    }
+
+    @include tablet {
+      padding-left: 42px;
+      justify-content: space-evenly;
+      padding-right: 0;
+    }
+
+    &-link {
+      display: block;
+      padding: pxToRem(8) pxToRem(9);
+      color: var(--pallete-common-grey-700);
+      
+      @include dark-theme {
+        color: var(--empty-star-color);
       }
     }
   }

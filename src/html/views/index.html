@@ -1,6 +1,8 @@
 <% var data = {
   title: "Заголовок | Проект",
 }; %>
+<%= _.template(require('./../includes/_html-top.html').default)(data) %>
+
 <%= _.template(require('./../includes/header.html').default)(data) %>
       <main class="main">
   <%= _.template(require('./../includes/hero.html').default)(data) %>
@@ -21,11 +23,10 @@
 
   <%= _.template(require('./../includes/faq.html').default)(data) %>
 
-  <%= _.template(require('./../includes/socials.html').default)(data) %>
-      </main>
-      
-    <%= _.template(require('./../includes/footer.html').default)(data) %>
-    <%= _.template(require('./../includes/sprites.html').default)(data) %>
-  </body>
-</html>
+</main>
 
+<%= _.template(require('./../includes/footer.html').default)(data) %>
+
+<%= _.template(require('./../includes/sprites.html').default)(data) %>
+
+<%= _.template(require('./../includes/_html-bottom.html').default)(data) %>

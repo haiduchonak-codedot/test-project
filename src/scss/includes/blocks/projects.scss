@@ -15,15 +15,20 @@
   }
 
   @include desktop-extra {
-    margin-top: pxToRem(212);
+    margin-top: pxToRem(317);
     z-index: 0;
     padding-top: pxToRem(56);
     margin-bottom: pxToRem(183);
     padding-bottom: pxToRem(130);
   }
 
+  @media print {
+    page-break-before: always;
+  }
+
   .container {
     position: relative;
+    padding: 0;
   }
 
   &::before,
@@ -44,7 +49,7 @@
     }
   }
   &::before {
-    -webkit-mask-image: url(../../../img/projectsUpperWave.svg);
+    -webkit-mask-image: url(../../../img/projects-upper-wave.svg);
     height: pxToRem(150);
     top: pxToRem(-148);
 
@@ -62,7 +67,7 @@
   }
 
   &::after {
-    -webkit-mask-image: url(../../../img/projectsLowerWave.svg);
+    -webkit-mask-image: url(../../../img/projects-lower-wave.svg);
     background-position: 0 0;
     -webkit-mask-size: 106% 104px;
     height: pxToRem(187);
@@ -83,193 +88,217 @@
     }
   }
 
-  .slider {
-    &__arrow {
-      @include media(0, $desktop) {
-        display: none;
-      }
+}
 
-      @include desktop {
-        display: block;
-        cursor: pointer;
-        border: 0;
-        width: pxToRem(45);
-        height: pxToRem(55);
-        position: absolute;
-        min-width: auto;
-        border-radius: 0;
-        top: calc(56% - 15px);
-        background-color: transparent;
-
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          display: block;
-          background-color: #84b5ff;
-          width: pxToRem(30);
-          height: pxToRem(9);
-          z-index: 1;
-        }
-      }
+.slider {
+  &__content {
+    display: flex;
+    align-items: center;
+    scrollbar-width: none;
+    
+    @include media(0, $desktop) {
+      flex-direction: column;
+      gap: pxToRem(40);
     }
-    .left-arrow {
-      left: 6%;
-
-      @include media-min($desktop-extra-large) {
-        left: -4.4%;
-      }
-
-      &::before {
-        left: 0;
-        bottom: pxToRem(16);
-        transform: rotate(48deg);
-      }
-
-      &::after {
-        top: pxToRem(14);
-        left: 0;
-        transform: rotate(-45deg);
-      }
+    
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    
+    &::-moz-scrollbar {
+      width: 0;
+    }
+    
+    @include desktop {
+      overflow: auto;
+      flex-direction: row;
+      gap: pxToRem(80);
+      padding: pxToRem(25) pxToRem(16) pxToRem(25);
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    @include media($desktop, $desktop-extra-large) {
+      width: 80%;
+    }
+    
+    @include media-min($desktop-extra-large) {
+      width: 100%;
     }
 
-    .right-arrow {
-      right: 6%;
+    // @media print {
+    //   page-break-inside: avoid;
+    // }
 
-      @include media-min($desktop-extra-large) {
-        right: -4.4%;
-      }
+  }
 
-      &::before {
-        bottom: pxToRem(16);
-        right: pxToRem(3);
-        transform: rotate(133deg);
-      }
+  &__item {
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
+    border-radius: pxToRem(16);
 
-      &::after {
-        right: pxToRem(2);
-        top: pxToRem(13.5);
-        transform: rotate(46deg);
+    &:last-child {
+      @media print {
+        margin-top: pxToRem(60);
       }
     }
+    
+    @include light-theme {
+      background-color: var(--pallete-common-grey-100);
+    }
+    
+    @include dark-theme {
+      background-color: var(--pallete-common-grey-900);
+    }
+    
+    @include media(0, $desktop-extra) {
+      max-width: pxToRem(320);
+    }
+    
+    @include desktop {
+      flex: none;
+      margin-bottom: 0;
+    }
+    
+    @include desktop-extra {
+      max-width: pxToRem(400);
+      min-height: pxToRem(438);
+    }
 
-    &__content {
+    @media print {
+      margin-top: pxToRem(160);
+    }
+    
+    &-wrapper {
+      position: relative;
+      max-width: pxToRem(400);
+      max-height: pxToRem(224);
+      overflow: hidden;
       display: flex;
       align-items: center;
-      scrollbar-width: none;
-
-      @include media(0, $desktop) {
-        flex-direction: column;
-        gap: pxToRem(40);
+      width: 100%;
+      height: 100%;
+      
+      @include desktop-extra {
+        min-height: pxToRem(280);
       }
-
-      &::-webkit-scrollbar {
-        width: 0;
-      }
-
-      &::-moz-scrollbar {
-        width: 0;
-      }
-
-      @include desktop {
-        overflow: auto;
-        flex-direction: row;
-        gap: pxToRem(80);
-        width: 80%;
-        padding: pxToRem(25);
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      @include media-min($desktop-extra-large) {
+      
+      picture,
+      img {
         width: 100%;
-      }
-
-      .slider__item {
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
-        border-radius: pxToRem(16);
-
-        @include light-theme {
-          background-color: var(--pallete-common-grey-100);
-        }
-
-        @include dark-theme {
-          background-color: var(--pallete-common-grey-900);
-        }
-
-        @include media(0, $desktop-extra) {
-          max-width: pxToRem(320);
-        }
-
-        @include desktop {
-          flex: none;
-          margin-bottom: 0;
-        }
-
-        @include desktop-extra {
-          max-width: pxToRem(400);
-          min-height: pxToRem(438);
-        }
-
-        &-wrapper {
-          position: relative;
-          max-width: pxToRem(400);
-          max-height: pxToRem(224);
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          width: 100%;
-          height: 100%;
-
-          @include desktop-extra {
-            min-height: pxToRem(280);
-          }
-
-          picture,
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: 0.25s ease;
-          }
-        }
-
-        &-link {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          border-radius: pxToRem(16);
-          z-index: 1;
-
-          &:hover ~ .slider__item-wrapper > .slider__item-img > img {
-            transform: scale(1.1);
-          }
-        }
-
-        &-content {
-          padding: pxToRem(16) pxToRem(13) pxToRem(16);
-
-          @include desktop-extra {
-            padding-top: pxToRem(24);
-          }
-
-          .slider__item-title {
-            margin: 0 0 pxToRem(13);
-            
-            @include media(0, $desktop-extra) {
-              font-size: pxToRem(18);
-            }
-          }
-
-          .slider__item-text {
-            @include desktop-extra {
-              width: 98%;
-            }
-          }
-        }
+        height: 100%;
+        object-fit: contain;
+        transition: 0.25s ease;
       }
     }
+    
+    &-link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: pxToRem(16);
+      z-index: 1;
+      
+      &:hover ~ .slider__item-wrapper > .slider__item-img > img {
+        transform: scale(1.1);
+      }
+    }
+    
+    &-content {
+      padding: pxToRem(16) pxToRem(13) pxToRem(16);
+      
+      @include desktop-extra {
+        padding-top: pxToRem(24);
+      }
+    }
+
+    &-title {
+      margin: 0 0 pxToRem(13);
+      
+      @include media(0, $desktop-extra) {
+        font-size: pxToRem(18);
+      }
+    }
+    
+    &-text {
+      @include desktop-extra {
+        width: 98%;
+      }
+    }
+  }
+}
+
+.arrow {
+  @include media(0, $desktop) {
+    display: none;
+  }
+
+  @include desktop {
+    display: block;
+    cursor: pointer;
+    border: 0;
+    width: pxToRem(45);
+    height: pxToRem(55);
+    position: absolute;
+    min-width: auto;
+    border-radius: 0;
+    top: calc(56% - 15px);
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: #84b5ff;
+      width: pxToRem(30);
+      height: pxToRem(9);
+      z-index: 1;
+    }
+  }
+}
+
+.left-arrow {
+  @include media(0, $desktop-extra-large) {
+    left: 6%;
+  }
+
+  @include media-min($desktop-extra-large) {
+    left: -4.4%;
+  }
+
+  &::before {
+    left: 0;
+    bottom: pxToRem(16);
+    transform: rotate(48deg);
+  }
+
+  &::after {
+    top: pxToRem(14);
+    left: 0;
+    transform: rotate(-45deg);
+  }
+}
+
+.right-arrow {
+  @include media(0, $desktop-extra-large) {
+    right: 6%;
+  }
+
+  @include media-min($desktop-extra-large) {
+    right: -4.4%;
+  }
+
+  &::before {
+    bottom: pxToRem(16);
+    right: pxToRem(3);
+    transform: rotate(133deg);
+  }
+
+  &::after {
+    right: pxToRem(2);
+    top: pxToRem(13.5);
+    transform: rotate(46deg);
   }
 }

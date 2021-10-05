@@ -8,15 +8,21 @@
 @import "includes/base/animations.scss";
 
 // Blocks
+@import "includes/blocks/header-animations";
 @import "includes/blocks/hero";
+@import "includes/blocks/hero-animations";
 @import "includes/blocks/info";
+@import "includes/blocks/info-animations";
 @import "includes/blocks/reviews";
 @import "includes/blocks/services";
+@import "includes/blocks/services-animations";
 @import "includes/blocks/proposal";
 @import "includes/blocks/contacts";
+@import "includes/blocks/contacts-animations";
 @import "includes/blocks/projects";
 @import "includes/blocks/faq";
 @import "includes/blocks/socials";
+@import "includes/blocks/socials-animations";
 // Vendor
 //@import "includes/vendor/**/*";
 

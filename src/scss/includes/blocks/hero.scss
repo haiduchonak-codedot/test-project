@@ -2,258 +2,163 @@ html[dir="rtl"] .breadcrumbs__item::after {
   transform: rotate(45deg);
 }
 
-#animations-loading:target {
-  .breadcrumbs {
-    &__item {
-      opacity: 0;
-      
-      @include media(0, $desktop) {
-        &:nth-child(1) {
-          animation: appearance 0.2s 0.5s forwards;
-        }
-
-        &:nth-child(2) {
-          animation: appearance 0.2s 0.7s forwards;
-        }
-
-        &:nth-child(3) {
-          animation: appearance 0.2s 0.9s forwards;
-        }
-      }
-
-      @include desktop {
-        &:nth-child(1) {
-          animation: appearance 0.2s 1.16s forwards;
-        }
-
-        &:nth-child(2) {
-          animation: appearance 0.2s 1.55s forwards;
-        }
-
-        &:nth-child(3) {
-          animation: appearance 0.2s 1.95s forwards;
-        }
-      }
-    }
-
-    .hero__title {
-      width: 0;
-      animation: textAppearance 1s 0.9s ease-in forwards;
-    }
-  }
-
-  .hero__img {
-    transition: 0.25s ease;
-
-    svg {
-      #background {
-        opacity: 0;
-        animation: appearance ease 1s 1s forwards;
-      }
-
-      #lines {
-        opacity: 0;
-        animation: appearance ease 1s 1.2s forwards;
-      }
-
-      #circle {
-        opacity: 0;
-        animation: appearance ease 1s 1.3s forwards;
-      }
-
-      .screen {
-        opacity: 0;
-        animation: appearance ease 1s 1.6s forwards;
-      }
-
-      #girl {
-        opacity: 0;
-        animation: appearance ease 1s 2s forwards;
-      }
-
-      #gear {
-        opacity: 0;
-        animation: appearance ease 1s 2.2s forwards;
-      }
-    }
-  }
-}
-
 .hero {
+  position: relative;
+
   @include tablet {
+    display: flex;
+    justify-content: space-between;
     padding-top: pxToRem(31);
     padding-bottom: pxToRem(14);
   }
 
   &__content {
     flex-basis: 50%;
+  }
 
-    .breadcrumbs {
+  &__breadcrumbs {
+    display: flex;
+    margin-left: pxToRem(-7);
+    flex-wrap: wrap;
+
+    &-item {
+      position: relative;
       display: flex;
-      margin-left: pxToRem(-7);
-      flex-wrap: wrap;
+      align-items: center;
 
-      &__item {
-        position: relative;
-        display: flex;
-        align-items: center;
-
-          
-        
-
-        &::after {
-          content: "";
-          display: block;
-          width: pxToRem(6);
-          height: pxToRem(6);
-          transform: rotate(-135deg);
-          margin-left: pxToRem(-1);
-          border-bottom: pxToRem(2) solid var(--pallete-primary-dark);
-          border-left: pxToRem(2) solid var(--pallete-primary-dark);
-        }
-
-        &:last-child::after {
-          display: none;
-        }
+      &::after {
+        content: "";
+        display: block;
+        width: pxToRem(6);
+        height: pxToRem(6);
+        transform: rotate(-135deg);
+        margin-left: pxToRem(-1);
+        border-bottom: pxToRem(2) solid var(--pallete-primary-dark);
+        border-left: pxToRem(2) solid var(--pallete-primary-dark);
       }
-      &__link {
-        font-family: "Montserrat", $sans-serif;
-        font-weight: normal;
-        color: var(--pallete-primary-dark);
-        display: flex;
 
-        @include media(0, $mobile) {
-          font-size: pxToRem(12);
-        }
+      &:last-child::after {
+        display: none;
+      }
+    }
 
-        @include media(0, $desktop-extra) {
-          padding: pxToRem(7) pxToRem(6.5);
-        }
+    &-link {
+      font-weight: normal;
+      color: var(--pallete-primary-dark);
+      display: flex;
 
-        @include mobile {
-          font-size: pxToRem(16);
-        }
+      @include media(0, $mobile) {
+        font-size: pxToRem(12);
+      }
 
-        @include desktop-extra {
-          padding: pxToRem(16) pxToRem(10);
-        }
+      @include media(0, $desktop-extra) {
+        padding: pxToRem(7) pxToRem(6.5);
+      }
+
+      @include mobile {
+        font-size: pxToRem(16);
+      }
+
+      @include desktop-extra {
+        padding: pxToRem(16) pxToRem(10);
       }
     }
   }
-  .hero__wrapper {
-    position: relative;
+
+  &__title-wrapper {
+    width: 100%;
+    display: flex;
+
+    @include media(0, $tablet) {
+      justify-content: center;
+    }
 
     @include tablet {
-      display: flex;
-      justify-content: space-between;
+      justify-content: initial;
     }
-    .hero__title-wrapper {
+    @include media(0, $tablet) {
+      text-align: center;
+      margin-top: pxToRem(36);
+      margin-bottom: pxToRem(12);
+    }
+
+    @include media($tablet, $desktop) {
+      margin-top: pxToRem(99);
+      margin-bottom: pxToRem(99);
+    }
+
+    @include tablet {
+      text-align: initial;
+    }
+
+    @include media($desktop, $desktop-extra) {
+      margin-top: pxToRem(119);
+      margin-bottom: pxToRem(119);
+    }
+
+    @include desktop-extra {
+      margin-top: pxToRem(109);
+      margin-bottom: pxToRem(109);
+    }
+  }
+
+  &__title {
+    overflow: hidden;
+    white-space: pre;
+  }
+
+  &__img-wrapper {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include desktop {
+      padding-top: 14px;
+    }
+
+    @include desktop-extra {
+      padding-left: pxToRem(43);
+    }
+  }
+
+  &__img-container {
+    height: auto;
+
+    @include media(0, $tablet) {
+      max-height: pxToRem(202);
+      width: pxToRem(216);
+    }
+
+    @include tablet {
+      min-width: pxToRem(216);
+      min-height: pxToRem(202);
+      max-height: pxToRem(431);
       width: 100%;
-      display: flex;
+      max-width: 464px;
+    }
 
-      @include media(0, $tablet) {
-        justify-content: center;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    .screen #display,
+    .clothes {
+      @include light-theme {
+        fill: var(--pallete-common-grey-100);
       }
-
-      @include tablet {
-        justify-content: initial;
+      @include dark-theme {
+        fill: var(--pallete-common-grey-900);
       }
     }
 
-    .hero__title {
-      overflow: hidden;
-      white-space: pre;
-
-      @include media(0, $tablet) {
-        text-align: center;
-        margin-top: pxToRem(36);
-        margin-bottom: pxToRem(12);
-      }
-
-      @include media($tablet, $desktop) {
-        margin-top: pxToRem(99);
-        margin-bottom: pxToRem(99);
-      }
-
-      @include tablet {
-        text-align: initial;
-      }
-
-      @include media($desktop, $desktop-extra) {
-        margin-top: pxToRem(119);
-        margin-bottom: pxToRem(119);
-      }
-
-      @include desktop {
-        animation-delay: 1.55s;
-      }
-
-      @include desktop-extra {
-        margin-top: pxToRem(109);
-        margin-bottom: pxToRem(109);
-      }
-    }
-
-    .hero__img-wrapper {
-      flex-basis: 50%;
-      display: flex;
-      justify-content: center;
-
-      @include desktop {
-        padding-top: 14px;
-      }
-
-      @include desktop-extra {
-        padding-left: pxToRem(43);
-      }
-
-      .hero__img {
-        height: auto;
-
-        @include media(0, $tablet) {
-          max-height: pxToRem(202);
-          width: pxToRem(216);
-        }
-
-        @include tablet {
-          min-width: pxToRem(216);
-          min-height: pxToRem(202);
-          max-height: pxToRem(431);
-          width: 100%;
-          max-width: 464px;
-        }
-
-        svg {
-          width: 100%;
-          height: 100%;
-          object-fit: contain;
-
-          .screen #display,
-          .clothes {
-            @include light-theme {
-              fill: var(--pallete-common-grey-100);
-            }
-            @include dark-theme {
-              fill: var(--pallete-common-grey-900);
-            }
-          }
-
-          #mask0,
-          #mask1,
-          #mask2,
-          #mask3 {
-            mask-type: alpha;
-          }
-
-          #gear {
-            path {
-              transform-origin: center;
-              transform-box: fill-box;
-              animation: rotate linear 20s 1.4s infinite forwards;
-            }
-          }          
-        }
-      }
-    }
+    #mask0,
+    #mask1,
+    #mask2,
+    #mask3 {
+      mask-type: alpha;
+    }      
   }
 }

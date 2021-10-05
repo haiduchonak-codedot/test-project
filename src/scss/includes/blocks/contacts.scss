@@ -1,19 +1,20 @@
+.contacts.container {
+  @include desktop-extra {
+    max-width: pxToRem(1229);
+  }
+}
+
 .contacts {
   @include media(0, $desktop-extra) {
-    padding-top: pxToRem(73);
+    padding-top: pxToRem(97);
     padding-bottom: pxToRem(73);
   }
 
   @include desktop-extra {
-    padding-top: pxToRem(126);
-    padding-bottom: pxToRem(130);
+    padding-top: pxToRem(73);
+    padding-bottom: pxToRem(73);
   }
 
-  .container {
-    @include desktop-extra {
-      padding: env(safe-area-inset-top) calc(117px + env(safe-area-inset-left));
-    }
-  }
   &__title {
     margin-bottom: pxToRem(14);
 
@@ -36,25 +37,17 @@
     @include desktop-extra {
       margin-bottom: pxToRem(94);
     }
+  }
 
-    .contacts__subtitle {
-      margin-top: 0;
+  &__subtitle {
+    margin-top: 0;
 
-      @include media(0, $desktop-extra) {
-        margin-bottom: pxToRem(35);
-      }
-
-      @include desktop-extra {
-        margin-bottom: pxToRem(18);
-      }
+    @include media(0, $desktop-extra) {
+      margin-bottom: pxToRem(35);
     }
 
-    .contacts__text {
-      margin-top: 0;
-
-      @include desktop-extra {
-        margin-bottom: pxToRem(18);
-      }
+    @include desktop-extra {
+      margin-bottom: pxToRem(18);
     }
   }
 
@@ -71,69 +64,71 @@
       justify-content: center;
     }
 
-    .contacts__list {
-      flex-basis: 50%;
+  }
 
-      .contacts__item {
-        width: 100%;
+  &__list {
+    flex-basis: 50%;
+  }
 
-        &:last-child {
-          margin-bottom: 0;
-        }
+  &__item {
+    width: 100%;
 
-        &-icon {
-          width: pxToRem(20);
-          height: pxToRem(20);
-          margin-left: pxToRem(3);
-          flex: none;
-          display: flex;
-          flex-basis: pxToRem(20);
-        }
+    &:last-child {
+      margin-bottom: 0;
+    }
 
-        &-text {
-          display: inline-flex;
-          line-height: pxToRem(26);
-          gap: pxToRem(18);
+    &-icon {
+      width: pxToRem(20);
+      height: pxToRem(20);
+      margin-left: pxToRem(3);
+      flex: none;
+      display: flex;
+      flex-basis: pxToRem(20);
+    }
 
-          @include light-theme {
-            color: var(--pallete-common-grey-900);
-          }
+    &-text {
+      display: inline-flex;
+      line-height: pxToRem(26);
+      gap: pxToRem(18);
 
-          @include dark-theme {
-            color: var(--empty-star-color);
-          }
+      @include light-theme {
+        color: var(--pallete-common-grey-900);
+      }
 
-          @include media(0, $mobile-small) {
-            font-size: pxToRem(18);
-          }
+      @include dark-theme {
+        color: var(--empty-star-color);
+      }
 
-          @include media-min($mobile-small) {
-            font-size: pxToRem(20);
-          }
+      @include media(0, $mobile-small) {
+        font-size: pxToRem(18);
+      }
 
-          @include media(0, $mobile) {
-            align-items: baseline;
-          }
+      @include media-min($mobile-small) {
+        font-size: pxToRem(20);
+      }
 
-          @include media(0, $tablet) {
-            padding-top: 13.4px;
-            padding-bottom: 13.4px;
-          }
+      @include media(0, $mobile) {
+        align-items: baseline;
+      }
 
-          @include mobile {
-            align-items: center;
-          }
+      @include media(0, $tablet) {
+        padding-top: 13.4px;
+        padding-bottom: 13.4px;
+      }
 
-          @include tablet {
-            padding-top: pxToRem(14);
-            padding-bottom: pxToRem(14);
-            padding-left: pxToRem(11);
-            padding-right: pxToRem(11);
-          }
-        }
+      @include mobile {
+        align-items: center;
+      }
+
+      @include tablet {
+        padding-top: pxToRem(14);
+        padding-bottom: pxToRem(14);
+        padding-left: pxToRem(11);
+        padding-right: pxToRem(11);
       }
     }
   }
+
   &__form-wrapper {
     background-repeat: no-repeat;
     position: relative;
@@ -150,117 +145,145 @@
       margin-top: 0;
     }
 
-    .contacts__form-bg-container {
+    @media print {
+      page-break-before: always;
+    }
+  }
+
+  &__form {
+    text-align: center;
+    box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
+    border-radius: pxToRem(6);
+    max-width: pxToRem(420);
+
+    @include light-theme {
+      background: var(--pallete-common-grey-100);
+    }
+
+    @include dark-theme {
+      border: 1px solid var(--border-color);
+      background: var(--pallete-common-grey-900);
+    }
+
+    @include media(0, $desktop-extra) {
+      padding: pxToRem(41) pxToRem(22);
+    }
+
+    @include desktop-extra {
+      padding: pxToRem(65) pxToRem(39);
+      margin-left: pxToRem(36);
+    }
+
+    &-container {
       @include media(0, $desktop-extra) {
         display: none;
       }
+    }
+  
+    &-icon {
+      z-index: -1;
+      position: absolute;
 
-      .contacts__form-bg-icon {
-        z-index: -1;
-        position: absolute;
+      @include media(0, $desktop-extra) {
+        display: none;
       }
     }
-    #bg-icon-container-1 {
-      #bg-icon-1 {
-        height: pxToRem(154);
-        width: pxToRem(149);
-        top: pxToRem(-41);
+    
+    &-field {
+      font-family: $font-family-text;
+      width: 100%;
+      border: pxToRem(1) solid #d7d7d7;
+      box-sizing: border-box;
+      border-radius: pxToRem(4);
+      margin-bottom: pxToRem(20);
+      padding: pxToRem(10) pxToRem(16);
+      color: var(--pallete-common-grey-900);
 
-        @include media(0, $desktop-extra) {
-          left: pxToRem(-43);
-        }
-
-        @include desktop-extra {
-          left: pxToRem(27);
-        }
+      &::placeholder {
+        font-family: $font-family-text;
       }
-    }
-    #bg-icon-container-2 {
-      #bg-icon-2 {
-        width: pxToRem(135);
-        height: pxToRem(108);
-        bottom: pxToRem(21);
-
-        @include media(0, $desktop-extra) {
-          left: pxToRem(-42);
-        }
-
-        @include desktop-extra {
-          left: pxToRem(8);
-        }
-      }
-    }
-    #bg-icon-container-3 {
-      #bg-icon-3 {
-        width: pxToRem(126);
-        height: pxToRem(229);
-        right: pxToRem(-61);
-        top: pxToRem(-41);
-      }
-    }
-    .contacts__form {
-      text-align: center;
-      box-shadow: 0 pxToRem(3) pxToRem(16) pxToRem(2) rgba(0, 0, 0, 0.15);
-      border-radius: pxToRem(6);
-      max-width: pxToRem(420);
 
       @include light-theme {
-        background: var(--pallete-common-grey-100);
+        color: var(--pallete-common-grey-900);
       }
 
       @include dark-theme {
-        border: 1px solid var(--border-color);
-        background: var(--pallete-common-grey-900);
+        color: var(--empty-star-color);
+        border-color: var(--border-color);
       }
+    }
 
-      @include media(0, $desktop-extra) {
-        padding: pxToRem(41) pxToRem(22);
+    &-textarea {
+      min-height: pxToRem(80);
+      margin-bottom: pxToRem(25);
+    }
+
+    
+    &-button {
+      width: 100%;
+      margin-bottom: 0;
+      padding: pxToRem(5) 0;
+      background-color: var(--pallete-secondary-main);
+      font-size: pxToRem(18);
+      
+      @include light-theme {
+        color: var(--pallete-common-grey-100);
       }
-
-      @include desktop-extra {
-        padding: pxToRem(65) pxToRem(39);
-        margin-left: pxToRem(109);
+      
+      @include dark-theme {
+        color: var(--empty-star-color);
       }
-
-      &-field {
-        font-family: "Open Sans", $sans-serif;
-        width: 100%;
-        border: pxToRem(1) solid #d7d7d7;
-        box-sizing: border-box;
-        border-radius: pxToRem(4);
-        margin-bottom: pxToRem(20);
-        padding: pxToRem(10) pxToRem(16);
-        color: var(--pallete-common-grey-900);
-        &::placeholder {
-          font-family: "Open Sans", $sans-serif;
-        }
+      
+      &:hover {
+        color: var(--pallete-secondary-main);
+        background-color: transparent;
       }
+    }
+  }
+}
 
-      .form-textarea {
-        min-height: pxToRem(80);
-        margin-bottom: pxToRem(22);
-      }
+#bg-icon-container-1 {
+  #bg-icon-1 {
+    height: pxToRem(154);
+    width: pxToRem(149);
+    top: pxToRem(-41);
 
-      &-button {
-        width: 100%;
-        margin-bottom: 0;
-        padding: pxToRem(5) 0;
-        background-color: var(--pallete-secondary-main);
-        font-size: pxToRem(18);
+    @include media(0, $desktop-extra) {
+      display: none;
+    }
 
-        @include light-theme {
-          color: var(--pallete-common-grey-100);
-        }
+    @include desktop-extra {
+      left: pxToRem(7);
+    }
+  }
+}
 
-        @include dark-theme {
-          color: var(--empty-star-color);
-        }
-        
-        &:hover {
-          color: var(--pallete-secondary-main);
-          background-color: transparent;
-        }
-      }
+#bg-icon-container-2 {
+  #bg-icon-2 {
+    width: pxToRem(135);
+    height: pxToRem(108);
+    bottom: pxToRem(26);
+
+    @include media(0, $desktop-extra) {
+      left: pxToRem(-42);
+      display: none;
+    }
+
+    @include desktop-extra {
+      left: pxToRem(-13);
+    }
+  }
+}
+
+#bg-icon-container-3 {
+  #bg-icon-3 {
+    width: pxToRem(126);
+    height: pxToRem(229);
+    right: pxToRem(-12);
+    top: pxToRem(-41);
+
+    @include media(0, $desktop-extra) {
+      display: none;
     }
   }
 }

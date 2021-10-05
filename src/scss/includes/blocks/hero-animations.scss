@@ -1,0 +1,88 @@
+#animations-loading:target {
+  .hero {
+    &__breadcrumbs {
+      &-item {
+        opacity: 0;
+        
+        @include media(0, $desktop) {
+          &:nth-child(1) {
+            animation: appearance 0.2s 0.5s forwards;
+          }
+  
+          &:nth-child(2) {
+            animation: appearance 0.2s 0.7s forwards;
+          }
+  
+          &:nth-child(3) {
+            animation: appearance 0.2s 0.9s forwards;
+          }
+        }
+  
+        @include desktop {
+          &:nth-child(1) {
+            animation: appearance 0.2s 1.16s forwards;
+          }
+  
+          &:nth-child(2) {
+            animation: appearance 0.2s 1.55s forwards;
+          }
+  
+          &:nth-child(3) {
+            animation: appearance 0.2s 1.95s forwards;
+          }
+        }
+      }
+    }
+    
+    &__title {
+      width: 0;
+      animation: textAppearance 1s 0.9s ease-in forwards;
+    }
+
+    &__img-container {
+      transition: 0.25s ease;
+    }
+
+    &__img {
+      #background {
+        opacity: 0;
+        animation: appearance ease 1s 1s forwards;
+      }
+
+      #lines {
+        opacity: 0;
+        animation: appearance ease 1s 1.2s forwards;
+      }
+
+      #circle {
+        opacity: 0;
+        animation: appearance ease 1s 1.3s forwards;
+      }
+
+      .screen {
+        opacity: 0;
+        animation: appearance ease 1s 1.6s forwards;
+      }
+
+      #girl {
+        opacity: 0;
+        animation: appearance ease 1s 2s forwards;
+      }
+
+      #gear {
+        opacity: 0;
+        animation: appearance ease 1s 2.2s forwards;
+      }
+    }
+  }
+}
+
+.hero__img {
+  #gear {
+    path {
+      transform-origin: center;
+      transform-box: fill-box;
+      animation: rotate linear 20s 1.4s infinite forwards;
+    }
+  }
+}

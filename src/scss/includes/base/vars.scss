@@ -1,5 +1,6 @@
 @function pxToRem($size, $postfix: rem) {
-  @return $size / $base-size * 1 + $postfix;
+  // @return $size / $base-size * 1 + $postfix;
+  @return $size + px;
 }
 
 $base-size: 16;
@@ -47,7 +48,9 @@ $mobile: 576;
 $mobile-small: 375;
 $mobile-extra-small: 340;
 
-// Main alternative fonts
+// Main fonts
 $sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
   "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
   "Noto Color Emoji";
+$font-family-heading: "Harabara", $sans-serif;
+$font-family-text: "Montserrat", $sans-serif;

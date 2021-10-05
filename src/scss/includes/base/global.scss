@@ -1,19 +1,19 @@
 * {
   box-sizing: border-box;
   text-decoration: none;
-  // backface-visibility: hidden;
-  // -webkit-backface-visibility: hidden;
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  // &:not(iframe) {
-  //   transition: 0.25s ease;
-  //   transition-property: background, border, color, left, margin, padding, right, opacity;
-  // }
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeSpeed;
+}
+
+html {
+  @include dark-theme {
+    background-color: var(--pallete-common-grey-900);
+  }
 }
 
 html,
@@ -21,6 +21,12 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+.page-wrapper {
+  @include dark-theme {
+    background-color: var(--pallete-common-grey-900);
+  }
 }
 
 input[type="submit"]:focus {
@@ -33,47 +39,13 @@ ul {
   list-style: none;
 }
 
-video,
-audio {
-  max-width: 100%;
-  height: auto;
-}
-
 label,
 select {
   cursor: pointer;
 }
 
-label[for] {
-  cursor: pointer;
-}
-
-abbr[title],
-acronym[title],
-dfn {
-  cursor: help;
-}
-
 textarea {
   resize: vertical;
-}
-
-[disabled] {
-  cursor: default;
-}
-
-[aria-disabled="true"] {
-  cursor: default;
-  pointer-events: none;
-}
-
-.no-js button[type="button"] {
-  display: none;
-}
-
-sub,
-sup {
-  line-height: 0;
 }
 
 img {
@@ -81,14 +53,11 @@ img {
 }
 
 body {
+  font-family: $font-family-text;
   min-height: 100vh;
   transition: 0s;
   overscroll-behavior: contain;
   scroll-behavior: smooth;
-
-  &.fixed {
-    overflow: hidden;
-  }
 }
 
 input[type="text"],
@@ -108,15 +77,6 @@ textarea {
 
   &.not-valid {
     border-color: #f00;
-  }
-}
-
-select {
-  -webkit-appearance: none;
-
-  &:focus::-ms-value {
-    color: #12161e;
-    background: var(--pallete-common-grey-100);
   }
 }
 
@@ -159,20 +119,21 @@ select {
   cursor: pointer;
 }
 
-strong {
-  font-weight: 600;
+button  {
+  font-family: $font-family-text;
 }
 
 h1,
 h2,
 h3 {
-  font-family: "Harabara", $sans-serif;
+  font-family: $font-family-heading;
   font-weight: normal;
 }
 
 h1 {
   text-transform: uppercase;
   color: var(--pallete-primary-dark);
+  margin: 0;
   @include media(0, $desktop-extra) {
     line-height: pxToRem(38);
     letter-spacing: 0.05em;
@@ -225,9 +186,10 @@ h3,
 
 h4,
 .h4 {
-  font-family: "Montserrat", $sans-serif;
+  font-family: $font-family-text;
   font-weight: bold;
   line-height: pxToRem(28);
+  letter-spacing: 0;
   color: var(--pallete-common-grey-900);
   @include dark-theme {
     color: var(--empty-star-color);
@@ -240,9 +202,13 @@ h4,
   }
 }
 
-p {
-  font-family: "Montserrat", $sans-serif;
+p,
+span {
   font-weight: normal;
+  font-style: normal;
+}
+
+p {
   line-height: pxToRem(26);
   color: var(--pallete-common-grey-900);
   @include dark-theme {
@@ -250,20 +216,14 @@ p {
   }
 }
 
-span {
-  font-family: "Montserrat", $sans-serif;
-  font-style: normal;
-  font-weight: normal;
-}
-
 .btn {
-  font-family: "Montserrat", $sans-serif;
+  display: block;
   font-size: pxToRem(16);
-  line-height: pxToRem(36);
+  line-height: pxToRem(37);
   font-weight: bold;
   border: pxToRem(2) solid var(--pallete-secondary-main);
   border-radius: var(--border-radius);
-  min-width: pxToRem(160);
+  width: pxToRem(160);
   min-height: pxToRem(42);
   cursor: pointer;
   transition: 0.25s;

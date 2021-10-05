@@ -1,105 +1,77 @@
-<!DOCTYPE html>
-<html lang="ru" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, minimum-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta property="og:title" content="stanassets">
-    <meta property="og:description" content="vr app development">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="#">
-    <meta property="og:site_name" content="stanassets.com">
-    <meta name="description" content="vr app development">
-    <title><%=title%></title>
-    <link rel="preload" as="style" href="css/main.min.css"/>
-    <link rel="preload" as="font" href="fonts/Montserrat/Montserrat-Bold.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="fonts/Montserrat/Montserrat-Regular.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="fonts/Montserrat/Montserrat-SemiBold.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="fonts/Harabara/Harabara.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" href="fonts/OpenSans/OpenSans-Regular.woff2" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/main.min.css"/>    
-    <link rel="shortcut icon" href="favicon/favicon.ico"/>
-  </head>
-  <body id="main">
-    <div class="page-wrapper" id="animations-loading">
-      <header class="header">
-        <div class="container">
-          <div class="header__wrapper">
-            <a aria-label="logo" href="#" class="logo">
-              <picture>
-                <source srcset="../../img/logo@1x.webp 1x,
-                                ../../img/logo@2x.webp 2x" type="image/webp"> 
-                <img src="../../img/logo@1x.png" srcset="../../img/logo@2x.png 2x" alt="logo">
-              </picture>
-            </a>
-            <a aria-label="burger menu link" class="burger" id="hamburger" href="#main">
-              <span class="header__burger-line"></span>
-            </a>
-            <div class="header__menu-wrapper" id="main-menu">
-              <div class="header__menu">
-                <nav>
-                  <div class="header__menu-link-wrapper">
-                    <a class="header__menu-text" href="#">close</a>
-                  </div>
-                  <ul class="header__menu-list" id="menu">
-                    <li class="header__menu-item dropdown">
-                      <a href="#main" class="header__menu-link dropdown__menu-link">
-                        SERVICES
-                      </a>
-                      <ul class="dropdown__content">
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">MOBILE APPLICATION DEVELOPMENT</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">GAME DEVELOPMENT OUTSOURCING</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">VR APP DEVELOPMENT</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">DEDICATED DEVELOPERS</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">SDK DEVELOPMENT</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">3D MODELLING SERVICES</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">AR APP DEVELOPMENT</a></li>
-                      </ul>
-                    </li>
-                    <li class="header__menu-item dropdown">
-                      <a href="#main" class="header__menu-link dropdown__menu-link">
-                        TECHNOLOGIES
-                      </a>
-                      <ul class="dropdown__content">
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">ANDROID</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">IOS</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">UNITY</a></li>
-                      </ul>
-                    </li>
-                    <li class="header__menu-item">
-                      <a href="#" class="header__menu-link">
-                        PRODUCTS
-                      </a>
-                    </li>
-                    <li class="header__menu-item">
-                      <a href="#" class="header__menu-link">
-                        PORTFOLIO
-                      </a>
-                    </li>
-                    <li class="header__menu-item">
-                      <a href="#" class="header__menu-link">
-                        BLOG
-                      </a>
-                    </li>
-                    <li class="header__menu-item dropdown">
-                      <a href="#main" class="header__menu-link dropdown__menu-link">
-                        ABOUT US
-                      </a>
-                      <ul class="dropdown__content">
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">CONTACTS</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">TEAM</a></li>
-                        <li class="dropdown__item"><a href="#" class="dropdown__link">JOIN THE TEAM</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </nav>
-                <button class="btn contact-btn">
-                  CONTACT US
-                </button>
+      <header class="header container">
+        <a aria-label="logo" href="#" class="header__logo-link">
+          <picture>
+            <source srcset="../../img/logo-1x.webp 1x,
+                            ../../img/logo-2x.webp 2x" type="image/webp"> 
+            <img class="header__logo" src="../../img/logo-1x.png" srcset="../../img/logo-2x.png 2x" alt="logo">
+          </picture>
+        </a>
+        <a aria-label="burger menu link" class="header__burger-link" id="hamburger" href="#main">
+          <span class="header__burger-line"></span>
+        </a>
+        <div class="header__menu-wrapper" id="main-menu">
+          <div class="header__menu">
+            <nav>
+              <div class="header__menu-link-wrapper">
+                <a class="header__menu-text" href="#">close</a>
               </div>
-              <a aria-label="close menu" href="#" class="header__menu-backdrop"></a>
-            </div>
+              <ul class="header__menu-list" id="menu">
+                <li class="header__menu-item dropdown">
+                  <a href="#main" class="header__menu-link dropdown__link">
+                    SERVICES
+                  </a>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">MOBILE APPLICATION DEVELOPMENT</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">GAME DEVELOPMENT OUTSOURCING</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">VR APP DEVELOPMENT</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">DEDICATED DEVELOPERS</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">SDK DEVELOPMENT</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">3D MODELLING SERVICES</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">AR APP DEVELOPMENT</a></li>
+                  </ul>
+                </li>
+                <li class="header__menu-item dropdown">
+                  <a href="#main" class="header__menu-link dropdown__link">
+                    TECHNOLOGIES
+                  </a>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">ANDROID</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">IOS</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">UNITY</a></li>
+                  </ul>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+                    PRODUCTS
+                  </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+                    PORTFOLIO
+                  </a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__menu-link">
+                    BLOG
+                  </a>
+                </li>
+                <li class="header__menu-item dropdown">
+                  <a href="#main" class="header__menu-link dropdown__link">
+                    ABOUT US
+                  </a>
+                  <ul class="dropdown__list">
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">CONTACTS</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">TEAM</a></li>
+                    <li class="dropdown__item"><a href="#" class="dropdown__item-link">JOIN THE TEAM</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+            <a class="btn header__contact-link">
+              CONTACT US
+            </a>
           </div>
+          <a aria-label="close menu" href="#" class="header__menu-backdrop"></a>
         </div>
       </header>
       
