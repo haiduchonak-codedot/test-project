@@ -60,75 +60,6 @@ html[dir="rtl"] {
   }
 }
 
-#animations-loading:target {
-  .header {
-    &__logo {
-      opacity: 0;
-      animation: appearance 0.3s 0.5s 1 forwards;
-    }
-  
-    &__menu-item {
-      @include desktop {
-        opacity: 0;
-        transition: 0.2s ease-in;
-  
-        &:nth-child(1) {
-          animation: appearance 0.2s 0.75s forwards;
-        }
-  
-        &:nth-child(2) {
-          animation: appearance 0.2s 0.95s forwards;
-        }
-  
-        &:nth-child(3) {
-          animation: appearance 0.2s 1.15s forwards;
-        }
-  
-        &:nth-child(4) {
-          animation: appearance 0.2s 1.35s forwards;
-        }
-  
-        &:nth-child(5) {
-          animation: appearance 0.2s 1.55s forwards;
-        }
-  
-        &:nth-child(6) {
-          animation: appearance 0.2s 1.75s forwards;
-        }
-  
-        &:nth-child(7) {
-          animation: appearance 0.2s 1.95s forwards;
-        }
-      }
-    }
-
-    &__burger-line,
-    &__burger-line::before,
-    &__burger-line::after {
-      opacity: 0;
-    }
-
-    &__burger-line {
-      animation: appearance 0.2s 1s forwards;
-
-      &::before {
-        animation: appearance 0.2s 1.2s forwards;
-      }
-
-      &::after {
-        animation: appearance 0.2s 1.4s forwards;
-      }
-    }
-  
-    &__contact-link {
-      @include desktop {
-        opacity: 0;
-        animation: appearance 0.2s 2.15s forwards;
-      }
-    }
-  }
-}
-
 .header.container {
   padding-left: pxToRem(15);
   padding-right: pxToRem(15);
@@ -200,7 +131,6 @@ html[dir="rtl"] {
     @include media(0, $desktop) {
       position: fixed;
       opacity: 0;
-      animation: menuTransition 0.5s 1 forwards cubic-bezier(0, 1, 0, 1);
     }
 
     @include desktop {
@@ -318,15 +248,6 @@ html[dir="rtl"] {
 
   &__menu-item {
     display: block;
-
-    @include desktop {
-      &:hover {
-        .dropdown__list {
-          display: block;
-          animation: dropdown 1.5s 0s cubic-bezier(0.12, 0.7, 0.53, 1) forwards;
-        }
-      }
-    }
   }
 
   &__menu-link {

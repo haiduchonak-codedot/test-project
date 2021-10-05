@@ -1,12 +1,3 @@
-#animations-loading:target {
-  .info {
-    &__item {
-      opacity: 0;
-      animation: slideIn 0.4s 1.95s forwards;
-    }
-  }
-}
-
 .info {
   padding-bottom: pxToRem(47);
 
